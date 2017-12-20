@@ -29,7 +29,7 @@ public struct HostCell<View, State, Layout>: CellConfigType where View: UIView, 
 		self.state = state
 		self.cellUpdater = cellUpdater
 	}
-	
+    
 	// MARK: - TableItemConfigType
 	
 	/// Registers the instance of this HostCell for use in creating new table cells.

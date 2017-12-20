@@ -40,8 +40,7 @@ class ViewController: UIViewController {
                 self.show(TableViewController(), sender: self)
                 return .deselected
             }),
-            state: LabelState(text: "UITableView Demo"),
-            cellUpdater: LabelState.updateView)
+            state: LabelState(text: "UITableView Demo"))
         rows.append(tableDemo)
         
         let collectionDemo = LabelCell(
@@ -53,8 +52,7 @@ class ViewController: UIViewController {
                 self.show(CollectionViewController(collectionViewLayout: layout), sender: self)
                 return .deselected
             }),
-            state: LabelState(text: "UICollectionView Demo"),
-            cellUpdater: LabelState.updateView)
+            state: LabelState(text: "UICollectionView Demo"))
         rows.append(collectionDemo)
         
         let detailCell = DetailCell(
@@ -67,8 +65,7 @@ class ViewController: UIViewController {
             state: DetailState(
                 image: #imageLiteral(resourceName: "finedog"),
                 title: "Sample Title",
-                subtitle: "This is the subs on a detail cell"),
-            cellUpdater: DetailState.updateView)
+                subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 
         functionalData.renderAndDiff([

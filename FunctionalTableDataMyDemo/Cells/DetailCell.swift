@@ -21,7 +21,7 @@ class DetailView: UIView, NibView {
     }
 }
 
-struct DetailState: Equatable {
+struct DetailState {
     let image: UIImage?
     let title: String
     let subtitle: String
@@ -31,7 +31,11 @@ struct DetailState: Equatable {
         self.subtitle = subtitle
         self.image = image
     }
-    
+}
+
+extension DetailState: StateType {
+    typealias View = DetailView
+
     static func updateView(_ view: DetailView, state: DetailState?) {
         guard let state = state else {
             view.imageView.image = nil
@@ -44,7 +48,9 @@ struct DetailState: Equatable {
         view.titleLabel.text = state.title
         view.subtitleLabel.text = state.subtitle
     }
-    
+}
+
+extension DetailState: Equatable {
     static func ==(lhs: DetailState, rhs: DetailState) -> Bool {
         return lhs.title == rhs.title && lhs.subtitle == rhs.subtitle && lhs.image == rhs.image
     }

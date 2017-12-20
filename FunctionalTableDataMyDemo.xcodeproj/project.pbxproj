@@ -32,6 +32,7 @@
 		C741E4011FEA171C006B693F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3EB1FEA171C006B693F /* UITableView+Reusable.swift */; };
 		C741E4021FEA171C006B693F /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3EC1FEA171C006B693F /* UIView+AutoLayout.swift */; };
 		C741E4031FEA171C006B693F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3ED1FEA171C006B693F /* UIView+Extensions.swift */; };
+		C741E4051FEA1B67006B693F /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4041FEA1B67006B693F /* StateType.swift */; };
 		C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F621FD7929300710A79 /* AppDelegate.swift */; };
 		C7854F651FD7929300710A79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F641FD7929300710A79 /* ViewController.swift */; };
 		C7854F681FD7929300710A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7854F661FD7929300710A79 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		C741E3EB1FEA171C006B693F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		C741E3EC1FEA171C006B693F /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		C741E3ED1FEA171C006B693F /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		C741E4041FEA1B67006B693F /* StateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
 		C7854F5F1FD7929300710A79 /* FunctionalTableDataMyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalTableDataMyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7854F621FD7929300710A79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7854F641FD7929300710A79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				C741E3D01FE9FB8B006B693F /* NibView.swift */,
+				C741E4041FEA1B67006B693F /* StateType.swift */,
 			);
 			path = "FTD Helpers";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				C741E3F91FEA171C006B693F /* Separator.swift in Sources */,
 				C7854FA71FD7945700710A79 /* LabelCell.swift in Sources */,
 				C7854F651FD7929300710A79 /* ViewController.swift in Sources */,
+				C741E4051FEA1B67006B693F /* StateType.swift in Sources */,
 				C741E3F31FEA171C006B693F /* FunctionalCollectionData.swift in Sources */,
 				C7854FD91FD796B400710A79 /* UIView+Helpers.swift in Sources */,
 				C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */,
