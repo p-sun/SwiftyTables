@@ -68,6 +68,11 @@ class ViewController: UIViewController {
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 
+        let colorCell = ColorStripCell(
+            key: "colorCell",
+            state: ColorStripState(colors: [.red, .orange, .yellow, .green, .blue, .purple]))
+        rows.append(colorCell)
+
         functionalData.renderAndDiff([
             TableSection(key: "section", rows: rows)
             ])

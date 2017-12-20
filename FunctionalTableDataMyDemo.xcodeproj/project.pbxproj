@@ -33,6 +33,10 @@
 		C741E4021FEA171C006B693F /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3EC1FEA171C006B693F /* UIView+AutoLayout.swift */; };
 		C741E4031FEA171C006B693F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3ED1FEA171C006B693F /* UIView+Extensions.swift */; };
 		C741E4051FEA1B67006B693F /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4041FEA1B67006B693F /* StateType.swift */; };
+		C741E40A1FEA22AF006B693F /* ColorStripItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4081FEA22AE006B693F /* ColorStripItemCell.swift */; };
+		C741E40B1FEA22AF006B693F /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4091FEA22AE006B693F /* CarouselCell.swift */; };
+		C741E40D1FEA2334006B693F /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */; };
+		C741E40F1FEA2663006B693F /* ColorStripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E40E1FEA2663006B693F /* ColorStripCell.swift */; };
 		C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F621FD7929300710A79 /* AppDelegate.swift */; };
 		C7854F651FD7929300710A79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F641FD7929300710A79 /* ViewController.swift */; };
 		C7854F681FD7929300710A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7854F661FD7929300710A79 /* Main.storyboard */; };
@@ -72,6 +76,10 @@
 		C741E3EC1FEA171C006B693F /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		C741E3ED1FEA171C006B693F /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C741E4041FEA1B67006B693F /* StateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
+		C741E4081FEA22AE006B693F /* ColorStripItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStripItemCell.swift; sourceTree = "<group>"; };
+		C741E4091FEA22AE006B693F /* CarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		C741E40E1FEA2663006B693F /* ColorStripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStripCell.swift; sourceTree = "<group>"; };
 		C7854F5F1FD7929300710A79 /* FunctionalTableDataMyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalTableDataMyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7854F621FD7929300710A79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7854F641FD7929300710A79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +160,15 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		C741E4071FEA227E006B693F /* CarouselCell */ = {
+			isa = PBXGroup;
+			children = (
+				C741E4091FEA22AE006B693F /* CarouselCell.swift */,
+				C741E4081FEA22AE006B693F /* ColorStripItemCell.swift */,
+			);
+			path = CarouselCell;
+			sourceTree = "<group>";
+		};
 		C7854F561FD7929300710A79 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +190,7 @@
 			children = (
 				C741E3D41FEA171C006B693F /* FunctionalTableData */,
 				C741E3CF1FE9FB6F006B693F /* FTD Helpers */,
+				C741E4071FEA227E006B693F /* CarouselCell */,
 				C78550151FD8642400710A79 /* Cells */,
 				C78550141FD8640B00710A79 /* Helpers */,
 				C7854F621FD7929300710A79 /* AppDelegate.swift */,
@@ -192,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C7854FD81FD796B400710A79 /* UIView+Helpers.swift */,
+				C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -202,6 +221,7 @@
 				C7854FA61FD7945700710A79 /* LabelCell.swift */,
 				C741E3CB1FE9CE7F006B693F /* DetailCell.swift */,
 				C741E3CD1FE9D001006B693F /* DetailView.xib */,
+				C741E40E1FEA2663006B693F /* ColorStripCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -283,13 +303,16 @@
 				C741E3F91FEA171C006B693F /* Separator.swift in Sources */,
 				C7854FA71FD7945700710A79 /* LabelCell.swift in Sources */,
 				C7854F651FD7929300710A79 /* ViewController.swift in Sources */,
+				C741E40A1FEA22AF006B693F /* ColorStripItemCell.swift in Sources */,
 				C741E4051FEA1B67006B693F /* StateType.swift in Sources */,
 				C741E3F31FEA171C006B693F /* FunctionalCollectionData.swift in Sources */,
 				C7854FD91FD796B400710A79 /* UIView+Helpers.swift in Sources */,
 				C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */,
 				C7854FA51FD7930900710A79 /* CollectionViewController.swift in Sources */,
 				C741E3FD1FEA171C006B693F /* TableSectionHeaderFooter.swift in Sources */,
+				C741E40F1FEA2663006B693F /* ColorStripCell.swift in Sources */,
 				C741E3F71FEA171C006B693F /* ObjCExceptionRethrower.swift in Sources */,
+				C741E40B1FEA22AF006B693F /* CarouselCell.swift in Sources */,
 				C741E3F41FEA171C006B693F /* UICollectionView+Reusable.swift in Sources */,
 				C741E3FC1FEA171C006B693F /* TableSectionChangeSet.swift in Sources */,
 				C741E3F51FEA171C006B693F /* HostCell.swift in Sources */,
@@ -306,6 +329,7 @@
 				C78550171FD864F600710A79 /* TableViewController.swift in Sources */,
 				C741E4031FEA171C006B693F /* UIView+Extensions.swift in Sources */,
 				C741E4001FEA171C006B693F /* TableItemConfigType.swift in Sources */,
+				C741E40D1FEA2334006B693F /* UIColor+Helpers.swift in Sources */,
 				C741E3F21FEA171C006B693F /* CollectionItemConfigType.swift in Sources */,
 				C741E3CC1FE9CE7F006B693F /* DetailCell.swift in Sources */,
 				C741E3F01FEA171C006B693F /* CellStyle.swift in Sources */,
