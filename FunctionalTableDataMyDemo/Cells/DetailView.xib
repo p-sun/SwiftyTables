@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailView" customModule="FunctionalTableDataMyDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="125"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="15A-Sz-l2b">
+                    <rect key="frame" x="0.0" y="0.0" width="483" height="125"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-jN-Qiq">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finedog" translatesAutoresizingMaskIntoConstraints="NO" id="MEB-hl-3oy">
+                                    <rect key="frame" x="0.0" y="12.5" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="IbT-w7-Ctc"/>
+                                        <constraint firstAttribute="width" constant="100" id="sTU-E5-nK1"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="MEB-hl-3oy" firstAttribute="leading" secondItem="Kto-jN-Qiq" secondAttribute="leading" id="8Pf-l1-hGw"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MEB-hl-3oy" secondAttribute="bottom" id="Tmv-aq-S5Y"/>
+                                <constraint firstItem="MEB-hl-3oy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kto-jN-Qiq" secondAttribute="top" id="cga-iP-DB3"/>
+                                <constraint firstAttribute="trailing" secondItem="MEB-hl-3oy" secondAttribute="trailing" id="p9F-xk-oZk"/>
+                                <constraint firstItem="MEB-hl-3oy" firstAttribute="centerY" secondItem="Kto-jN-Qiq" secondAttribute="centerY" id="tyx-FR-Z8i"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VxU-dK-TL3">
+                            <rect key="frame" x="112" y="38" width="371" height="49.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-5l-omf">
+                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="24"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akk-LF-Bfi">
+                                    <rect key="frame" x="0.0" y="29" width="59" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="15A-Sz-l2b" secondAttribute="trailing" id="8go-D6-AwC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="15A-Sz-l2b" secondAttribute="bottom" id="STh-yD-yf1"/>
+                <constraint firstItem="15A-Sz-l2b" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Y85-Q2-ASI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="15A-Sz-l2b" secondAttribute="top" id="t8S-1k-qN5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="MEB-hl-3oy" id="aDU-fD-nSm"/>
+                <outlet property="subtitleLabel" destination="akk-LF-Bfi" id="x3i-fh-bgq"/>
+                <outlet property="titleLabel" destination="HUi-5l-omf" id="AZx-WN-Ahw"/>
+            </connections>
+            <point key="canvasLocation" x="39.5" y="-252.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="finedog" width="277" height="268"/>
+    </resources>
+</document>
