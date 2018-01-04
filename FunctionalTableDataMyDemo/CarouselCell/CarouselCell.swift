@@ -3,6 +3,7 @@ import UIKit
 protocol CarouselItemCell {
     associatedtype Model
     func configure(model: Model)
+    static func hasNib() -> Bool
 }
 
 extension CarouselItemCell {
@@ -18,7 +19,9 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
     fileprivate var models: [ItemCell.Model] = []
     fileprivate var didSelectCell: ((IndexPath) -> Void)?
     
-    var collectionHeight: CGFloat = 130 {
+    // If nothing is showing up, make sure collectionHeight is greater than item height
+    // If you're using nibs, set width and height on the nib
+    fileprivate var collectionHeight: CGFloat = 170 {
         didSet {
             collectionViewHeightConstraint.constant = collectionHeight
         }
@@ -36,7 +39,11 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
         
         collectionViewHeightConstraint =         collectionView.heightAnchor.activateConstraint(equalToConstant: collectionHeight, priority: 999)
         
-        collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseId())
+        if ItemCell.hasNib() {
+           collectionView.register(UINib(nibName: String(describing: ItemCell.self), bundle: nil), forCellWithReuseIdentifier: ItemCell.reuseId())
+        } else {
+            collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseId())
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,6 +70,7 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.reuseId(), for: indexPath) as? ItemCell {
             let model = models[indexPath.row]
             cell.configure(model: model)
+            cell.tag = indexPath.row
             return cell
         }
         return ItemCell()
@@ -74,35 +82,37 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
 }
 
 extension CarouselCell {
-    func reload(models: [ItemCell.Model], didSelectCell: ((IndexPath) -> Void)? = nil) {
+    static func register(to tableView: UITableView) {
+        let className = String(describing: self)
+        tableView.register(CarouselCell<ItemCell>.self, forCellReuseIdentifier: className)
+    }
+    
+    static func dequeue(from tableView: UITableView, at indexPath: IndexPath) -> CarouselCell<ItemCell>? {
+        let className = String(describing: self)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: className, for: indexPath) as? CarouselCell<ItemCell> {
+            return cell
+        }
+        return nil
+    }
+}
+
+extension CarouselCell {
+    func reload(models: [ItemCell.Model], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat? = nil) {
         collectionView.setContentOffset(collectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
 
         self.models = models
         self.didSelectCell = didSelectCell
+        if let collectionHeight = collectionHeight {
+            self.collectionHeight = collectionHeight
+        }
         collectionView.reloadData()
     }
-    
-//    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
-//
-//        collectionView.delegate = dataSourceDelegate
-//        collectionView.dataSource = dataSourceDelegate
-//        collectionView.tag = row
-//        collectionView.setContentOffset(collectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
-//
-//        collectionView.reloadData()
-//    }
-    
+
     func saveOffset(for row: Int) {
-        storedOffsets[row] = collectionViewOffset
+        storedOffsets[row] = collectionView.contentOffset.x
     }
     
     func restoreOffset(for row: Int) {
-        collectionViewOffset = storedOffsets[row] ?? 0
-    }
-    
-    var collectionViewOffset: CGFloat {
-        set { collectionView.contentOffset.x = newValue }
-        get { return collectionView.contentOffset.x }
+        collectionView.contentOffset.x = storedOffsets[row] ?? 0
     }
 }
-

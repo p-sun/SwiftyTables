@@ -68,14 +68,32 @@ class ViewController: UIViewController {
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 
-        let colorCell = ColorStripCell(
-            key: "colorCell",
-            state: ColorStripState(colors: [.red, .orange, .yellow, .green, .blue, .purple]))
-        rows.append(colorCell)
-
+        rows.append(colorStripCell("colorCell1"))
+        rows.append(colorStripCell("colorCell2"))
+        rows.append(colorStripCell("colorCell3"))
+        rows.append(colorStripCell("colorCell4"))
+        rows.append(colorStripCell("colorCell5"))
+        rows.append(colorStripCell("colorCell6"))
+        rows.append(colorStripCell("colorCell7"))
+        rows.append(colorStripCell("colorCell8"))
+        rows.append(colorStripCell("colorCell9"))
+        rows.append(colorStripCell("colorCell10"))
+        
+        // TODO
+        /*
+         - Move this to another VC
+         - Create another Carousel cell, using a nib
+         - Take care of the offset issue with CarouselCells -- make it a CellConfigType instead of a HostCell?
+         **/
         functionalData.renderAndDiff([
             TableSection(key: "section", rows: rows)
             ])
+    }
+    
+    private func colorStripCell(_ key: String) -> ColorStripCell {
+        return ColorStripCell(
+            key: key,
+            state: ColorStripState(colors: [.red, .orange, .yellow, .green, .blue, .purple, .gray, .brown, .cyan]))
     }
 }
 
