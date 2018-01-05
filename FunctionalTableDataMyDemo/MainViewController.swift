@@ -6,9 +6,11 @@
 //  Copyright © 2017 TribalScale. All rights reserved.
 //
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     private let functionalData = FunctionalTableData()
     var tableView = UITableView(frame: CGRect.zero, style: .grouped)
+    
+    var randomColors = UIColor.generateRandomData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,16 +70,12 @@ class ViewController: UIViewController {
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 
-        rows.append(colorStripCell("colorCell1"))
-        rows.append(colorStripCell("colorCell2"))
-        rows.append(colorStripCell("colorCell3"))
-        rows.append(colorStripCell("colorCell4"))
-        rows.append(colorStripCell("colorCell5"))
-        rows.append(colorStripCell("colorCell6"))
-        rows.append(colorStripCell("colorCell7"))
-        rows.append(colorStripCell("colorCell8"))
-        rows.append(colorStripCell("colorCell9"))
-        rows.append(colorStripCell("colorCell10"))
+        for (rowIndex, colors) in randomColors.enumerated() {
+            let cell = ColorStripCell(
+                key: "colorCell\(rowIndex)",
+                state: ColorStripState(colors: colors))
+            rows.append(cell)
+        }
         
         // TODO
         /*
@@ -88,12 +86,6 @@ class ViewController: UIViewController {
         functionalData.renderAndDiff([
             TableSection(key: "section", rows: rows)
             ])
-    }
-    
-    private func colorStripCell(_ key: String) -> ColorStripCell {
-        return ColorStripCell(
-            key: key,
-            state: ColorStripState(colors: [.red, .orange, .yellow, .green, .blue, .purple, .gray, .brown, .cyan]))
     }
 }
 

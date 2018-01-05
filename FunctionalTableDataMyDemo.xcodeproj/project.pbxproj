@@ -38,7 +38,7 @@
 		C741E40D1FEA2334006B693F /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */; };
 		C741E40F1FEA2663006B693F /* ColorStripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E40E1FEA2663006B693F /* ColorStripCell.swift */; };
 		C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F621FD7929300710A79 /* AppDelegate.swift */; };
-		C7854F651FD7929300710A79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F641FD7929300710A79 /* ViewController.swift */; };
+		C7854F651FD7929300710A79 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F641FD7929300710A79 /* MainViewController.swift */; };
 		C7854F681FD7929300710A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7854F661FD7929300710A79 /* Main.storyboard */; };
 		C7854F6A1FD7929300710A79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7854F691FD7929300710A79 /* Assets.xcassets */; };
 		C7854F6D1FD7929300710A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7854F6B1FD7929300710A79 /* LaunchScreen.storyboard */; };
@@ -82,7 +82,7 @@
 		C741E40E1FEA2663006B693F /* ColorStripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStripCell.swift; sourceTree = "<group>"; };
 		C7854F5F1FD7929300710A79 /* FunctionalTableDataMyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalTableDataMyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7854F621FD7929300710A79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C7854F641FD7929300710A79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C7854F641FD7929300710A79 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C7854F671FD7929300710A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7854F691FD7929300710A79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7854F6C1FD7929300710A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				C78550151FD8642400710A79 /* Cells */,
 				C78550141FD8640B00710A79 /* Helpers */,
 				C7854F621FD7929300710A79 /* AppDelegate.swift */,
-				C7854F641FD7929300710A79 /* ViewController.swift */,
+				C7854F641FD7929300710A79 /* MainViewController.swift */,
 				C78550161FD864F600710A79 /* TableViewController.swift */,
 				C7854FA41FD7930900710A79 /* CollectionViewController.swift */,
 				C7854FDE1FD79DB600710A79 /* FunctionalTableDataMyDemo-Swift.h */,
@@ -302,7 +302,7 @@
 			files = (
 				C741E3F91FEA171C006B693F /* Separator.swift in Sources */,
 				C7854FA71FD7945700710A79 /* LabelCell.swift in Sources */,
-				C7854F651FD7929300710A79 /* ViewController.swift in Sources */,
+				C7854F651FD7929300710A79 /* MainViewController.swift in Sources */,
 				C741E40A1FEA22AF006B693F /* ColorStripItemCell.swift in Sources */,
 				C741E4051FEA1B67006B693F /* StateType.swift in Sources */,
 				C741E3F31FEA171C006B693F /* FunctionalCollectionData.swift in Sources */,

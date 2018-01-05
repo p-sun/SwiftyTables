@@ -161,38 +161,6 @@
             endingLineNumber = "85"
             landmarkName = "update(cell:in:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FunctionalTableDataMyDemo.HostCell.update(cell: __ObjC.UITableViewCell, in: __ObjC.UITableView) -&gt; ()"
-                  moduleName = "FunctionalTableDataMyDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tsd051/Downloads/FunctionalTableData-master/FunctionalTableData/HostCell.swift"
-                  timestampString = "535433347.021139"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "1036">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in FunctionalTableDataMyDemo.HostCell.update(cell: __ObjC.UITableViewCell, in: __ObjC.UITableView) -&gt; ()"
-                  moduleName = "FunctionalTableDataMyDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tsd051/Downloads/FunctionalTableData-master/FunctionalTableData/HostCell.swift"
-                  timestampString = "535433347.022588"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -337,38 +305,6 @@
             endingLineNumber = "494"
             landmarkName = "render()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in FunctionalTableDataMyDemo):__ObjC.UITableView.render() -&gt; ()"
-                  moduleName = "FunctionalTableDataMyDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tsd051/Downloads/FunctionalTableData-master/FunctionalTableData/TableView/FunctionalTableData.swift"
-                  timestampString = "535433347.048127"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "494"
-                  endingLineNumber = "494"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in (extension in FunctionalTableDataMyDemo):__ObjC.UITableView.render() -&gt; ()"
-                  moduleName = "FunctionalTableDataMyDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tsd051/Downloads/FunctionalTableData-master/FunctionalTableData/TableView/FunctionalTableData.swift"
-                  timestampString = "535433347.049731"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "494"
-                  endingLineNumber = "494"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

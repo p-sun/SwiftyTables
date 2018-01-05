@@ -8,14 +8,7 @@
 
 import UIKit
 
-func generateRandomData() -> [[UIColor]] {
-    let numberOfRows = 30
-    let numberOfItemsPerRow = 20
-    
-    return (0..<numberOfRows).map { _ in
-        return (0..<numberOfItemsPerRow).map { _ in UIColor.randomColor() }
-    }
-}
+
 
 extension UIColor {
     class func randomColor() -> UIColor {
@@ -24,5 +17,14 @@ extension UIColor {
         let brightness = CGFloat(arc4random() % 100) / 100
         
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+    }
+    
+    class func generateRandomData() -> [[UIColor]] {
+        let numberOfRows = 20
+        let numberOfItemsPerRow = 18
+        
+        return (0..<numberOfRows).map { _ in
+            return (0..<numberOfItemsPerRow).map { _ in UIColor.randomColor() }
+        }
     }
 }
