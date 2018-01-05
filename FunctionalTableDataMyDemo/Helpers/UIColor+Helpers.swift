@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 extension UIColor {
     class func randomColor() -> UIColor {
         let hue = CGFloat(arc4random() % 100) / 100

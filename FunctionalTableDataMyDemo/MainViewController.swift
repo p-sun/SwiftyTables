@@ -35,9 +35,12 @@ class MainViewController: UIViewController {
             selectionColor: .green,
             backgroundColor: .white)
         
+        var cellStyleWithDisclosure = cellStyle
+        cellStyleWithDisclosure.accessoryType = .disclosureIndicator
+        
         let tableDemo = LabelCell(
             key: "tableDemo",
-            style: cellStyle,
+            style: cellStyleWithDisclosure,
             actions: CellActions(selectionAction: { _ in
                 self.show(TableViewController(), sender: self)
                 return .deselected
@@ -47,7 +50,7 @@ class MainViewController: UIViewController {
         
         let collectionDemo = LabelCell(
             key: "collectionDemo",
-            style: cellStyle,
+            style: cellStyleWithDisclosure,
             actions: CellActions(selectionAction: { _ in
                 let layout = UICollectionViewFlowLayout()
                 layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
