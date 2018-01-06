@@ -9,33 +9,22 @@
 class MainViewController: UIViewController {
 	
 	// FTD 1/3 - Init FTD
-    private let functionalData = FunctionalTableData()
+    let functionalData = FunctionalTableData()
     var tableView = UITableView(frame: CGRect.zero, style: .grouped)
 
-	// Data for Carousels
-	let randomColors: [[UIColor]]
-	var storedOffsets: [CGFloat]
-	
-	required init?(coder aDecoder: NSCoder) {
-		randomColors = UIColor.generateRandomData()
-		storedOffsets = Array(repeatElement(0, count: randomColors.count))
-
-		super.init(coder: aDecoder)
-	}
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-        // FTD 2/3 - Set tableview
+        // FTD 2/3 - Set tableView
 		view.addSubview(tableView)
 		tableView.pinToSuperView()
         functionalData.tableView = tableView
 		
 		// FTD 3/3 - Render Table Sections
-		functionalData.renderAndDiff(sections())
+		render()
     }
 
-    private func sections() -> [TableSection] {
+    func render() {
         var rows = [CellConfigType]()
         
         let cellStyle = CellStyle(
@@ -70,7 +59,17 @@ class MainViewController: UIViewController {
             }),
             state: LabelState(text: "UICollectionView Demo"))
         rows.append(collectionDemo)
-        
+		
+		let carouselDemo = LabelCell(
+			key: "carouselDemo",
+			style: cellStyleWithDisclosure,
+			actions: CellActions(selectionAction: { _ in
+				self.show(CarouselViewController(), sender: self)
+				return .deselected
+			}),
+			state: LabelState(text: "Carousel Cell Demo"))
+		rows.append(carouselDemo)
+		
 		let detailCell = DetailCell(
 			key: "detailCell",
 			style: cellStyle,
@@ -85,31 +84,14 @@ class MainViewController: UIViewController {
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 
-        for (rowIndex, colors) in randomColors.enumerated() {
-            let cell = ColorStripCell(
-                key: "colorCell\(rowIndex)",
-				actions: CellActions(
-					visibilityAction: { [weak self] cellView, visible in
-						guard let strongSelf = self else { return }
-						if let carouselCell = cellView.subviews.first?.subviews.first as? CarouselCell<ColorStripItemCell> {
-							if visible {
-								carouselCell.carouselOffset = strongSelf.storedOffsets[rowIndex]
-							} else {
-								strongSelf.storedOffsets[rowIndex] = carouselCell.carouselOffset
-							}
-						}
-					}
-				),
-                state: ColorStripState(colors: colors))
-            rows.append(cell)
-        }
-        
+
         // TODO
         /*
-         - Move this to another VC
          - Create another Carousel cell, using a nib
+		 - collectionHeight
          **/
 
-		return [TableSection(key: "section", rows: rows)]
+		let sections = [TableSection(key: "section", rows: rows)]
+		functionalData.renderAndDiff(sections)
     }
 }

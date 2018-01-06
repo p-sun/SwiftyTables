@@ -9,10 +9,10 @@
 import UIKit
 
 class CollectionViewController: UICollectionViewController {
-    private let functionalData = FunctionalCollectionData()
-    private let reuseIdentifier = "Cell"
+    let functionalData = FunctionalCollectionData()
+    let reuseIdentifier = "Cell"
 
-    private var items: [String] = [] {
+    var items: [String] = [] {
         didSet {
             render()
         }
@@ -45,7 +45,7 @@ class CollectionViewController: UICollectionViewController {
         items = []
     }
     
-    private func render() {
+    func render() {
         let rows: [CellConfigType] = items.enumerated().map { index, item in
 //            return LabelCell(
 //                key: "id-\(index)",

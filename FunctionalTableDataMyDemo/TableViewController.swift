@@ -7,10 +7,10 @@
 //
 
 class TableViewController: UIViewController {
-    private let functionalData = FunctionalTableData()
+    let functionalData = FunctionalTableData()
     var tableView = UITableView(frame: CGRect.zero, style: .grouped)
     
-    private var items: [String] = [] {
+    var items: [String] = [] {
         didSet {
             render()
         }
@@ -44,7 +44,7 @@ class TableViewController: UIViewController {
         items = []
     }
     
-    private func render() {
+    func render() {
         let rows: [CellConfigType] = items.enumerated().map { index, item in
             return LabelCell(
                 key: "id-\(index)",

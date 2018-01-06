@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B831602200193440053BBA0 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B831601200193440053BBA0 /* CarouselViewController.swift */; };
 		C741E3CC1FE9CE7F006B693F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3CB1FE9CE7F006B693F /* DetailCell.swift */; };
 		C741E3CE1FE9D001006B693F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C741E3CD1FE9D001006B693F /* DetailView.xib */; };
 		C741E3D11FE9FB8B006B693F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3D01FE9FB8B006B693F /* NibView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B831601200193440053BBA0 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		C741E3CB1FE9CE7F006B693F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		C741E3CD1FE9D001006B693F /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		C741E3D01FE9FB8B006B693F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				C7854F641FD7929300710A79 /* MainViewController.swift */,
 				C78550161FD864F600710A79 /* TableViewController.swift */,
 				C7854FA41FD7930900710A79 /* CollectionViewController.swift */,
+				9B831601200193440053BBA0 /* CarouselViewController.swift */,
 				C7854FDE1FD79DB600710A79 /* FunctionalTableDataMyDemo-Swift.h */,
 				C7854F661FD7929300710A79 /* Main.storyboard */,
 				C7854F691FD7929300710A79 /* Assets.xcassets */,
@@ -315,6 +318,7 @@
 				C741E40B1FEA22AF006B693F /* CarouselCell.swift in Sources */,
 				C741E3F41FEA171C006B693F /* UICollectionView+Reusable.swift in Sources */,
 				C741E3FC1FEA171C006B693F /* TableSectionChangeSet.swift in Sources */,
+				9B831602200193440053BBA0 /* CarouselViewController.swift in Sources */,
 				C741E3F51FEA171C006B693F /* HostCell.swift in Sources */,
 				C741E3EE1FEA171C006B693F /* CellActions.swift in Sources */,
 				C741E4011FEA171C006B693F /* UITableView+Reusable.swift in Sources */,
