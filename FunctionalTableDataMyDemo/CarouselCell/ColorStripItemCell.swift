@@ -34,8 +34,4 @@ class ColorStripItemCell: UICollectionViewCell, CarouselItemCell {
     func configure(model: UIColor) {
         colorView.backgroundColor = model
     }
-    
-    static func hasNib() -> Bool {
-        return false
-    }
 }

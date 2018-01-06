@@ -3,7 +3,6 @@ import UIKit
 protocol CarouselItemCell {
     associatedtype Model
     func configure(model: Model)
-    static func hasNib() -> Bool
 }
 
 extension CarouselItemCell {
@@ -12,10 +11,17 @@ extension CarouselItemCell {
     }
 }
 
+protocol CarouselItemNibView {}
+
+extension CarouselItemNibView {
+	static func nibWithClassName() -> UINib {
+		return UINib(nibName: String(describing: self), bundle: nil)
+	}
+}
+
 class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource where ItemCell: CarouselItemCell{
     private var collectionViewHeightConstraint: NSLayoutConstraint!
     fileprivate var collectionView: UICollectionView!
-    fileprivate var storedOffsets = [Int: CGFloat]()
     fileprivate var models: [ItemCell.Model] = []
     fileprivate var didSelectCell: ((IndexPath) -> Void)?
     
@@ -26,7 +32,16 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
             collectionViewHeightConstraint.constant = collectionHeight
         }
     }
-    
+	
+	var carouselOffset: CGFloat {
+		get {
+			return collectionView.contentOffset.x
+		}
+		set {
+			collectionView.contentOffset.x = newValue
+		}
+	}
+	
     init() {
         super.init(frame: CGRect.zero)
 
@@ -38,12 +53,12 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
         collectionView.pinToSuperView()
         
         collectionViewHeightConstraint =         collectionView.heightAnchor.activateConstraint(equalToConstant: collectionHeight, priority: 999)
-        
-        if ItemCell.hasNib() {
-           collectionView.register(UINib(nibName: String(describing: ItemCell.self), bundle: nil), forCellWithReuseIdentifier: ItemCell.reuseId())
-        } else {
-            collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseId())
-        }
+		
+		if let itemCell = ItemCell.self as? CarouselItemNibView.Type {
+			collectionView.register(itemCell.nibWithClassName(), forCellWithReuseIdentifier: ItemCell.reuseId())
+		} else {
+			collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseId())
+		}
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -82,37 +97,15 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
 }
 
 extension CarouselCell {
-    static func register(to tableView: UITableView) {
-        let className = String(describing: self)
-        tableView.register(CarouselCell<ItemCell>.self, forCellReuseIdentifier: className)
-    }
-    
-    static func dequeue(from tableView: UITableView, at indexPath: IndexPath) -> CarouselCell<ItemCell>? {
-        let className = String(describing: self)
-        if let cell = tableView.dequeueReusableCell(withIdentifier: className, for: indexPath) as? CarouselCell<ItemCell> {
-            return cell
-        }
-        return nil
-    }
-}
-
-extension CarouselCell {
     func reload(models: [ItemCell.Model], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat? = nil) {
-        collectionView.setContentOffset(collectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
-
+        // Stops collection view if it was scrolling.
+        collectionView.setContentOffset(collectionView.contentOffset, animated: false)
+		
         self.models = models
         self.didSelectCell = didSelectCell
         if let collectionHeight = collectionHeight {
             self.collectionHeight = collectionHeight
         }
         collectionView.reloadData()
-    }
-
-    func saveOffset(for row: Int) {
-        storedOffsets[row] = collectionView.contentOffset.x
-    }
-    
-    func restoreOffset(for row: Int) {
-        collectionView.contentOffset.x = storedOffsets[row] ?? 0
     }
 }

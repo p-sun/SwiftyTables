@@ -7,24 +7,35 @@
 //
 
 class MainViewController: UIViewController {
+	
+	// FTD 1/3 - Init FTD
     private let functionalData = FunctionalTableData()
     var tableView = UITableView(frame: CGRect.zero, style: .grouped)
-    
-    var randomColors = UIColor.generateRandomData()
-    
+
+	// Data for Carousels
+	let randomColors: [[UIColor]]
+	var storedOffsets: [CGFloat]
+	
+	required init?(coder aDecoder: NSCoder) {
+		randomColors = UIColor.generateRandomData()
+		storedOffsets = Array(repeatElement(0, count: randomColors.count))
+
+		super.init(coder: aDecoder)
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup tableView
-        view.addSubview(tableView)
-        tableView.pinToSuperView()
-        
-        // Setup function table data
+		
+        // FTD 2/3 - Set tableview
+		view.addSubview(tableView)
+		tableView.pinToSuperView()
         functionalData.tableView = tableView
-        render()
+		
+		// FTD 3/3 - Render Table Sections
+		functionalData.renderAndDiff(sections())
     }
 
-    private func render() {
+    private func sections() -> [TableSection] {
         var rows = [CellConfigType]()
         
         let cellStyle = CellStyle(
@@ -60,22 +71,35 @@ class MainViewController: UIViewController {
             state: LabelState(text: "UICollectionView Demo"))
         rows.append(collectionDemo)
         
-        let detailCell = DetailCell(
-            key: "detailCell",
-            style: cellStyle,
-            actions: CellActions(selectionAction: { _ in
-                print("Detail Cell Selected")
-                return .deselected
-            }),
-            state: DetailState(
-                image: #imageLiteral(resourceName: "finedog"),
-                title: "Sample Title",
+		let detailCell = DetailCell(
+			key: "detailCell",
+			style: cellStyle,
+			actions: CellActions(
+				selectionAction: { _ in
+					print("Detail Cell Selected")
+					return .deselected }
+			),
+			state: DetailState(
+				image: #imageLiteral(resourceName: "finedog"),
+				title: "Sample Title",
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 
         for (rowIndex, colors) in randomColors.enumerated() {
             let cell = ColorStripCell(
                 key: "colorCell\(rowIndex)",
+				actions: CellActions(
+					visibilityAction: { [weak self] cellView, visible in
+						guard let strongSelf = self else { return }
+						if let carouselCell = cellView.subviews.first?.subviews.first as? CarouselCell<ColorStripItemCell> {
+							if visible {
+								carouselCell.carouselOffset = strongSelf.storedOffsets[rowIndex]
+							} else {
+								strongSelf.storedOffsets[rowIndex] = carouselCell.carouselOffset
+							}
+						}
+					}
+				),
                 state: ColorStripState(colors: colors))
             rows.append(cell)
         }
@@ -84,11 +108,8 @@ class MainViewController: UIViewController {
         /*
          - Move this to another VC
          - Create another Carousel cell, using a nib
-         - Take care of the offset issue with CarouselCells -- make it a CellConfigType instead of a HostCell?
          **/
-        functionalData.renderAndDiff([
-            TableSection(key: "section", rows: rows)
-            ])
+
+		return [TableSection(key: "section", rows: rows)]
     }
 }
-

@@ -52,6 +52,8 @@ extension DetailState: StateType {
 
 extension DetailState: Equatable {
     static func ==(lhs: DetailState, rhs: DetailState) -> Bool {
-        return lhs.title == rhs.title && lhs.subtitle == rhs.subtitle && lhs.image == rhs.image
+        return lhs.title == rhs.title
+			&& lhs.subtitle == rhs.subtitle
+			&& lhs.image == rhs.image
     }
 }
