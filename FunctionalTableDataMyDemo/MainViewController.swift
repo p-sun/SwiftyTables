@@ -6,21 +6,29 @@
 //  Copyright © 2017 TribalScale. All rights reserved.
 //
 
+// TODO
+/*
+- Create another Carousel cell, using a nib
+- collectionHeight
+**/
+
 class MainViewController: UIViewController {
-	
+
+	var tableView = UITableView(frame: CGRect.zero, style: .grouped)
+
 	// FTD 1/3 - Init FTD
     let functionalData = FunctionalTableData()
-    var tableView = UITableView(frame: CGRect.zero, style: .grouped)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-        // FTD 2/3 - Set tableView
+
 		view.addSubview(tableView)
 		tableView.pinToSuperView()
+		
+        // FTD 2/3 - Let FTD manage this tableView
         functionalData.tableView = tableView
 		
-		// FTD 3/3 - Render Table Sections
+		// FTD 3/3 - Render Table
 		render()
     }
 
@@ -67,7 +75,7 @@ class MainViewController: UIViewController {
 				self.show(CarouselViewController(), sender: self)
 				return .deselected
 			}),
-			state: LabelState(text: "Carousel Cell Demo"))
+			state: LabelState(text: "CarouselCell Demo"))
 		rows.append(carouselDemo)
 		
 		let detailCell = DetailCell(
@@ -83,13 +91,6 @@ class MainViewController: UIViewController {
 				title: "Sample Title",
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
-
-
-        // TODO
-        /*
-         - Create another Carousel cell, using a nib
-		 - collectionHeight
-         **/
 
 		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)

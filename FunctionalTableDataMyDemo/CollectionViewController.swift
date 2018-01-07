@@ -29,7 +29,7 @@ class CollectionViewController: UICollectionViewController {
         
         // Setup view
         collectionView?.backgroundColor = .groupTableViewBackground
-        title = "UICollectionView Example"
+        title = "UICollectionView Demo"
         
         // Use buttons to insert and delete rows
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didSelectAdd))

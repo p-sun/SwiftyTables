@@ -107,11 +107,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B83160320019A210053BBA0 /* FTD Carousel Item Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C741E4081FEA22AE006B693F /* ColorStripItemCell.swift */,
+			);
+			path = "FTD Carousel Item Cells";
+			sourceTree = "<group>";
+		};
 		C741E3CF1FE9FB6F006B693F /* FTD Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C741E3D01FE9FB8B006B693F /* NibView.swift */,
 				C741E4041FEA1B67006B693F /* StateType.swift */,
+				C741E3D01FE9FB8B006B693F /* NibView.swift */,
+				C741E4091FEA22AE006B693F /* CarouselCell.swift */,
 			);
 			path = "FTD Helpers";
 			sourceTree = "<group>";
@@ -162,15 +171,6 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		C741E4071FEA227E006B693F /* CarouselCell */ = {
-			isa = PBXGroup;
-			children = (
-				C741E4091FEA22AE006B693F /* CarouselCell.swift */,
-				C741E4081FEA22AE006B693F /* ColorStripItemCell.swift */,
-			);
-			path = CarouselCell;
-			sourceTree = "<group>";
-		};
 		C7854F561FD7929300710A79 = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +192,7 @@
 			children = (
 				C741E3D41FEA171C006B693F /* FunctionalTableData */,
 				C741E3CF1FE9FB6F006B693F /* FTD Helpers */,
-				C741E4071FEA227E006B693F /* CarouselCell */,
-				C78550151FD8642400710A79 /* Cells */,
+				C78550151FD8642400710A79 /* FTD Cells */,
 				C78550141FD8640B00710A79 /* Helpers */,
 				C7854F621FD7929300710A79 /* AppDelegate.swift */,
 				C7854F641FD7929300710A79 /* MainViewController.swift */,
@@ -218,15 +217,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		C78550151FD8642400710A79 /* Cells */ = {
+		C78550151FD8642400710A79 /* FTD Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9B83160320019A210053BBA0 /* FTD Carousel Item Cells */,
 				C7854FA61FD7945700710A79 /* LabelCell.swift */,
 				C741E3CB1FE9CE7F006B693F /* DetailCell.swift */,
 				C741E3CD1FE9D001006B693F /* DetailView.xib */,
 				C741E40E1FEA2663006B693F /* ColorStripCell.swift */,
 			);
-			path = Cells;
+			path = "FTD Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

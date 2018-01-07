@@ -21,7 +21,7 @@ class TableViewController: UIViewController {
         
         // Setup view
         view?.backgroundColor = .white
-        title = "UITableView Example"
+        title = "UITableView Demo"
         
         // Setup tableView UI
         view.addSubview(tableView)

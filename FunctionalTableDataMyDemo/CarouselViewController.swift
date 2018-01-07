@@ -9,11 +9,12 @@
 import UIKit
 
 class CarouselViewController: UIViewController {
+	var tableView = UITableView(frame: CGRect.zero, style: .grouped)
+
 	// FTD 1/3 - Init FTD
 	let functionalData = FunctionalTableData()
-	var tableView = UITableView(frame: CGRect.zero, style: .grouped)
 	
-	// Data for Carousels
+	// Data for cells
 	let randomColors: [[UIColor]]
 	var storedOffsets: [CGFloat]
 
@@ -29,10 +30,11 @@ class CarouselViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		// FTD 2/3 - Set tableview
+		title = "CarouselCell Demo"
 		view.addSubview(tableView)
 		tableView.pinToSuperView()
+		
+		// FTD 2/3 - Set tableview
 		functionalData.tableView = tableView
 		
 		// FTD 3/3 - Render Table Sections
@@ -41,7 +43,7 @@ class CarouselViewController: UIViewController {
 
 	func render() {
 		var rows = [CellConfigType]()
-
+		
 		for (rowIndex, colors) in randomColors.enumerated() {
 			let cell = ColorStripCell(
 				key: "colorCell\(rowIndex)",
