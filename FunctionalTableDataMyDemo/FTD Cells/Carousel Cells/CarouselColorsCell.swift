@@ -3,7 +3,6 @@
 //  FunctionalTableDataMyDemo
 //
 //  Created by Paige Sun on 2017-12-20.
-//  Copyright © 2017 TribalScale. All rights reserved.
 //
 
 import Foundation
@@ -13,9 +12,11 @@ typealias CarouselColorsCell = HostCell<CarouselCell<CarouselItemColorCell>, Col
 
 struct ColorStripState {
     let colors: [UIColor]
+	let didSelectCell: ((IndexPath) -> Void)?
     
-    init(colors: [UIColor]) {
+    init(colors: [UIColor], didSelectCell: ((IndexPath) -> Void)?) {
         self.colors = colors
+		self.didSelectCell = didSelectCell
     }
 }
 
@@ -27,7 +28,11 @@ extension ColorStripState: StateType {
             return
         }
 
-        view.reload(models: state.colors)
+		view.reload(
+			models: state.colors,
+			didSelectCell: state.didSelectCell,
+			collectionHeight: 120,
+			minimumLineSpacing: 16)
     }
 }
 

@@ -3,7 +3,6 @@
 //  FunctionalTableDataMyDemo
 //
 //  Created by Pei Sun on 2018-01-06.
-//  Copyright © 2018 TribalScale. All rights reserved.
 //
 
 import UIKit
@@ -50,16 +49,21 @@ class CarouselViewController: UIViewController {
 				actions: CellActions(
 					visibilityAction: { [weak self] cellView, visible in
 						guard let strongSelf = self else { return }
-						if let carouselCell = cellView.subviews.first?.subviews.first as? CarouselCell<CarouselItemColorCell> {
+						if let CarouselCell = cellView.subviews.first?.subviews.first as? CarouselCell<CarouselItemColorCell> {
 							if visible {
-								carouselCell.carouselOffset = strongSelf.storedOffsets[rowIndex]
+								CarouselCell.carouselOffset = strongSelf.storedOffsets[rowIndex]
 							} else {
-								strongSelf.storedOffsets[rowIndex] = carouselCell.carouselOffset
+								strongSelf.storedOffsets[rowIndex] = CarouselCell.carouselOffset
 							}
 						}
 					}
 				),
-				state: ColorStripState(colors: colors))
+				state: ColorStripState(
+					colors: colors,
+					didSelectCell: { indexPath in
+						print("Did tap item \(indexPath.row)")
+				})
+			)
 			rows.append(cell)
 		}
 		

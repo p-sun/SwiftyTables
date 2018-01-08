@@ -2,7 +2,8 @@ import UIKit
 
 protocol CarouselItemCell {
     associatedtype Model
-    func configure(model: Model)
+	static func sizeForItem(model: Model) -> CGSize
+	func configure(model: Model)
 }
 
 extension CarouselItemCell {
@@ -19,19 +20,13 @@ extension CarouselItemNibView {
 	}
 }
 
-class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource where ItemCell: CarouselItemCell{
+class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout where ItemCell: CarouselItemCell{
     private var collectionViewHeightConstraint: NSLayoutConstraint!
+	fileprivate var flowLayout: UICollectionViewFlowLayout!
+
     fileprivate var collectionView: UICollectionView!
     fileprivate var models: [ItemCell.Model] = []
     fileprivate var didSelectCell: ((IndexPath) -> Void)?
-    
-    // If nothing is showing up, make sure collectionHeight is greater than item height
-    // If you're using nibs, set width and height on the nib
-    fileprivate var collectionHeight: CGFloat = 170 {
-        didSet {
-            collectionViewHeightConstraint.constant = collectionHeight
-        }
-    }
 	
 	var carouselOffset: CGFloat {
 		get {
@@ -45,14 +40,14 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
     init() {
         super.init(frame: CGRect.zero)
 
-        collectionView = createCollectionView()
+		collectionView = createCollectionView()
         collectionView.delegate = self
         collectionView.dataSource = self
         
         self.addSubview(collectionView)
         collectionView.pinToSuperView()
         
-        collectionViewHeightConstraint =         collectionView.heightAnchor.activateConstraint(equalToConstant: collectionHeight, priority: 999)
+        collectionViewHeightConstraint =         collectionView.heightAnchor.activateConstraint(equalToConstant: 10, priority: 999)
 		
 		if let itemCell = ItemCell.self as? CarouselItemNibView.Type {
 			collectionView.register(itemCell.nibWithClassName(), forCellWithReuseIdentifier: ItemCell.reuseId())
@@ -66,11 +61,11 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
     }
     
     private func createCollectionView() -> UICollectionView {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: 80, height: 80) // An arbitary number smaller than collectionView height
-        
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .white
         collectionView.showsHorizontalScrollIndicator = false
         
@@ -85,27 +80,29 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.reuseId(), for: indexPath) as? ItemCell {
             let model = models[indexPath.row]
             cell.configure(model: model)
-            cell.tag = indexPath.row
             return cell
         }
-        return ItemCell()
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.didSelectCell?(indexPath)
     }
+	
+	// Return item size instead of dynamic resizing for smoother scrolling.
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		
+		return ItemCell.sizeForItem(model: models[indexPath.row])
+	}
 }
 
 extension CarouselCell {
-    func reload(models: [ItemCell.Model], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat? = nil) {
-        // Stops collection view if it was scrolling.
-        collectionView.setContentOffset(collectionView.contentOffset, animated: false)
+	func reload(models: [ItemCell.Model], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat, minimumLineSpacing: CGFloat) {
 		
-        self.models = models
+		self.models = models
         self.didSelectCell = didSelectCell
-        if let collectionHeight = collectionHeight {
-            self.collectionHeight = collectionHeight
-        }
-        collectionView.reloadData()
+		collectionViewHeightConstraint.constant = collectionHeight
+		flowLayout.minimumLineSpacing = minimumLineSpacing
+		collectionView.reloadData()
     }
 }

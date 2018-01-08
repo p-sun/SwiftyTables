@@ -3,13 +3,11 @@
 //  FunctionalTableDataMyDemo
 //
 //  Created by Paige Sun on 2017-12-05.
-//  Copyright © 2017 TribalScale. All rights reserved.
 //
 
 // TODO
 /*
 - Create another Carousel cell, using a nib
-- collectionHeight
 **/
 
 class MainViewController: UIViewController {
@@ -91,6 +89,16 @@ class MainViewController: UIViewController {
 				title: "Sample Title",
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
+
+        let itemState = CarouselItemDetails(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
+        let dogeCarouselCell = CarouselDetailCell(
+            key: "dogeCell",
+            state: CarouselDetailState(
+                details: Array(repeating: itemState, count: 9),
+                didSelectCell: { (_) in
+                    print("did select doge")
+            }))
+        rows.append(dogeCarouselCell)
 
 		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)

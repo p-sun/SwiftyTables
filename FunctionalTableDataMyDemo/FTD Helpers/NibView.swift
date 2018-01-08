@@ -3,7 +3,6 @@
 //  FunctionalTableDataMyDemo
 //
 //  Created by Paige Sun on 2017-12-19.
-//  Copyright © 2017 TribalScale. All rights reserved.
 //
 
 import Foundation

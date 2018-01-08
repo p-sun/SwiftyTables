@@ -3,7 +3,6 @@
 //  FunctionalTableDataMyDemo
 //
 //  Created by Paige Sun on 2017-12-19.
-//  Copyright © 2017 TribalScale. All rights reserved.
 //
 
 import UIKit
@@ -18,7 +17,7 @@ extension UIColor {
     }
     
     class func generateRandomData() -> [[UIColor]] {
-        let numberOfRows = 20
+        let numberOfRows = 10
         let numberOfItemsPerRow = 18
         
         return (0..<numberOfRows).map { _ in

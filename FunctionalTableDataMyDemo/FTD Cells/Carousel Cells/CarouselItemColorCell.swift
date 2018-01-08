@@ -9,6 +9,7 @@
 import UIKit
 
 class CarouselItemColorCell: UICollectionViewCell, CarouselItemCell {
+	
     typealias Model = UIColor
     
     private static let size = CGSize(width: 120, height: 120)
@@ -30,7 +31,11 @@ class CarouselItemColorCell: UICollectionViewCell, CarouselItemCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+	
+	static func sizeForItem(model: Model) -> CGSize {
+		return CarouselItemColorCell.size
+	}
+	
     func configure(model: UIColor) {
         colorView.backgroundColor = model
     }
