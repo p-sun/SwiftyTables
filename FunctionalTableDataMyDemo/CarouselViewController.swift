@@ -45,12 +45,12 @@ class CarouselViewController: UIViewController {
 		var rows = [CellConfigType]()
 		
 		for (rowIndex, colors) in randomColors.enumerated() {
-			let cell = ColorStripCell(
+			let cell = CarouselColorsCell(
 				key: "colorCell\(rowIndex)",
 				actions: CellActions(
 					visibilityAction: { [weak self] cellView, visible in
 						guard let strongSelf = self else { return }
-						if let carouselCell = cellView.subviews.first?.subviews.first as? CarouselCell<ColorStripItemCell> {
+						if let carouselCell = cellView.subviews.first?.subviews.first as? CarouselCell<CarouselItemColorCell> {
 							if visible {
 								carouselCell.carouselOffset = strongSelf.storedOffsets[rowIndex]
 							} else {

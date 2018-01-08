@@ -2,7 +2,7 @@
 //  UIView+Extension.swift
 //  SimpleTable
 //
-//  Created by TSD051 on 2017-11-28.
+//  Created by Paige Sun on 2017-11-28.
 //  Copyright © 2017 Paige Sun. All rights reserved.
 //
 

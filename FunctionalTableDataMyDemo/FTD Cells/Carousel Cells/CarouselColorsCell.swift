@@ -1,18 +1,15 @@
 //
-//  ColorStripCell.swift
+//  CarouselColorsCell.swift
 //  FunctionalTableDataMyDemo
 //
-//  Created by TSD051 on 2017-12-20.
+//  Created by Paige Sun on 2017-12-20.
 //  Copyright © 2017 TribalScale. All rights reserved.
 //
 
 import Foundation
-
 import UIKit
 
-typealias ColorStripCell = HostCell<CarouselCell<ColorStripItemCell>, ColorStripState, LayoutMarginsTableItemLayout>
-
-typealias ColorStripView = CarouselCell<ColorStripItemCell>
+typealias CarouselColorsCell = HostCell<CarouselCell<CarouselItemColorCell>, ColorStripState, LayoutMarginsTableItemLayout>
 
 struct ColorStripState {
     let colors: [UIColor]
@@ -23,9 +20,9 @@ struct ColorStripState {
 }
 
 extension ColorStripState: StateType {
-    typealias View = ColorStripView
+    typealias View = CarouselCell<CarouselItemColorCell>
 
-    static func updateView(_ view: ColorStripView, state: ColorStripState?) {
+    static func updateView(_ view: CarouselCell<CarouselItemColorCell>, state: ColorStripState?) {
         guard let state = state else {
             return
         }

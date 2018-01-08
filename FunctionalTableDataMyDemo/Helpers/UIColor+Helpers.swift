@@ -2,7 +2,7 @@
 //  UIColor+Helpers.swift
 //  FunctionalTableDataMyDemo
 //
-//  Created by TSD051 on 2017-12-19.
+//  Created by Paige Sun on 2017-12-19.
 //  Copyright © 2017 TribalScale. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  CollectionViewController.swift
 //  FunctionalTableDataMyDemo
 //
-//  Created by TSD051 on 2017-12-05.
+//  Created by Paige Sun on 2017-12-05.
 //  Copyright © 2017 TribalScale. All rights reserved.
 //
 
@@ -10,7 +10,6 @@ import UIKit
 
 class CollectionViewController: UICollectionViewController {
     let functionalData = FunctionalCollectionData()
-    let reuseIdentifier = "Cell"
 
     var items: [String] = [] {
         didSet {
@@ -20,17 +19,14 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+		
+		// Setup view
+		collectionView?.backgroundColor = .groupTableViewBackground
+		title = "UICollectionView Demo"
+		
         // Setup functional table data
         functionalData.collectionView = collectionView
-        
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        // Setup view
-        collectionView?.backgroundColor = .groupTableViewBackground
-        title = "UICollectionView Demo"
-        
+
         // Use buttons to insert and delete rows
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didSelectAdd))
         let trashButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didSelectTrash))
@@ -47,6 +43,7 @@ class CollectionViewController: UICollectionViewController {
     
     func render() {
         let rows: [CellConfigType] = items.enumerated().map { index, item in
+			// Uncomment for a different type of cell
 //            return LabelCell(
 //                key: "id-\(index)",
 //                style: CellStyle(backgroundColor: .white),
