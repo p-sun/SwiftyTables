@@ -8,36 +8,32 @@
 import Foundation
 import UIKit
 
-typealias CarouselDetailCell = HostCell<CarouselCell<CarouselItemDetailCell>, CarouselDetailState, LayoutMarginsTableItemLayout>
+typealias CarouselDetailCell = HostCell<CarouselView<CarouselItemDetailCell>, CarouselDetailState, LayoutMarginsTableItemLayout>
 
 struct CarouselDetailState {
-	let details: [CarouselItemDetails]
+	var itemModels: [CarouselItemDetails]
 	let didSelectCell: ((IndexPath) -> Void)?
 	
-	init(details: [CarouselItemDetails], didSelectCell: ((IndexPath) -> Void)?) {
-		self.details = details
+	init(itemModels: [CarouselItemDetails],
+		 didSelectCell: ((IndexPath) -> Void)?) {
+		self.itemModels = itemModels
 		self.didSelectCell = didSelectCell
 	}
 }
 
-extension CarouselDetailState: StateType {
-	typealias View = CarouselCell<CarouselItemDetailCell>
+extension CarouselDetailState: CarouselStateType {
+	typealias ItemModel = CarouselItemDetails
+	typealias View = CarouselView<CarouselItemDetailCell>
 	
-	static func updateView(_ view: CarouselCell<CarouselItemDetailCell>, state: CarouselDetailState?) {
+	static func updateView(_ view: CarouselView<CarouselItemDetailCell>, state: CarouselDetailState?) {
 		guard let state = state else {
 			return
 		}
 		
 		view.reload(
-			models: state.details,
+			models: state.itemModels,
 			didSelectCell: state.didSelectCell,
 			collectionHeight: 250,
-			minimumLineSpacing: 15)
-	}
-}
-
-extension CarouselDetailState: Equatable {
-	static func ==(lhs: CarouselDetailState, rhs: CarouselDetailState) -> Bool {
-		return lhs.details == rhs.details
+			spacing: 15)
 	}
 }

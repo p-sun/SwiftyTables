@@ -29,7 +29,7 @@ class CarouselViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		title = "CarouselCell Demo"
+		title = "CarouselView Demo"
 		view.addSubview(tableView)
 		tableView.pinToSuperView()
 		
@@ -49,11 +49,11 @@ class CarouselViewController: UIViewController {
 				actions: CellActions(
 					visibilityAction: { [weak self] cellView, visible in
 						guard let strongSelf = self else { return }
-						if let CarouselCell = cellView.subviews.first?.subviews.first as? CarouselCell<CarouselItemColorCell> {
+						if let CarouselView = cellView.subviews.first?.subviews.first as? CarouselView<CarouselItemColorCell> {
 							if visible {
-								CarouselCell.carouselOffset = strongSelf.storedOffsets[rowIndex]
+								CarouselView.carouselOffset = strongSelf.storedOffsets[rowIndex]
 							} else {
-								strongSelf.storedOffsets[rowIndex] = CarouselCell.carouselOffset
+								strongSelf.storedOffsets[rowIndex] = CarouselView.carouselOffset
 							}
 						}
 					}

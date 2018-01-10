@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */; };
+		9B4DC50120064FED00894FCA /* TestCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC50020064FED00894FCA /* TestCellConfig.swift */; };
 		9B831602200193440053BBA0 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B831601200193440053BBA0 /* CarouselViewController.swift */; };
 		9B8316052001A2040053BBA0 /* CarouselDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */; };
 		9B83160A2003A0E40053BBA0 /* CarouselItemDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8316082003A0E40053BBA0 /* CarouselItemDetailCell.swift */; };
@@ -38,7 +40,7 @@
 		C741E4031FEA171C006B693F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3ED1FEA171C006B693F /* UIView+Extensions.swift */; };
 		C741E4051FEA1B67006B693F /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4041FEA1B67006B693F /* StateType.swift */; };
 		C741E40A1FEA22AF006B693F /* CarouselItemColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4081FEA22AE006B693F /* CarouselItemColorCell.swift */; };
-		C741E40B1FEA22AF006B693F /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4091FEA22AE006B693F /* CarouselCell.swift */; };
+		C741E40B1FEA22AF006B693F /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E4091FEA22AE006B693F /* CarouselView.swift */; };
 		C741E40D1FEA2334006B693F /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */; };
 		C741E40F1FEA2663006B693F /* CarouselColorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E40E1FEA2663006B693F /* CarouselColorsCell.swift */; };
 		C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854F621FD7929300710A79 /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemCell.swift; sourceTree = "<group>"; };
+		9B4DC50020064FED00894FCA /* TestCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCellConfig.swift; sourceTree = "<group>"; };
 		9B831601200193440053BBA0 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDetailCell.swift; sourceTree = "<group>"; };
 		9B8316082003A0E40053BBA0 /* CarouselItemDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemDetailCell.swift; sourceTree = "<group>"; };
@@ -85,7 +89,7 @@
 		C741E3ED1FEA171C006B693F /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C741E4041FEA1B67006B693F /* StateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
 		C741E4081FEA22AE006B693F /* CarouselItemColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItemColorCell.swift; sourceTree = "<group>"; };
-		C741E4091FEA22AE006B693F /* CarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		C741E4091FEA22AE006B693F /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		C741E40E1FEA2663006B693F /* CarouselColorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselColorsCell.swift; sourceTree = "<group>"; };
 		C7854F5F1FD7929300710A79 /* FunctionalTableDataMyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalTableDataMyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B4DC4EC20040CB300894FCA /* Header Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Header Cells";
+			sourceTree = "<group>";
+		};
 		9B83160320019A210053BBA0 /* Carousel Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +141,9 @@
 			children = (
 				C741E4041FEA1B67006B693F /* StateType.swift */,
 				C741E3D01FE9FB8B006B693F /* NibView.swift */,
-				C741E4091FEA22AE006B693F /* CarouselCell.swift */,
+				C741E4091FEA22AE006B693F /* CarouselView.swift */,
+				9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */,
+				9B4DC50020064FED00894FCA /* TestCellConfig.swift */,
 			);
 			path = "FTD Helpers";
 			sourceTree = "<group>";
@@ -230,6 +243,7 @@
 		C78550151FD8642400710A79 /* FTD Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9B4DC4EC20040CB300894FCA /* Header Cells */,
 				9B83160320019A210053BBA0 /* Carousel Cells */,
 				C7854FA61FD7945700710A79 /* LabelCell.swift */,
 				C741E3CB1FE9CE7F006B693F /* DetailCell.swift */,
@@ -317,15 +331,17 @@
 				C7854FA71FD7945700710A79 /* LabelCell.swift in Sources */,
 				C7854F651FD7929300710A79 /* MainViewController.swift in Sources */,
 				C741E40A1FEA22AF006B693F /* CarouselItemColorCell.swift in Sources */,
+				9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */,
 				C741E4051FEA1B67006B693F /* StateType.swift in Sources */,
 				C741E3F31FEA171C006B693F /* FunctionalCollectionData.swift in Sources */,
+				9B4DC50120064FED00894FCA /* TestCellConfig.swift in Sources */,
 				C7854FD91FD796B400710A79 /* UIView+Helpers.swift in Sources */,
 				C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */,
 				C7854FA51FD7930900710A79 /* CollectionViewController.swift in Sources */,
 				C741E3FD1FEA171C006B693F /* TableSectionHeaderFooter.swift in Sources */,
 				C741E40F1FEA2663006B693F /* CarouselColorsCell.swift in Sources */,
 				C741E3F71FEA171C006B693F /* ObjCExceptionRethrower.swift in Sources */,
-				C741E40B1FEA22AF006B693F /* CarouselCell.swift in Sources */,
+				C741E40B1FEA22AF006B693F /* CarouselView.swift in Sources */,
 				C741E3F41FEA171C006B693F /* UICollectionView+Reusable.swift in Sources */,
 				C741E3FC1FEA171C006B693F /* TableSectionChangeSet.swift in Sources */,
 				9B831602200193440053BBA0 /* CarouselViewController.swift in Sources */,

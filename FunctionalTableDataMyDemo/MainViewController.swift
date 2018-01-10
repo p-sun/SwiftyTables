@@ -5,11 +5,6 @@
 //  Created by Paige Sun on 2017-12-05.
 //
 
-// TODO
-/*
-- Create another Carousel cell, using a nib
-**/
-
 class MainViewController: UIViewController {
 
 	var tableView = UITableView(frame: CGRect.zero, style: .grouped)
@@ -73,7 +68,7 @@ class MainViewController: UIViewController {
 				self.show(CarouselViewController(), sender: self)
 				return .deselected
 			}),
-			state: LabelState(text: "CarouselCell Demo"))
+			state: LabelState(text: "CarouselView Demo"))
 		rows.append(carouselDemo)
 		
 		let detailCell = DetailCell(
@@ -91,14 +86,14 @@ class MainViewController: UIViewController {
         rows.append(detailCell)
 
         let itemState = CarouselItemDetails(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
-        let dogeCarouselCell = CarouselDetailCell(
+        let dogeCarouselView = CarouselDetailCell(
             key: "dogeCell",
             state: CarouselDetailState(
-                details: Array(repeating: itemState, count: 9),
+				itemModels: Array(repeating: itemState, count: 9),
                 didSelectCell: { (_) in
                     print("did select doge")
             }))
-        rows.append(dogeCarouselCell)
+        rows.append(dogeCarouselView)
 
 		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)

@@ -1,31 +1,22 @@
 import UIKit
 
-protocol CarouselItemCell {
-    associatedtype Model
-	static func sizeForItem(model: Model) -> CGSize
-	func configure(model: Model)
+protocol CarouselStateType: StateType, Equatable {
+	associatedtype ItemModel: Equatable
+	var itemModels: [ItemModel] { get set }
 }
 
-extension CarouselItemCell {
-    static func reuseId() -> String {
-        return String(describing: self)
-    }
-}
-
-protocol CarouselItemNibView {}
-
-extension CarouselItemNibView {
-	static func nibWithClassName() -> UINib {
-		return UINib(nibName: String(describing: self), bundle: nil)
+extension CarouselStateType {
+	static func ==(lhs: Self, rhs: Self) -> Bool {
+		return lhs.itemModels == rhs.itemModels
 	}
 }
 
-class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout where ItemCell: CarouselItemCell{
+class CarouselView<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout where ItemCell: CarouselItemCell {
     private var collectionViewHeightConstraint: NSLayoutConstraint!
 	fileprivate var flowLayout: UICollectionViewFlowLayout!
 
     fileprivate var collectionView: UICollectionView!
-    fileprivate var models: [ItemCell.Model] = []
+    fileprivate var models: [ItemCell.ItemModel] = []
     fileprivate var didSelectCell: ((IndexPath) -> Void)?
 	
 	var carouselOffset: CGFloat {
@@ -59,19 +50,18 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func createCollectionView() -> UICollectionView {
-        flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
-
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
-        collectionView.backgroundColor = .white
-        collectionView.showsHorizontalScrollIndicator = false
-        
-        return collectionView
-    }
-    
+	
+	// MARK: - Public
+	func reload(models: [ItemCell.ItemModel], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat, spacing: CGFloat) {
+		
+		self.models = models
+		self.didSelectCell = didSelectCell
+		collectionViewHeightConstraint.constant = collectionHeight
+		flowLayout.minimumLineSpacing = spacing
+		collectionView.reloadData()
+	}
+	
+	// MARK: - UICollectionView Delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return models.count
     }
@@ -94,15 +84,17 @@ class CarouselCell<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
 		
 		return ItemCell.sizeForItem(model: models[indexPath.row])
 	}
-}
-
-extension CarouselCell {
-	func reload(models: [ItemCell.Model], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat, minimumLineSpacing: CGFloat) {
+	
+	// MARK: - Private
+	private func createCollectionView() -> UICollectionView {
+		flowLayout = UICollectionViewFlowLayout()
+		flowLayout.scrollDirection = .horizontal
+		flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
 		
-		self.models = models
-        self.didSelectCell = didSelectCell
-		collectionViewHeightConstraint.constant = collectionHeight
-		flowLayout.minimumLineSpacing = minimumLineSpacing
-		collectionView.reloadData()
-    }
+		let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+		collectionView.backgroundColor = .white
+		collectionView.showsHorizontalScrollIndicator = false
+		
+		return collectionView
+	}
 }

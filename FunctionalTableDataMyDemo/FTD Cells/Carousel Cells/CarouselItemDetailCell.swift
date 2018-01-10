@@ -9,16 +9,14 @@ import UIKit
 
 class CarouselItemDetailCell: UICollectionViewCell, CarouselItemCell, CarouselItemNibView {
 	
-	typealias Model = CarouselItemDetails
+	typealias ItemModel = CarouselItemDetails
 	
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var subtitleLabel: UILabel!
 	
-	private static let size = CGSize(width: 200, height: 158)
-
-	static func sizeForItem(model: Model) -> CGSize {
-		return CarouselItemDetailCell.size
+	static func sizeForItem(model: CarouselItemDetails) -> CGSize {
+		return CGSize(width: 200, height: 158)
 	}
 	
 	func configure(model: CarouselItemDetails) {
@@ -32,7 +30,7 @@ struct CarouselItemDetails {
     let image: UIImage?
     let title: String?
     let subtitle: String?
-    
+	
     init(image: UIImage?, title: String?, subtitle: String?) {
         self.image = image
         self.title = title

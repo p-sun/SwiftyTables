@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-typealias CarouselColorsCell = HostCell<CarouselCell<CarouselItemColorCell>, ColorStripState, LayoutMarginsTableItemLayout>
+typealias CarouselColorsCell = HostCell<CarouselView<CarouselItemColorCell>, ColorStripState, LayoutMarginsTableItemLayout>
 
 struct ColorStripState {
     let colors: [UIColor]
@@ -21,9 +21,9 @@ struct ColorStripState {
 }
 
 extension ColorStripState: StateType {
-    typealias View = CarouselCell<CarouselItemColorCell>
+    typealias View = CarouselView<CarouselItemColorCell>
 
-    static func updateView(_ view: CarouselCell<CarouselItemColorCell>, state: ColorStripState?) {
+    static func updateView(_ view: CarouselView<CarouselItemColorCell>, state: ColorStripState?) {
         guard let state = state else {
             return
         }
@@ -32,7 +32,7 @@ extension ColorStripState: StateType {
 			models: state.colors,
 			didSelectCell: state.didSelectCell,
 			collectionHeight: 120,
-			minimumLineSpacing: 16)
+			spacing: 16)
     }
 }
 
