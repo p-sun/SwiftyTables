@@ -1,5 +1,5 @@
 //
-//  CarouselViewController.swift
+//  ColorTilesViewController.swift
 //  FunctionalTableDataMyDemo
 //
 //  Created by Pei Sun on 2018-01-06.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CarouselViewController: UIViewController {
+class ColorTilesViewController: UIViewController {
 	var tableView = UITableView(frame: CGRect.zero, style: .grouped)
 
 	// FTD 1/3 - Init FTD
@@ -29,7 +29,7 @@ class CarouselViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		title = "CarouselView Demo"
+		title = "CarouselCell Demo"
 		view.addSubview(tableView)
 		tableView.pinToSuperView()
 		
@@ -42,14 +42,14 @@ class CarouselViewController: UIViewController {
 
 	func render() {
 		var rows = [CellConfigType]()
-		
+
 		for (rowIndex, colors) in randomColors.enumerated() {
-			let cell = CarouselColorsCell(
+			let cell = CarouselColorTilesCell(
 				key: "colorCell\(rowIndex)",
 				actions: CellActions(
 					visibilityAction: { [weak self] cellView, visible in
 						guard let strongSelf = self else { return }
-						if let CarouselView = cellView.subviews.first?.subviews.first as? CarouselView<CarouselItemColorCell> {
+						if let CarouselView = cellView.subviews.first?.subviews.first as? CarouselView<CarouselItemColorTilesCell> {
 							if visible {
 								CarouselView.carouselOffset = strongSelf.storedOffsets[rowIndex]
 							} else {
@@ -58,11 +58,11 @@ class CarouselViewController: UIViewController {
 						}
 					}
 				),
-				state: ColorStripState(
-					colors: colors,
+				state: CarouselState<CarouselItemColorTilesCell>(
+					itemModels: colors,
 					didSelectCell: { indexPath in
-						print("Did tap item \(indexPath.row)")
-				})
+						print("Did tap item \(indexPath.row)")},
+					collectionHeight: 120)
 			)
 			rows.append(cell)
 		}

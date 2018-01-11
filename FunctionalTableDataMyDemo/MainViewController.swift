@@ -65,10 +65,10 @@ class MainViewController: UIViewController {
 			key: "carouselDemo",
 			style: cellStyleWithDisclosure,
 			actions: CellActions(selectionAction: { _ in
-				self.show(CarouselViewController(), sender: self)
+				self.show(ColorTilesViewController(), sender: self)
 				return .deselected
 			}),
-			state: LabelState(text: "CarouselView Demo"))
+			state: LabelState(text: "CarouselCell Demo"))
 		rows.append(carouselDemo)
 		
 		let detailCell = DetailCell(
@@ -84,15 +84,15 @@ class MainViewController: UIViewController {
 				title: "Sample Title",
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
-
-        let itemState = CarouselItemDetails(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
+		
+        let itemState = CarouselItemDetailState(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
         let dogeCarouselView = CarouselDetailCell(
             key: "dogeCell",
-            state: CarouselDetailState(
-				itemModels: Array(repeating: itemState, count: 9),
+            state: CarouselState<CarouselItemDetailCell>(
+				itemModels: Array(repeating: itemState, count: 4),
                 didSelectCell: { (_) in
-                    print("did select doge")
-            }))
+                    print("did select doge") },
+				spacing: 15))
         rows.append(dogeCarouselView)
 
 		let sections = [TableSection(key: "section", rows: rows)]

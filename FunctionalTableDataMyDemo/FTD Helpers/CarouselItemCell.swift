@@ -8,9 +8,8 @@
 
 import Foundation
 
-// All CarouselItemCell are UICollectionViewCell that conforms to this.
-protocol CarouselItemCell {
-	associatedtype ItemModel
+protocol CarouselItemCell where Self: UICollectionViewCell {
+	associatedtype ItemModel: Equatable
 	static func sizeForItem(model: ItemModel) -> CGSize
 	func configure(model: ItemModel)
 }
@@ -21,7 +20,10 @@ extension CarouselItemCell {
 	}
 }
 
-// CarouselItemCell can optionally conform to CarouselItemNibView if there is a cooresponding Nib with the same name
+/**
+ Classes conforming to CarouselItemCells can optionally conform to CarouselItemNibView
+ if there is a cooresponding Nib with the same name
+*/
 protocol CarouselItemNibView {}
 
 extension CarouselItemNibView {
