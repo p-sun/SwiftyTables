@@ -3,21 +3,36 @@ import UIKit
 protocol CarouselStateType: StateType, Equatable {
 	associatedtype ItemModel: Equatable
 	var itemModels: [ItemModel] { get set }
+	var didSelectCell: ((IndexPath) -> Void)? { get set }
 }
 
 extension CarouselStateType {
 	static func ==(lhs: Self, rhs: Self) -> Bool {
 		return lhs.itemModels == rhs.itemModels
 	}
+	
+	static func updateView(_ view: View, state: CarouselDetailState?) {
+		guard let state = state, let view = view as? CarouselViewProtocol else {
+			print("ERROR in updateView")
+			return
+		}
+		
+		view.reload(models: state.itemModels, didSelectCell: state.didSelectCell, collectionHeight: 250, spacing: 15)
+	}
 }
 
-class CarouselView<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout where ItemCell: CarouselItemCell {
-    private var collectionViewHeightConstraint: NSLayoutConstraint!
-	fileprivate var flowLayout: UICollectionViewFlowLayout!
+protocol CarouselViewProtocol {
+	func reload(models: [Any], didSelectCell: ((IndexPath) -> Void)?, collectionHeight: CGFloat, spacing: CGFloat)
+}
 
-    fileprivate var collectionView: UICollectionView!
-    fileprivate var models: [ItemCell.ItemModel] = []
-    fileprivate var didSelectCell: ((IndexPath) -> Void)?
+class CarouselView<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CarouselViewProtocol where ItemCell: CarouselItemCell {
+
+    private var collectionViewHeightConstraint: NSLayoutConstraint!
+	private var flowLayout: UICollectionViewFlowLayout!
+
+    private var collectionView: UICollectionView!
+    private var models: [ItemCell.ItemModel] = []
+    private var didSelectCell: ((IndexPath) -> Void)?
 	
 	var carouselOffset: CGFloat {
 		get {
@@ -52,14 +67,24 @@ class CarouselView<ItemCell: UICollectionViewCell>: UIView, UICollectionViewDele
     }
 	
 	// MARK: - Public
-	func reload(models: [ItemCell.ItemModel], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat, spacing: CGFloat) {
+	func reload(models: [Any], didSelectCell: ((IndexPath) -> Void)?, collectionHeight: CGFloat, spacing: CGFloat) {
+		guard let models = models as? [ItemCell.ItemModel] else { return }
 		
 		self.models = models
 		self.didSelectCell = didSelectCell
-		collectionViewHeightConstraint.constant = collectionHeight
-		flowLayout.minimumLineSpacing = spacing
+//		collectionViewHeightConstraint.constant = collectionHeight
+//		flowLayout.minimumLineSpacing = spacing
 		collectionView.reloadData()
 	}
+	
+//	func reload(models: [ItemCell.ItemModel], didSelectCell: ((IndexPath) -> Void)? = nil, collectionHeight: CGFloat, spacing: CGFloat) {
+//
+//		self.models = models
+//		self.didSelectCell = didSelectCell
+//		collectionViewHeightConstraint.constant = collectionHeight
+//		flowLayout.minimumLineSpacing = spacing
+//		collectionView.reloadData()
+//	}
 	
 	// MARK: - UICollectionView Delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

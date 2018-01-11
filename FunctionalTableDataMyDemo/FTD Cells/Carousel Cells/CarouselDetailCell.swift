@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
+
 typealias CarouselDetailCell = HostCell<CarouselView<CarouselItemDetailCell>, CarouselDetailState, LayoutMarginsTableItemLayout>
 
 struct CarouselDetailState {
 	var itemModels: [CarouselItemDetails]
-	let didSelectCell: ((IndexPath) -> Void)?
+	var didSelectCell: ((IndexPath) -> Void)?
 	
 	init(itemModels: [CarouselItemDetails],
 		 didSelectCell: ((IndexPath) -> Void)?) {
@@ -24,16 +25,4 @@ struct CarouselDetailState {
 extension CarouselDetailState: CarouselStateType {
 	typealias ItemModel = CarouselItemDetails
 	typealias View = CarouselView<CarouselItemDetailCell>
-	
-	static func updateView(_ view: CarouselView<CarouselItemDetailCell>, state: CarouselDetailState?) {
-		guard let state = state else {
-			return
-		}
-		
-		view.reload(
-			models: state.itemModels,
-			didSelectCell: state.didSelectCell,
-			collectionHeight: 250,
-			spacing: 15)
-	}
 }

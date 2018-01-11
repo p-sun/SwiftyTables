@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */; };
-		9B4DC50120064FED00894FCA /* TestCellConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC50020064FED00894FCA /* TestCellConfig.swift */; };
 		9B831602200193440053BBA0 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B831601200193440053BBA0 /* CarouselViewController.swift */; };
 		9B8316052001A2040053BBA0 /* CarouselDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */; };
 		9B83160A2003A0E40053BBA0 /* CarouselItemDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8316082003A0E40053BBA0 /* CarouselItemDetailCell.swift */; };
@@ -56,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemCell.swift; sourceTree = "<group>"; };
-		9B4DC50020064FED00894FCA /* TestCellConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCellConfig.swift; sourceTree = "<group>"; };
 		9B831601200193440053BBA0 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDetailCell.swift; sourceTree = "<group>"; };
 		9B8316082003A0E40053BBA0 /* CarouselItemDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemDetailCell.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				C741E3D01FE9FB8B006B693F /* NibView.swift */,
 				C741E4091FEA22AE006B693F /* CarouselView.swift */,
 				9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */,
-				9B4DC50020064FED00894FCA /* TestCellConfig.swift */,
 			);
 			path = "FTD Helpers";
 			sourceTree = "<group>";
@@ -334,7 +331,6 @@
 				9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */,
 				C741E4051FEA1B67006B693F /* StateType.swift in Sources */,
 				C741E3F31FEA171C006B693F /* FunctionalCollectionData.swift in Sources */,
-				9B4DC50120064FED00894FCA /* TestCellConfig.swift in Sources */,
 				C7854FD91FD796B400710A79 /* UIView+Helpers.swift in Sources */,
 				C7854F631FD7929300710A79 /* AppDelegate.swift in Sources */,
 				C7854FA51FD7930900710A79 /* CollectionViewController.swift in Sources */,
