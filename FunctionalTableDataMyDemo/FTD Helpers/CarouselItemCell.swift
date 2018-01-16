@@ -11,7 +11,7 @@ import Foundation
 protocol CarouselItemCell where Self: UICollectionViewCell {
 	associatedtype ItemModel: Equatable
 	static func sizeForItem(model: ItemModel) -> CGSize
-	func configure(model: ItemModel)
+	func configure(model: ItemModel)    
 }
 
 extension CarouselItemCell {

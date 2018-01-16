@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1751422008F15F004B7101 /* SimpleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1751412008F15F004B7101 /* SimpleHeader.swift */; };
 		9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */; };
 		9B831602200193440053BBA0 /* ColorTilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B831601200193440053BBA0 /* ColorTilesViewController.swift */; };
 		9B8316052001A2040053BBA0 /* CarouselDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B1751412008F15F004B7101 /* SimpleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeader.swift; sourceTree = "<group>"; };
 		9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemCell.swift; sourceTree = "<group>"; };
 		9B831601200193440053BBA0 /* ColorTilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTilesViewController.swift; sourceTree = "<group>"; };
 		9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDetailCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1751402008F141004B7101 /* HeaderCells */ = {
+			isa = PBXGroup;
+			children = (
+				9B1751412008F15F004B7101 /* SimpleHeader.swift */,
+			);
+			path = HeaderCells;
+			sourceTree = "<group>";
+		};
 		9B83160320019A210053BBA0 /* Carousel Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +247,7 @@
 		C78550151FD8642400710A79 /* FTD Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9B1751402008F141004B7101 /* HeaderCells */,
 				9B83160320019A210053BBA0 /* Carousel Cells */,
 				9BD63E932007464C0061CFD7 /* Host Cells */,
 			);
@@ -334,6 +345,7 @@
 				C741E3F41FEA171C006B693F /* UICollectionView+Reusable.swift in Sources */,
 				C741E3FC1FEA171C006B693F /* TableSectionChangeSet.swift in Sources */,
 				9B831602200193440053BBA0 /* ColorTilesViewController.swift in Sources */,
+				9B1751422008F15F004B7101 /* SimpleHeader.swift in Sources */,
 				9B8316052001A2040053BBA0 /* CarouselDetailCell.swift in Sources */,
 				C741E3F51FEA171C006B693F /* HostCell.swift in Sources */,
 				C741E3EE1FEA171C006B693F /* CellActions.swift in Sources */,
@@ -493,6 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66T4X4PK9Q;
 				INFOPLIST_FILE = FunctionalTableDataMyDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalscale.FunctionalTableDataMyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,6 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66T4X4PK9Q;
 				INFOPLIST_FILE = FunctionalTableDataMyDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalscale.FunctionalTableDataMyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -40,7 +40,6 @@ struct CarouselState<ItemCell: CarouselItemCell>: StateType, Equatable {
 			&& lhs.spacing == rhs.spacing
 	}
 	
-	
 	private func firstCollectionCellHeight() -> CGFloat {
 		if let firstModel = itemModels.first {
 			return ItemCell.sizeForItem(model: firstModel).height
@@ -50,7 +49,7 @@ struct CarouselState<ItemCell: CarouselItemCell>: StateType, Equatable {
 }
 
 class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
 	var carouselOffset: CGFloat {
 		get {
 			return collectionView.contentOffset.x
@@ -140,6 +139,7 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.reuseId(), for: indexPath) as? ItemCell, let state = state {
             let model = state.itemModels[indexPath.row]
             cell.configure(model: model)
+            cell.tag = indexPath.row
             return cell
         }
         return UICollectionViewCell()

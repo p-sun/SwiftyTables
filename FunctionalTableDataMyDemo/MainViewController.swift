@@ -54,7 +54,11 @@ class MainViewController: UIViewController {
             style: cellStyleWithDisclosure,
             actions: CellActions(selectionAction: { _ in
                 let layout = UICollectionViewFlowLayout()
-                layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+				if #available(iOS 10.0, *) {
+					layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
+				} else {
+					layout.estimatedItemSize = CGSize(width: 1, height: 1)
+				}
                 self.show(CollectionViewController(collectionViewLayout: layout), sender: self)
                 return .deselected
             }),
@@ -95,7 +99,8 @@ class MainViewController: UIViewController {
 				spacing: 15))
         rows.append(dogeCarouselView)
 
-		let sections = [TableSection(key: "section", rows: rows)]
+		let header = SimpleHeaderConfig("title")
+		let sections = [TableSection(key: "section", rows: rows, header: header)]
 		functionalData.renderAndDiff(sections)
     }
 }

@@ -16,12 +16,21 @@ extension UIView {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor),
-            self.bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor),
-            self.leftAnchor.constraint(equalTo: superview.leftAnchor),
-            self.rightAnchor.constraint(equalTo: superview.rightAnchor)
-            ])
+		if #available(iOS 11.0, *) {
+			NSLayoutConstraint.activate([
+				self.topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor),
+				self.bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor),
+				self.leftAnchor.constraint(equalTo: superview.leftAnchor),
+				self.rightAnchor.constraint(equalTo: superview.rightAnchor)
+				])
+		} else {
+			NSLayoutConstraint.activate([
+				self.topAnchor.constraint(equalTo: superview.topAnchor),
+				self.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+				self.leftAnchor.constraint(equalTo: superview.leftAnchor),
+				self.rightAnchor.constraint(equalTo: superview.rightAnchor)
+				])
+		}
     }
 }
 
