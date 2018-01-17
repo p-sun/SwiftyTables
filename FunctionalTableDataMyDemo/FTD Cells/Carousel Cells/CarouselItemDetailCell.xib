@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,34 +24,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="289" height="231"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-85-FVw">
-                                <rect key="frame" x="0.0" y="0.0" width="223" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="223" height="152.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aap-ay-F8a">
-                                        <rect key="frame" x="36.5" y="0.0" width="150" height="150"/>
+                                        <rect key="frame" x="35" y="0.0" width="152.5" height="152.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="AWt-RA-qTs"/>
-                                            <constraint firstAttribute="width" constant="150" id="WlD-qB-0TA"/>
+                                            <constraint firstAttribute="width" secondItem="aap-ay-F8a" secondAttribute="height" multiplier="1:1" id="Y73-zD-JCy"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aap-ay-F8a" secondAttribute="trailing" id="Mdr-uo-A2a"/>
-                                    <constraint firstItem="aap-ay-F8a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xrv-85-FVw" secondAttribute="leading" id="gyd-mz-SJn"/>
+                                    <constraint firstItem="aap-ay-F8a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xrv-85-FVw" secondAttribute="leading" id="1Vo-ve-xc5"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aap-ay-F8a" secondAttribute="trailing" id="4Bb-Xl-cay"/>
                                     <constraint firstAttribute="bottom" secondItem="aap-ay-F8a" secondAttribute="bottom" id="j5f-gT-TDk"/>
                                     <constraint firstItem="aap-ay-F8a" firstAttribute="centerX" secondItem="xrv-85-FVw" secondAttribute="centerX" id="n0b-sd-gYJ"/>
                                     <constraint firstItem="aap-ay-F8a" firstAttribute="top" secondItem="xrv-85-FVw" secondAttribute="top" id="zTm-Ru-Ma3"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYd-rt-qoq">
-                                <rect key="frame" x="0.0" y="150" width="223" height="20.5"/>
+                                <rect key="frame" x="0.0" y="152.5" width="223" height="20.5"/>
                                 <color key="backgroundColor" red="0.33578990786554996" green="0.90806929498225886" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOL-V4-HWx">
-                                <rect key="frame" x="0.0" y="170.5" width="223" height="20.5"/>
+                                <rect key="frame" x="0.0" y="173" width="223" height="18"/>
                                 <color key="backgroundColor" red="0.49761324185473821" green="1" blue="0.41751860173409494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>

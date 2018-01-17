@@ -17,9 +17,9 @@ class CarouselItemDetailCell: UICollectionViewCell, CarouselItemCell, CarouselIt
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var subtitleLabel: UILabel!
-	
+    
 	static func sizeForItem(model: ItemModel) -> CGSize {
-		return CGSize(width: 150, height: 158)
+		return CGSize(width: 150, height: 191)
 	}
 	
 	func configure(model: ItemModel) {
@@ -43,8 +43,9 @@ struct CarouselItemDetailState {
 
 extension CarouselItemDetailState: Equatable {
 	static func ==(lhs: CarouselItemDetailState, rhs: CarouselItemDetailState) -> Bool {
-		return lhs.image == rhs.image
-			&& lhs.title == rhs.title
-			&& lhs.subtitle == rhs.subtitle
+        var equality = lhs.image == rhs.image
+        equality = equality && lhs.title == rhs.title
+        equality = equality && lhs.subtitle == rhs.subtitle
+        return equality
 	}
 }

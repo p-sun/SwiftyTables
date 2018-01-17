@@ -9,7 +9,7 @@
 import UIKit
 
 public class Separator: UIView {
-	public static var inset: CGFloat = 0.0
+    public static var inset: CGFloat = 0.0
 	private let thickness: CGFloat = 1.0 / UIScreen.main.scale
 	
 	public enum Style {

@@ -1,7 +1,8 @@
 import UIKit
 
-typealias CarouselCell<T: CarouselItemCell> = HostCell<CarouselView<T>, CarouselState<T>, LayoutMarginsTableItemLayout>
-
+/* NOTE: if collectionHeight < item height, the app will enter a loop.
+   Set a symbolic breakpoint at UICollectionViewFlowLayoutBreakForInvalidSizes to catch it.
+ **/
 struct CarouselState<ItemCell: CarouselItemCell>: StateType, Equatable {
 
 	typealias View = CarouselView<ItemCell>
@@ -9,25 +10,22 @@ struct CarouselState<ItemCell: CarouselItemCell>: StateType, Equatable {
 	fileprivate let itemModels: [ItemCell.ItemModel]
 	fileprivate let didSelectCell: ((IndexPath) -> Void)?
 	fileprivate let collectionHeight: CGFloat
-	fileprivate let spacing: CGFloat
-	
+    fileprivate let scrollDirection: UICollectionViewScrollDirection
+
 	init(itemModels: [ItemCell.ItemModel],
-		 didSelectCell: ((IndexPath) -> Void)?,
-		 collectionHeight: CGFloat = 300,
-		 spacing: CGFloat = 0) {
+         scrollDirection: UICollectionViewScrollDirection,
+		 collectionHeight: CGFloat,
+         didSelectCell: ((IndexPath) -> Void)?) {
 		
 		self.itemModels = itemModels
-		self.didSelectCell = didSelectCell
+        self.scrollDirection = scrollDirection
 		self.collectionHeight = collectionHeight
-		self.spacing = spacing
-		
-		if firstCollectionCellHeight() > collectionHeight {
-			assertionFailure("ERROR: CarouselCell's collection view must be taller than its individual cells plus margins.")
-		}
+        self.didSelectCell = didSelectCell
 	}
 	
 	static func updateView(_ view: View, state: CarouselState?) {
 		guard let state = state else {
+            // Prepare for reuse if needed
 			return
 		}
 		
@@ -35,16 +33,10 @@ struct CarouselState<ItemCell: CarouselItemCell>: StateType, Equatable {
 	}
 	
 	static func ==(lhs: CarouselState<ItemCell>, rhs: CarouselState<ItemCell>) -> Bool {
-		return lhs.itemModels == rhs.itemModels
-			&& lhs.collectionHeight == rhs.collectionHeight
-			&& lhs.spacing == rhs.spacing
-	}
-	
-	private func firstCollectionCellHeight() -> CGFloat {
-		if let firstModel = itemModels.first {
-			return ItemCell.sizeForItem(model: firstModel).height
-		}
-		return 0
+        var equality = lhs.itemModels == rhs.itemModels
+        equality = equality && lhs.collectionHeight == rhs.collectionHeight
+        equality = equality && lhs.scrollDirection == rhs.scrollDirection
+        return equality
 	}
 }
 
@@ -52,18 +44,19 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
     
 	var carouselOffset: CGFloat {
 		get {
-			return collectionView.contentOffset.x
+			return collectionView.contentOffset.x + collectionView.contentInset.left
 		}
 		set {
-			collectionView.contentOffset.x = newValue
+			collectionView.contentOffset.x = newValue - collectionView.contentInset.left
 		}
 	}
 	
 	private var state: CarouselState<ItemCell>?
-	private var collectionViewHeightConstraint: NSLayoutConstraint!
-	
+	private var cellHeightConstraint: NSLayoutConstraint!
+
 	private var collectionView: UICollectionView!
-	
+    private var flowLayout = UICollectionViewFlowLayout()
+    
     init() {
         super.init(frame: CGRect.zero)
 
@@ -73,8 +66,9 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
         
         self.addSubview(collectionView)
         collectionView.pinToSuperView()
-        
-        collectionViewHeightConstraint = collectionView.heightAnchor.activateConstraint(equalToConstant: 300, priority: 999)
+
+        cellHeightConstraint = self.heightAnchor.constraint(equalToConstant: 200)
+        cellHeightConstraint.isActive = true
 		
 		if let itemCell = ItemCell.self as? CarouselItemNibView.Type {
 			collectionView.register(itemCell.nibWithClassName(), forCellWithReuseIdentifier: ItemCell.reuseId())
@@ -86,48 +80,21 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-	
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		collectionView.frame = self.bounds
-	}
 
 	// MARK: - Public
+    
+    func setContentInset(_ insets: UIEdgeInsets) {
+        collectionView.contentInset = insets
+    }
+    
 	func reload(state: CarouselState<ItemCell>) {
 		// Stops collection view if it was scrolling.
-//		collectionView.setContentOffset(collectionView.contentOffset, animated:false)
-//		collectionView.cancelInteractiveMovement()
-		
-		self.state = state
-		
-		let flowLayout = collectionView.collectionViewLayout as! CarouselCollectionLayout
-		flowLayout.minimumLineSpacing = state.spacing		
-
-		if let firstModel = state.itemModels.first {
-			let itemSize = ItemCell.sizeForItem(model: firstModel)
-			var width: CGFloat = 0
-			width = itemSize.width * CGFloat(state.itemModels.count)
-			width += state.spacing * CGFloat(state.itemModels.count - 1)
-			flowLayout.contentSize = CGSize(width: width, height: state.collectionHeight)
-		}
-		
-		collectionViewHeightConstraint.constant = state.collectionHeight
+        collectionView.setContentOffset(collectionView.contentOffset, animated:false)
+        collectionView.cancelInteractiveMovement()
+        cellHeightConstraint.constant = state.collectionHeight
+        flowLayout.scrollDirection = state.scrollDirection
+        self.state = state
 		collectionView.reloadData()
-		
-		print("collection view contentSize \(collectionView.collectionViewLayout.collectionViewContentSize)") // This starts with 0, 0
-		
-//		if self.superview != nil {
-//			UIView.performWithoutAnimation {
-////				collectionView.collectionViewLayout.invalidateLayout()
-////				collectionView.collectionViewLayout.prepare()
-//				collectionView.contentSize = CGSize(width: 600, height: 500)
-////				collectionView.layoutIfNeeded()
-//			}
-//		}
-		
-//		collectionView.collectionViewLayout.invalidateLayout()
-//		collectionView.setNeedsLayout()
-//		collectionView.layoutIfNeeded()
 	}
 	
 	// MARK: - UICollectionView Delegates
@@ -149,40 +116,22 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
 		state?.didSelectCell?(indexPath)
     }
 	
-	// Return item size instead of dynamic resizing for smoother scrolling.
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		guard let state = state else { return CGSize.zero }
-		return ItemCell.sizeForItem(model: state.itemModels[indexPath.row])
-	}
+	// Return item size for smoother scrolling.
+    // Actual item size is calculated dynamically with the view's constraints, and is not affected by this.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let state = state else { return CGSize.zero }
+        return ItemCell.sizeForItem(model: state.itemModels[indexPath.row])
+    }
 	
 	// MARK: - Private
 	private func createCollectionView() -> UICollectionView {
-		let flowLayout = CarouselCollectionLayout()
-		
+        // NOTE: Do NOT set minimumLineSpacing in the flow layout because the collectionView's contentSize will not size correctly. If absolutely needed, set spacing in your item cells instead.
+        flowLayout.scrollDirection = .horizontal
+
 		let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
 		collectionView.backgroundColor = .white
 		collectionView.showsHorizontalScrollIndicator = false
-		
-		return collectionView
-	}
-}
 
-class CarouselCollectionLayout: UICollectionViewFlowLayout {
-	
-	var contentSize: CGSize = CGSize.zero
-	
-	override init() {
-		super.init()
-		self.scrollDirection = .horizontal
-		self.estimatedItemSize = CGSize(width: 1, height: 1)
-		self.minimumLineSpacing = 0
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
-	override var collectionViewContentSize: CGSize {
-		return contentSize
+		return collectionView
 	}
 }

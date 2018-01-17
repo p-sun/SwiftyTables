@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
 
 	// FTD 1/3 - Init FTD
     let functionalData = FunctionalTableData()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,18 +89,39 @@ class MainViewController: UIViewController {
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 		
-        let itemState = CarouselItemDetailState(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
-        let dogeCarouselView = CarouselDetailCell(
-            key: "dogeCell",
-            state: CarouselState<CarouselItemDetailCell>(
-				itemModels: Array(repeating: itemState, count: 4),
-                didSelectCell: { (_) in
-                    print("did select doge") },
-				spacing: 15))
-        rows.append(dogeCarouselView)
-
+        for i in 0...3 {
+            let cell = self.dogeCarousel(key: "dogeCell\(i)")
+            rows.append(cell)
+        }
+        
+        let sizes = [ CGSize(width: 100, height: 100),
+                      CGSize(width: 100, height: 100),
+                      CGSize(width: 100, height: 100),
+                      CGSize(width: 300, height: 100)]
+        
+        let resizableCell = CarouselResizableCell(
+            key: "resizableCell",
+            state: CarouselState<CarouselItemResizableCell>(
+                itemModels: sizes,
+                scrollDirection: .vertical,
+                collectionHeight: 250,
+                didSelectCell: { indexPath in
+                    print("Did tap item \(indexPath.row)")}))
+        rows.append(resizableCell)
+        
 		let header = SimpleHeaderConfig("title")
 		let sections = [TableSection(key: "section", rows: rows, header: header)]
 		functionalData.renderAndDiff(sections)
+    }
+    
+    private func dogeCarousel(key: String) -> CellConfigType {
+        let itemState = CarouselItemDetailState(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
+        return CarouselDetailCell(
+            key: key,
+            state: CarouselState<CarouselItemDetailCell>(
+                itemModels: Array(repeating: itemState, count: 4),
+                scrollDirection: .horizontal,
+                collectionHeight: 220, didSelectCell: { _ in
+                    print("did select doge") }))
     }
 }

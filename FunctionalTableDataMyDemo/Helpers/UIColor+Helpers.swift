@@ -18,7 +18,7 @@ extension UIColor {
     
     class func generateRandomData() -> [[UIColor]] {
         let numberOfRows = 23
-        let numberOfItemsPerRow = 4
+        let numberOfItemsPerRow = 26
         
         return (0..<numberOfRows).map { _ in
             return (0..<numberOfItemsPerRow).map { _ in UIColor.randomColor() }

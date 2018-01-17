@@ -46,27 +46,27 @@ class ColorTilesViewController: UIViewController {
 		for (rowIndex, colors) in randomColors.enumerated() {
 			let cell = CarouselColorTilesCell(
 				key: "colorCell\(rowIndex)",
-				actions: CellActions(
-					visibilityAction: { [weak self] cellView, visible in
-						guard let strongSelf = self else { return }
-						if let CarouselView = cellView.subviews.first?.subviews.first as? CarouselView<CarouselItemColorTilesCell> {
-							if visible {
-								CarouselView.carouselOffset = strongSelf.storedOffsets[rowIndex]
-							} else {
-								strongSelf.storedOffsets[rowIndex] = CarouselView.carouselOffset
-							}
-						}
-					}
-				),
-				state: CarouselState<CarouselItemColorTilesCell>(
-					itemModels: colors,
-					didSelectCell: { indexPath in
-						print("Did tap item \(indexPath.row)")},
-					collectionHeight: 120)
+                state: CarouselState<CarouselItemColorTilesCell>(
+                    itemModels: colors,
+                    scrollDirection: .horizontal,
+                    collectionHeight: 120,
+                    didSelectCell: { indexPath in
+                        print("Did tap item \(indexPath.row)")}), actions: CellActions(
+                        visibilityAction: { [weak self] cellView, visible in
+                            guard let strongSelf = self else { return }
+                            if let carouselView = cellView.subviews.first?.subviews.first as? CarouselView<CarouselItemColorTilesCell> {
+                                if visible {
+                                    carouselView.carouselOffset = strongSelf.storedOffsets[rowIndex]
+                                } else {
+                                    strongSelf.storedOffsets[rowIndex] = carouselView.carouselOffset
+                                }
+                            }
+                        }
+                )
 			)
 			rows.append(cell)
 		}
-		
+        
 		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)
 	}
