@@ -48,7 +48,6 @@ class ColorTilesViewController: UIViewController {
 				key: "colorCell\(rowIndex)",
                 state: CarouselState<CarouselItemColorTilesCell>(
                     itemModels: colors,
-                    scrollDirection: .horizontal,
                     collectionHeight: 120,
                     didSelectCell: { indexPath in
                         print("Did tap item \(indexPath.row)")}), actions: CellActions(

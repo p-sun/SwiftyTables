@@ -35,7 +35,11 @@ class CarouselItemResizableCell: UICollectionViewCell, CarouselItemCell {
     static func sizeForItem(model: ItemModel) -> CGSize {
         return model
     }
-    
+	
+	static func scrollDirection() -> UICollectionViewScrollDirection {
+		return .vertical
+	}
+	
     func configure(model: ItemModel) {
         self.size = model
     }

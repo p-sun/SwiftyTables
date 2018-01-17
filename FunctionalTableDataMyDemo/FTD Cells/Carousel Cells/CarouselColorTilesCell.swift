@@ -32,6 +32,10 @@ class CarouselItemColorTilesCell: UICollectionViewCell, CarouselItemCell {
 		return CarouselItemColorTilesCell.size
 	}
 	
+    static func scrollDirection() -> UICollectionViewScrollDirection {
+        return .horizontal
+    }
+    
 	func configure(model: ItemModel) {
 		colorView.backgroundColor = model
 	}

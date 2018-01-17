@@ -22,6 +22,10 @@ class CarouselItemDetailCell: UICollectionViewCell, CarouselItemCell, CarouselIt
 		return CGSize(width: 150, height: 191)
 	}
 	
+    static func scrollDirection() -> UICollectionViewScrollDirection {
+        return .horizontal
+    }
+    
 	func configure(model: ItemModel) {
 		self.imageView.image = model.image
 		self.titleLabel.text = model.title
