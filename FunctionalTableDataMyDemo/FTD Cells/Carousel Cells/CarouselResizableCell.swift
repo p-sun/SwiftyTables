@@ -2,7 +2,7 @@
 //  CarouselResizableCell.swift
 //  FunctionalTableDataMyDemo
 //
-//  Created by TSD051 on 2018-01-17.
+//  Created by Paige Sun on 2018-01-17.
 //  Copyright © 2018 TribalScale. All rights reserved.
 //
 
