@@ -104,8 +104,7 @@ class MainViewController: UIViewController {
             rows.append(cell)
         }
         
-		let header = SimpleHeaderConfig("title")
-		let sections = [TableSection(key: "section", rows: rows, header: header)]
+		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)
     }
     
