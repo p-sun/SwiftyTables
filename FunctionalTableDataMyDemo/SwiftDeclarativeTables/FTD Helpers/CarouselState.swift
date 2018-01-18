@@ -104,9 +104,9 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.reuseId(), for: indexPath) as? ItemCell, let state = state {
-            let model = state.itemModels[indexPath.row]
+			cell.tag = indexPath.row
+			let model = state.itemModels[indexPath.row]
             cell.configure(model: model)
-            cell.tag = indexPath.row
             return cell
         }
         return UICollectionViewCell()

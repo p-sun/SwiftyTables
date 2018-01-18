@@ -6,9 +6,6 @@
 //  Copyright © 2018 TribalScale. All rights reserved.
 //
 
-import Foundation
-
-
 import UIKit
 
 typealias CarouselVerticalGridCell = CarouselCell<CarouselItemVerticalGridCell>
@@ -18,7 +15,25 @@ class CarouselItemVerticalGridCell: UICollectionViewCell, CarouselItemCell {
 	typealias ItemModel = CarouselItemVerticalGridState
 	
     private let colorView = UIView()
-    
+	
+	var size = CGSize.zero
+	
+	struct GradientColors {
+		private static let bottomColor = #colorLiteral(red: 0.003921568627, green: 0.5725490196, blue: 0.8588235294, alpha: 1)
+		private static let topColors = [#colorLiteral(red: 0.4, green: 0.3490196078, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.4, green: 0.007843137255, blue: 0.3490196078, alpha: 1), #colorLiteral(red: 0.4, green: 0.007843137255, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.05490196078, green: 0.4, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.5882352941, green: 0.3607843137, blue: 0, alpha: 1), #colorLiteral(red: 0.007843137255, green: 0.07058823529, blue: 0.4, alpha: 1)]
+		
+		static func getBottomColor() -> UIColor {
+			return bottomColor.withAlphaComponent(0.5)
+		}
+		
+		static func getTopColor(index: Int) -> UIColor {
+			guard index < topColors.count else {
+				return .clear
+			}
+			return topColors[index].withAlphaComponent(0.5)
+		}
+	}
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -46,7 +61,10 @@ class CarouselItemVerticalGridCell: UICollectionViewCell, CarouselItemCell {
 	}
 	
     func configure(model: ItemModel) {
-		self.colorView.backgroundColor = model.color
+		self.colorView.backgroundColor = model.color.withAlphaComponent(0.6)
+		let topColor = GradientColors.getTopColor(index: self.tag)
+		self.colorView.addDiagonalShading(size: self.bounds, bottomLeftColor: GradientColors.getBottomColor(), topRightColor:
+			topColor)
     }
 }
 
@@ -69,5 +87,21 @@ extension CarouselItemVerticalGridState: Equatable {
 		equality = equality && lhs.height == rhs.height
 		equality = equality && lhs.itemsInThisRow == rhs.itemsInThisRow
 		return equality
+	}
+}
+
+private extension UIView {
+	func addDiagonalShading(size: CGRect, bottomLeftColor: UIColor, topRightColor: UIColor) {
+		let gradient = CAGradientLayer()
+		gradient.frame = size
+		gradient.startPoint = CGPoint(x: 0, y: 1)
+		gradient.endPoint = CGPoint(x: 1, y: 0)
+		gradient.colors = [bottomLeftColor.cgColor, topRightColor.cgColor]
+		
+		if let topSubLayer = self.layer.sublayers?.first {
+			self.layer.replaceSublayer(topSubLayer, with: gradient)
+		} else {
+			self.layer.insertSublayer(gradient, at: 0)
+		}
 	}
 }

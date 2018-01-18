@@ -50,7 +50,8 @@ class ColorTilesViewController: UIViewController {
                     itemModels: colors,
                     collectionHeight: 120,
                     didSelectCell: { indexPath in
-                        print("Did tap item \(indexPath.row)")}), actions: CellActions(
+                        print("Did tap item \(indexPath.row)")}),
+				actions: CellActions(
                         visibilityAction: { [weak self] cellView, visible in
                             guard let strongSelf = self else { return }
                             if let carouselView = cellView.subviews.first?.subviews.first as? CarouselView<CarouselItemColorTilesCell> {
