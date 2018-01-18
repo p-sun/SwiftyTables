@@ -1,5 +1,5 @@
 //
-//  CarouselResizableCell.swift
+//  CarouselVerticalGridCell.swift
 //  FunctionalTableDataMyDemo
 //
 //  Created by Paige Sun on 2018-01-17.
@@ -11,11 +11,11 @@ import Foundation
 
 import UIKit
 
-typealias CarouselResizableCell = CarouselCell<CarouselItemResizableCell>
+typealias CarouselVerticalGridCell = CarouselCell<CarouselItemVerticalGridCell>
 
-class CarouselItemResizableCell: UICollectionViewCell, CarouselItemCell {
+class CarouselItemVerticalGridCell: UICollectionViewCell, CarouselItemCell {
 	
-	typealias ItemModel = CarouselItemResizableState
+	typealias ItemModel = CarouselItemVerticalGridState
 	
     private let colorView = UIView()
     
@@ -31,7 +31,6 @@ class CarouselItemResizableCell: UICollectionViewCell, CarouselItemCell {
     }
     
     static func sizeForItem(model: ItemModel, in collectionView: UICollectionView) -> CGSize {
-		
 		let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
 		
 		let totalWidth = collectionView.bounds.size.width
@@ -51,7 +50,7 @@ class CarouselItemResizableCell: UICollectionViewCell, CarouselItemCell {
     }
 }
 
-struct CarouselItemResizableState {
+struct CarouselItemVerticalGridState {
 	let color: UIColor
 	let height: CGFloat
 	let itemsInThisRow: CGFloat
@@ -64,8 +63,8 @@ struct CarouselItemResizableState {
 	}
 }
 
-extension CarouselItemResizableState: Equatable {
-	static func ==(lhs: CarouselItemResizableState, rhs: CarouselItemResizableState) -> Bool {
+extension CarouselItemVerticalGridState: Equatable {
+	static func ==(lhs: CarouselItemVerticalGridState, rhs: CarouselItemVerticalGridState) -> Bool {
 		var equality = lhs.color == rhs.color
 		equality = equality && lhs.height == rhs.height
 		equality = equality && lhs.itemsInThisRow == rhs.itemsInThisRow

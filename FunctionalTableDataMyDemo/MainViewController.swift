@@ -65,25 +65,25 @@ class MainViewController: UIViewController {
             state: LabelState(text: "UICollectionView Demo"))
         rows.append(collectionDemo)
 		
-		let carouselDemo = LabelCell(
-			key: "carouselDemo",
+		let colorTilesDemo = LabelCell(
+			key: "colorTilesDemo",
 			style: cellStyleWithDisclosure,
 			actions: CellActions(selectionAction: { _ in
 				self.show(ColorTilesViewController(), sender: self)
 				return .deselected
 			}),
-			state: LabelState(text: "CarouselCell Demo"))
-		rows.append(carouselDemo)
+			state: LabelState(text: "Horizontal CarouselCell Demo"))
+		rows.append(colorTilesDemo)
 
-		let carouselResizableDemo = LabelCell(
-			key: "carouselResizableDemo",
+		let carouselVerticalGridDemo = LabelCell(
+			key: "carouselVerticalGridDemo",
 			style: cellStyleWithDisclosure,
 			actions: CellActions(selectionAction: { _ in
-				self.show(ResizableCellViewController(), sender: self)
+				self.show(VerticalGridCellViewController(), sender: self)
 				return .deselected
 			}),
-			state: LabelState(text: "CarouselCell Resizable Demo"))
-		rows.append(carouselResizableDemo)
+			state: LabelState(text: "Vertical CarouseCell Demo"))
+		rows.append(carouselVerticalGridDemo)
 		
 		let detailCell = DetailCell(
 			key: "detailCell",

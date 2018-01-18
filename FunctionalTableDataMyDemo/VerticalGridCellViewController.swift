@@ -1,5 +1,5 @@
 //
-//  ResizableCellViewController.swift
+//  VerticalGridCellViewController.swift
 //  FunctionalTableDataMyDemo
 //
 //  Created by Pei Sun on 2018-01-17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ResizableCellViewController: UIViewController {
+class VerticalGridCellViewController: UIViewController {
 	
 	var tableView = UITableView(frame: CGRect.zero, style: .grouped)
 	let functionalData = FunctionalTableData()
@@ -16,7 +16,7 @@ class ResizableCellViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = "CarouselCell Resizable Cell Demo"
+		title = "Vertical CarouseCell Demo"
 		view.addSubview(tableView)
 		tableView.pinToSuperView()
 		functionalData.tableView = tableView
@@ -47,17 +47,17 @@ class ResizableCellViewController: UIViewController {
 		let numberOfRows = itemsPerRow.count
 		let collectionHeight = numberOfRows * Int(height) + (numberOfRows - 1) * 10 + 16
 		
-		var states = [CarouselItemResizableState]()
+		var states = [CarouselItemVerticalGridState]()
 		for itemsInThisRow in itemsPerRow {
 			for _ in 0..<itemsInThisRow {
-				let state = CarouselItemResizableState(color: color, height: height, itemsInThisRow: CGFloat(itemsInThisRow))
+				let state = CarouselItemVerticalGridState(color: color, height: height, itemsInThisRow: CGFloat(itemsInThisRow))
 				states.append(state)
 			}
 		}
 		
-		return CarouselResizableCell(
+		return CarouselVerticalGridCell(
 			key: key,
-			state: CarouselState<CarouselItemResizableCell>(
+			state: CarouselState<CarouselItemVerticalGridCell>(
 				itemModels: states,
 				collectionHeight: CGFloat(collectionHeight),
 				didSelectCell: { indexPath in

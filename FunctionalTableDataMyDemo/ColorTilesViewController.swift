@@ -29,7 +29,7 @@ class ColorTilesViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		title = "CarouselCell Demo"
+		title = "Horizontal CarouselCell Demo"
 		view.addSubview(tableView)
 		tableView.pinToSuperView()
 		
