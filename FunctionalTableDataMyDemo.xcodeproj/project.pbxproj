@@ -138,6 +138,16 @@
 			path = "Carousel Cells";
 			sourceTree = "<group>";
 		};
+		9B9F12D72010DA0000549C6E /* SwiftDeclarativeTables */ = {
+			isa = PBXGroup;
+			children = (
+				C741E3D41FEA171C006B693F /* FunctionalTableData */,
+				C741E3CF1FE9FB6F006B693F /* FTD Helpers */,
+				C78550151FD8642400710A79 /* FTD Cells */,
+			);
+			path = SwiftDeclarativeTables;
+			sourceTree = "<group>";
+		};
 		9BD63E932007464C0061CFD7 /* Host Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,9 +235,7 @@
 		C7854F611FD7929300710A79 /* FunctionalTableDataMyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C741E3D41FEA171C006B693F /* FunctionalTableData */,
-				C741E3CF1FE9FB6F006B693F /* FTD Helpers */,
-				C78550151FD8642400710A79 /* FTD Cells */,
+				9B9F12D72010DA0000549C6E /* SwiftDeclarativeTables */,
 				C78550141FD8640B00710A79 /* Helpers */,
 				C7854F621FD7929300710A79 /* AppDelegate.swift */,
 				C7854F641FD7929300710A79 /* MainViewController.swift */,
