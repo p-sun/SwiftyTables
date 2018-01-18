@@ -74,6 +74,16 @@ class MainViewController: UIViewController {
 			}),
 			state: LabelState(text: "CarouselCell Demo"))
 		rows.append(carouselDemo)
+
+		let carouselResizableDemo = LabelCell(
+			key: "carouselResizableDemo",
+			style: cellStyleWithDisclosure,
+			actions: CellActions(selectionAction: { _ in
+				self.show(ResizableCellViewController(), sender: self)
+				return .deselected
+			}),
+			state: LabelState(text: "CarouselCell Resizable Demo"))
+		rows.append(carouselResizableDemo)
 		
 		let detailCell = DetailCell(
 			key: "detailCell",
@@ -94,21 +104,6 @@ class MainViewController: UIViewController {
             rows.append(cell)
         }
         
-        let sizes = [ CGSize(width: 100, height: 100),
-                      CGSize(width: 100, height: 100),
-                      CGSize(width: 100, height: 100),
-                      CGSize(width: 300, height: 100)]
-        
-        let resizableCell = CarouselResizableCell(
-            key: "resizableCell",
-            state: CarouselState<CarouselItemResizableCell>(
-                itemModels: sizes,
-                scrollDirection: .vertical,
-                collectionHeight: 250,
-                didSelectCell: { indexPath in
-                    print("Did tap item \(indexPath.row)")}))
-        rows.append(resizableCell)
-        
 		let header = SimpleHeaderConfig("title")
 		let sections = [TableSection(key: "section", rows: rows, header: header)]
 		functionalData.renderAndDiff(sections)
@@ -120,7 +115,6 @@ class MainViewController: UIViewController {
             key: key,
             state: CarouselState<CarouselItemDetailCell>(
                 itemModels: Array(repeating: itemState, count: 4),
-                scrollDirection: .horizontal,
                 collectionHeight: 220, didSelectCell: { _ in
                     print("did select doge") }))
     }

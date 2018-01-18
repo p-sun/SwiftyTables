@@ -18,7 +18,7 @@ class CarouselItemDetailCell: UICollectionViewCell, CarouselItemCell, CarouselIt
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var subtitleLabel: UILabel!
     
-	static func sizeForItem(model: ItemModel) -> CGSize {
+	static func sizeForItem(model: ItemModel, in collectionView: UICollectionView) -> CGSize {
 		return CGSize(width: 150, height: 191)
 	}
 	

@@ -12,6 +12,7 @@
 		9B831602200193440053BBA0 /* ColorTilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B831601200193440053BBA0 /* ColorTilesViewController.swift */; };
 		9B8316052001A2040053BBA0 /* CarouselDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */; };
 		9B83160B2003A0E40053BBA0 /* CarouselItemDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8316092003A0E40053BBA0 /* CarouselItemDetailCell.xib */; };
+		9B9F12D6200FF94C00549C6E /* ResizableCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F12D5200FF94C00549C6E /* ResizableCellViewController.swift */; };
 		C741E3CC1FE9CE7F006B693F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3CB1FE9CE7F006B693F /* DetailCell.swift */; };
 		C741E3CE1FE9D001006B693F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C741E3CD1FE9D001006B693F /* DetailView.xib */; };
 		C741E3D11FE9FB8B006B693F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3D01FE9FB8B006B693F /* NibView.swift */; };
@@ -60,6 +61,7 @@
 		9B831601200193440053BBA0 /* ColorTilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTilesViewController.swift; sourceTree = "<group>"; };
 		9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDetailCell.swift; sourceTree = "<group>"; };
 		9B8316092003A0E40053BBA0 /* CarouselItemDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselItemDetailCell.xib; sourceTree = "<group>"; };
+		9B9F12D5200FF94C00549C6E /* ResizableCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableCellViewController.swift; sourceTree = "<group>"; };
 		C741E3CB1FE9CE7F006B693F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		C741E3CD1FE9D001006B693F /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		C741E3D01FE9FB8B006B693F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				C78550161FD864F600710A79 /* TableViewController.swift */,
 				C7854FA41FD7930900710A79 /* CollectionViewController.swift */,
 				9B831601200193440053BBA0 /* ColorTilesViewController.swift */,
+				9B9F12D5200FF94C00549C6E /* ResizableCellViewController.swift */,
 				C7854FDE1FD79DB600710A79 /* FunctionalTableDataMyDemo-Swift.h */,
 				C7854F661FD7929300710A79 /* Main.storyboard */,
 				C7854F691FD7929300710A79 /* Assets.xcassets */,
@@ -339,6 +342,7 @@
 				C7854FA71FD7945700710A79 /* LabelCell.swift in Sources */,
 				C7854F651FD7929300710A79 /* MainViewController.swift in Sources */,
 				9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */,
+				9B9F12D6200FF94C00549C6E /* ResizableCellViewController.swift in Sources */,
 				C741E4051FEA1B67006B693F /* HostCell+StateType.swift in Sources */,
 				C741E3F31FEA171C006B693F /* FunctionalCollectionData.swift in Sources */,
 				C7854FD91FD796B400710A79 /* UIView+Helpers.swift in Sources */,

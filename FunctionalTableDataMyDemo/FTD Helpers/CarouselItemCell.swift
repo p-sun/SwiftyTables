@@ -10,7 +10,7 @@ import Foundation
 
 protocol CarouselItemCell where Self: UICollectionViewCell {
 	associatedtype ItemModel: Equatable
-	static func sizeForItem(model: ItemModel) -> CGSize
+	static func sizeForItem(model: ItemModel, in collectionView: UICollectionView) -> CGSize
     static func scrollDirection() -> UICollectionViewScrollDirection
 	func configure(model: ItemModel)    
 }

@@ -28,7 +28,7 @@ class CarouselItemColorTilesCell: UICollectionViewCell, CarouselItemCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	static func sizeForItem(model: ItemModel) -> CGSize {
+	static func sizeForItem(model: ItemModel, in collectionView: UICollectionView) -> CGSize {
 		return CarouselItemColorTilesCell.size
 	}
 	

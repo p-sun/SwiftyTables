@@ -118,7 +118,8 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let state = state else { return CGSize.zero }
-        return ItemCell.sizeForItem(model: state.itemModels[indexPath.row])
+		let model = state.itemModels[indexPath.row]
+		return ItemCell.sizeForItem(model: model, in: collectionView)
     }
     
     // MARK: - Private

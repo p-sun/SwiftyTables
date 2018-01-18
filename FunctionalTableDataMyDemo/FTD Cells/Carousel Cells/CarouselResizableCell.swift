@@ -14,26 +14,32 @@ import UIKit
 typealias CarouselResizableCell = CarouselCell<CarouselItemResizableCell>
 
 class CarouselItemResizableCell: UICollectionViewCell, CarouselItemCell {
-    
-    typealias ItemModel = CGSize
-    
+	
+	typealias ItemModel = CarouselItemResizableState
+	
     private let colorView = UIView()
-    private var size = CGSize.zero
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         contentView.addSubview(colorView)
         colorView.pinToSuperView()
-        colorView.backgroundColor = .yellow
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    static func sizeForItem(model: ItemModel) -> CGSize {
-        return model
+    static func sizeForItem(model: ItemModel, in collectionView: UICollectionView) -> CGSize {
+		
+		let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+		
+		let totalWidth = collectionView.bounds.size.width
+		let contentInset = collectionView.contentInset
+		let widthMinusInsets = totalWidth - contentInset.left - contentInset.right
+		let widthMinusSpacing = widthMinusInsets - (model.itemsInThisRow - 1) * layout.minimumLineSpacing
+		let widthForItem = widthMinusSpacing / model.itemsInThisRow
+        return CGSize(width: widthForItem, height: model.height)
     }
 	
 	static func scrollDirection() -> UICollectionViewScrollDirection {
@@ -41,6 +47,28 @@ class CarouselItemResizableCell: UICollectionViewCell, CarouselItemCell {
 	}
 	
     func configure(model: ItemModel) {
-        self.size = model
+		self.colorView.backgroundColor = model.color
     }
+}
+
+struct CarouselItemResizableState {
+	let color: UIColor
+	let height: CGFloat
+	let itemsInThisRow: CGFloat
+	
+	init(color: UIColor, height: CGFloat, itemsInThisRow: CGFloat) {
+		assert(itemsInThisRow > 0)
+		self.color = color
+		self.height = height
+		self.itemsInThisRow = itemsInThisRow
+	}
+}
+
+extension CarouselItemResizableState: Equatable {
+	static func ==(lhs: CarouselItemResizableState, rhs: CarouselItemResizableState) -> Bool {
+		var equality = lhs.color == rhs.color
+		equality = equality && lhs.height == rhs.height
+		equality = equality && lhs.itemsInThisRow == rhs.itemsInThisRow
+		return equality
+	}
 }
