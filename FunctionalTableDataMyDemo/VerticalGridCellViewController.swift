@@ -26,16 +26,16 @@ class VerticalGridCellViewController: UIViewController {
 	func render() {
 		var rows = [CellConfigType]()
 
-		let fourGridCell = resizableCell(key: "fourGridCell", color: .yellow, height: 100, itemsPerRow: [1, 3])
+		let fourGridCell = resizableCell(key: "fourGridCell", color: .purple, height: 100, itemsPerRow: [1, 3])
 		rows.append(fourGridCell)
 
-		let fiveGridCell = resizableCell(key: "fiveGridCell", color: .blue, height: 100, itemsPerRow: [2, 3])
+		let fiveGridCell = resizableCell(key: "fiveGridCell", color: .green, height: 100, itemsPerRow: [2, 3])
 		rows.append(fiveGridCell)
 		
 		let sixGridCell = resizableCell(key: "sixGridCell", color: .orange, height: 100, itemsPerRow: [3, 3])
 		rows.append(sixGridCell)
 
-		let nineGridCell = resizableCell(key: "nineGridCell", color: .green, height: 100, itemsPerRow: [3, 3, 3])
+		let nineGridCell = resizableCell(key: "nineGridCell", color: .blue, height: 100, itemsPerRow: [3, 3, 3])
 		rows.append(nineGridCell)
 		
 		let sections = [TableSection(key: "section", rows: rows)]

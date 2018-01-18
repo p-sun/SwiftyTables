@@ -99,6 +99,8 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
     
     // MARK: - UICollectionView Delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		// Prevent a crash that happens on fresh install when the collectionView height is 44, and therefore smaller than the item size
+		guard collectionView.bounds.size.height == state?.collectionHeight else { return 0 }
         return self.state?.itemModels.count ?? 0
     }
     
