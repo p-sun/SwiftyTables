@@ -114,7 +114,7 @@ class MainViewController: UIViewController {
             key: key,
             state: CarouselState<CarouselItemDetailCell>(
                 itemModels: Array(repeating: itemState, count: 4),
-                collectionHeight: 220, didSelectCell: { _ in
+				collectionHeight: 220, didSelectItemCell: { _ in
                     print("did select doge") }))
     }
 }

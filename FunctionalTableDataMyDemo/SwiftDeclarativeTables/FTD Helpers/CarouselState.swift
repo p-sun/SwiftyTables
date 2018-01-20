@@ -14,16 +14,16 @@ struct CarouselState<ItemCell: CarouselItemCell>: StateType, Equatable {
     typealias View = CarouselView<ItemCell>
     
     fileprivate let itemModels: [ItemCell.ItemModel]
-    fileprivate let didSelectCell: ((IndexPath) -> Void)?
+    fileprivate let didSelectItemCell: ((IndexPath) -> Void)?
     fileprivate let collectionHeight: CGFloat
     
     init(itemModels: [ItemCell.ItemModel],
          collectionHeight: CGFloat,
-         didSelectCell: ((IndexPath) -> Void)?) {
+         didSelectItemCell: ((IndexPath) -> Void)?) {
         
         self.itemModels = itemModels
         self.collectionHeight = collectionHeight
-        self.didSelectCell = didSelectCell
+        self.didSelectItemCell = didSelectItemCell
     }
     
     static func updateView(_ view: View, state: CarouselState?) {
@@ -65,6 +65,10 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        if ItemCell.scrollDirection() == .vertical {
+            collectionView.isScrollEnabled = false
+        }
+        
         self.addSubview(collectionView)
         collectionView.pinToSuperView()
         
@@ -99,8 +103,9 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
     
     // MARK: - UICollectionView Delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		// Prevent a crash that happens on fresh install when the collectionView height is 44, and therefore smaller than the item size
-		guard collectionView.bounds.size.height == state?.collectionHeight else { return 0 }
+        // This is to prevent a crash that happens on fresh install when the collectionView height is 44, and therefore smaller than the item size
+        guard collectionView.bounds.size.height == state?.collectionHeight else { return 0 }
+        
         return self.state?.itemModels.count ?? 0
     }
     
@@ -115,7 +120,7 @@ class CarouselView<ItemCell: CarouselItemCell>: UIView, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        state?.didSelectCell?(indexPath)
+        state?.didSelectItemCell?(indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

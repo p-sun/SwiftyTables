@@ -49,7 +49,7 @@ class ColorTilesViewController: UIViewController {
                 state: CarouselState<CarouselItemColorTilesCell>(
                     itemModels: colors,
                     collectionHeight: 120,
-                    didSelectCell: { indexPath in
+					didSelectItemCell: { indexPath in
                         print("Did tap item \(indexPath.row)")}),
 				actions: CellActions(
                         visibilityAction: { [weak self] cellView, visible in

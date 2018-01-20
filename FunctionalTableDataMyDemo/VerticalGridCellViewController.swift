@@ -60,7 +60,7 @@ class VerticalGridCellViewController: UIViewController {
 			state: CarouselState<CarouselItemVerticalGridCell>(
 				itemModels: states,
 				collectionHeight: CGFloat(collectionHeight),
-				didSelectCell: { indexPath in
+				didSelectItemCell: { indexPath in
 					print("Did tap item \(indexPath.row)")}))
 	}
 }
