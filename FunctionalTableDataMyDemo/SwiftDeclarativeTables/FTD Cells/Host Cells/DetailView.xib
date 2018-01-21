@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,13 +20,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="483" height="125"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-jN-Qiq">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                            <rect key="frame" x="0.0" y="0.0" width="88" height="125"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finedog" translatesAutoresizingMaskIntoConstraints="NO" id="MEB-hl-3oy">
-                                    <rect key="frame" x="0.0" y="12.5" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="18.5" width="88" height="88"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" priority="999" constant="100" id="IbT-w7-Ctc"/>
-                                        <constraint firstAttribute="width" priority="999" constant="100" id="sTU-E5-nK1"/>
+                                        <constraint firstAttribute="height" priority="999" constant="88" id="IbT-w7-Ctc"/>
+                                        <constraint firstAttribute="width" priority="999" constant="88" id="sTU-E5-nK1"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -39,7 +40,7 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VxU-dK-TL3">
-                            <rect key="frame" x="112" y="38" width="371" height="49.5"/>
+                            <rect key="frame" x="100" y="38" width="383" height="49.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-5l-omf">
                                     <rect key="frame" x="0.0" y="0.0" width="41.5" height="24"/>

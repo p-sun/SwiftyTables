@@ -113,7 +113,7 @@ class MainViewController: UIViewController {
 		let dogeCarousel = CarouselDetailCell(
 			key: "dogeCarousel",
 			state: CarouselState<CarouselItemDetailCell>(
-				itemModels: Array(repeating: dogeItemState, count: 6),
+				itemModels: Array(repeating: dogeItemState, count: 20),
 				collectionHeight: 220,
 				didSelectItemCell: { index in
 					print("Did select doge at index \(index)") }))

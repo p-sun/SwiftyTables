@@ -22,7 +22,7 @@ This bug has been replicated in `TableSectionsViewController` in this repo. Here
 
 ![Header Height Bug][buggif]
 
-[buggif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Issue.gif ""
+[buggif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/Issue.gif ""
 
 ### Solution
 The tableView jumps because `estimatedHeightForHeaderInSection` and `estimatedHeightForFooterInSection` have not been implemented in `FunctionalTableData`. Simply return the contents of `heightForHeaderInSection` and `heightForFooterInSection` to fix the bug.
