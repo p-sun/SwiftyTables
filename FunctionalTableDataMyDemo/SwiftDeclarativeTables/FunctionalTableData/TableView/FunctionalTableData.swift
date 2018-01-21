@@ -571,22 +571,38 @@ extension FunctionalTableData: UITableViewDataSource {
 }
 
 extension FunctionalTableData: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return heightForHeaderInSection(tableViewStyle: tableView.style, section: section)
+    }
+    
+    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return heightForFooterInSection(tableViewStyle: tableView.style, section: section)
+    }
+    
 	public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		guard let header = sections[section].header else {
-			// When given a height of zero grouped style UITableView's use their default value instead of zero. By returning CGFloat.min we get around this behavior and force UITableView to end up using a height of zero after all.
-			return tableView.style == .grouped ? CGFloat.leastNormalMagnitude : 0
-		}
-		return header.height
+        return heightForHeaderInSection(tableViewStyle: tableView.style, section: section)
 	}
 	
 	public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		guard let footer = sections[section].footer else {
-			// When given a height of zero grouped style UITableView's use their default value instead of zero. By returning CGFloat.min we get around this behavior and force UITableView to end up using a height of zero after all.
-			return tableView.style == .grouped ? CGFloat.leastNormalMagnitude : 0
-		}
-		return footer.height
+        return heightForFooterInSection(tableViewStyle: tableView.style, section: section)
 	}
-	
+    
+    private func heightForHeaderInSection(tableViewStyle: UITableViewStyle, section: Int) -> CGFloat {
+        guard let header = sections[section].header else {
+            // When given a height of zero grouped style UITableView's use their default value instead of zero. By returning CGFloat.min we get around this behavior and force UITableView to end up using a height of zero after all.
+            return tableViewStyle == .grouped ? CGFloat.leastNormalMagnitude : 0
+        }
+        return header.height
+    }
+    
+    private func heightForFooterInSection(tableViewStyle: UITableViewStyle, section: Int) -> CGFloat {
+        guard let footer = sections[section].footer else {
+            // When given a height of zero grouped style UITableView's use their default value instead of zero. By returning CGFloat.min we get around this behavior and force UITableView to end up using a height of zero after all.
+            return tableViewStyle == .grouped ? CGFloat.leastNormalMagnitude : 0
+        }
+        return footer.height
+    }
+    
 	public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
 		guard indexPath.section < sections.count else { return UITableViewAutomaticDimension }
 		if let indexKeyPath = sections[indexPath.section].sectionKeyPathForRow(indexPath.row), let height = heightAtIndexKeyPath[indexKeyPath] {
