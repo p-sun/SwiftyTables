@@ -11,9 +11,9 @@ I've added more examples and now allow creating new cells using Nibs -- simply c
 ### 🐛 Replication -- Setup
 1. Create a custom `CellConfigType` cell with a height that's not the default height of 44.
 2. Make an array of 30 `TableSection`s, where each `TableSection` contains this custom cell.
-3. In the cell's `selectionAction`, re-render the table.
+3. In the cell's `selectionAction`, re-render the table, making sure the cell's state change when it's re-rendered.
 
-This bug has been replicated in `TableSectionsViewController` in this repo.
+This bug has been replicated in `TableSectionsViewController` in this repo. Here, I'm adding a 🐒 emoji to the cell's titleLabel when the cell is tapped.
 
 ### 🐛 Replication -- Execution
 1. Scroll down the table.
