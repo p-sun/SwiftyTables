@@ -50,8 +50,7 @@ class TableSectionsViewController: UIViewController {
 				}),
 				state: ProgramicDetailState(title: title))
 			
-			let header = SimpleHeader("\(i) Simple header")
-			let section = TableSection(key: "section\(i)", rows: [cell], header: header)
+			let section = TableSection(key: "section\(i)", rows: [cell])
 			sections.append(section)
 		}
 
