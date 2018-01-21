@@ -83,10 +83,14 @@ public class FunctionalTableData: NSObject {
 
 	public var scrollViewDidScroll: ((_ scrollView: UIScrollView) -> Void)?
 	public var scrollViewWillBeginDragging: ((_ scrollView: UIScrollView) -> Void)?
+	public var scrollViewWillEndDragging: ((_ scrollView: UIScrollView, _ velocity: CGPoint, _ targetContentOffset: UnsafeMutablePointer<CGPoint>) -> Void)?
 	public var scrollViewDidEndDragging: ((_ scrollView: UIScrollView, _ decelerate: Bool) -> Void)?
+	public var scrollViewWillBeginDecelerating: ((_ scrollView: UIScrollView) -> Void)?
 	public var scrollViewDidEndDecelerating: ((_ scrollView: UIScrollView) -> Void)?
 	public var scrollViewDidChangeContentSize: ((_ scrollView: UIScrollView) -> Void)?
 	public var scrollViewDidEndScrollingAnimation: ((_ scrollView: UIScrollView) -> Void)?
+	public var scrollViewShouldScrollToTop: ((_ scrollView: UIScrollView) -> Bool)?
+	public var scrollViewDidScrollToTop: ((_ scrollView: UIScrollView) -> Void)?
 	
 	/// The type of animation when rows and sections are inserted or deleted.
 	public struct TableAnimations {
@@ -279,6 +283,8 @@ public class FunctionalTableData: NSObject {
 			
 			strongSelf.doRenderAndDiff(newSections, animated: animated, animations: animations, completion: completion)
 		}
+		//cancel waiting operations since only the last state needs to be rendered
+		renderAndDiffQueue.operations.lazy.filter { !$0.isExecuting }.forEach { $0.cancel() }
 		renderAndDiffQueue.addOperation(blockOperation)
 	}
 	
@@ -450,6 +456,16 @@ public class FunctionalTableData: NSObject {
 		aTableView.scrollToRow(at: indexPath, at: scrollPosition, animated: animated)
 	}
 	
+	/// - Parameter point: The point in the collection view’s bounds that you want to test.
+	/// - Returns: the keypath of the item at the specified point, or `nil` if no item was found at that point.
+	public func keyPath(at point: CGPoint) -> KeyPath? {
+		guard let indexPath = tableView?.indexPathForRow(at: point) else {
+			return nil
+		}
+		
+		return keyPathForIndexPath(indexPath: indexPath)
+	}
+	
 	public func indexPathFromKeyPath(_ keyPath: KeyPath) -> IndexPath? {
 		if let sectionIndex = sections.index(where: { $0.key == keyPath.sectionKey }), let rowIndex = sections[sectionIndex].rows.index(where: { $0.key == keyPath.rowKey }) {
 			return IndexPath(row: rowIndex, section: sectionIndex)
@@ -589,11 +605,11 @@ extension FunctionalTableData: UITableViewDelegate {
 		guard let footer = sections[section].footer else { return nil }
 		return footer.dequeueHeaderFooter(from: tableView)
 	}
-    
-    public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        let cellConfig = sections[indexPath]
-        return cellConfig?.actions.selectionAction != nil
-    }
+	
+	public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+		let cellConfig = sections[indexPath]
+		return cellConfig?.actions.selectionAction != nil
+	}
 	
 	public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 		if tableView.indexPathForSelectedRow == indexPath {
@@ -640,12 +656,12 @@ extension FunctionalTableData: UITableViewDelegate {
 		guard let cell = tableView.cellForRow(at: indexPath) else { return }
 		let cellConfig = sections[indexPath]
 
-        let selectionState = cellConfig?.actions.selectionAction?(cell) ?? .deselected
-        if selectionState == .deselected {
-            DispatchQueue.main.async {
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
-        }
+		let selectionState = cellConfig?.actions.selectionAction?(cell) ?? .deselected
+		if selectionState == .deselected {
+			DispatchQueue.main.async {
+				tableView.deselectRow(at: indexPath, animated: true)
+			}
+		}
 	}
 	
 	public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -737,15 +753,31 @@ extension FunctionalTableData: UITableViewDelegate {
 		scrollViewWillBeginDragging?(scrollView)
 	}
 
+	public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+		scrollViewWillEndDragging?(scrollView, velocity, targetContentOffset)
+	}
+	
 	public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 		scrollViewDidEndDragging?(scrollView, decelerate)
 	}
 
+	public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+		scrollViewWillBeginDecelerating?(scrollView)
+	}
+	
 	public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 		scrollViewDidEndDecelerating?(scrollView)
 	}
 	
 	public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
 		scrollViewDidEndScrollingAnimation?(scrollView)
+	}
+	
+	public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+		return scrollViewShouldScrollToTop?(scrollView) ?? true
+	}
+	
+	public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+		scrollViewDidScrollToTop?(scrollView)
 	}
 }

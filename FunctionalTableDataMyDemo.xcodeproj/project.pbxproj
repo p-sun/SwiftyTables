@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		9B1751422008F15F004B7101 /* SimpleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1751412008F15F004B7101 /* SimpleHeader.swift */; };
 		9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */; };
+		9B6E84DF201513EA0000BE3F /* ProgramicDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E84DE201513EA0000BE3F /* ProgramicDetailCell.swift */; };
 		9B831602200193440053BBA0 /* ColorTilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B831601200193440053BBA0 /* ColorTilesViewController.swift */; };
 		9B8316052001A2040053BBA0 /* CarouselDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */; };
 		9B83160B2003A0E40053BBA0 /* CarouselItemDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8316092003A0E40053BBA0 /* CarouselItemDetailCell.xib */; };
 		9B9F12D6200FF94C00549C6E /* VerticalGridCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F12D5200FF94C00549C6E /* VerticalGridCellViewController.swift */; };
+		9BF51C482014C2DC0053CFFE /* TableSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF51C472014C2DC0053CFFE /* TableSectionsViewController.swift */; };
 		C741E3CC1FE9CE7F006B693F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3CB1FE9CE7F006B693F /* DetailCell.swift */; };
 		C741E3CE1FE9D001006B693F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C741E3CD1FE9D001006B693F /* DetailView.xib */; };
 		C741E3D11FE9FB8B006B693F /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C741E3D01FE9FB8B006B693F /* NibView.swift */; };
@@ -58,10 +60,12 @@
 /* Begin PBXFileReference section */
 		9B1751412008F15F004B7101 /* SimpleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeader.swift; sourceTree = "<group>"; };
 		9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemCell.swift; sourceTree = "<group>"; };
+		9B6E84DE201513EA0000BE3F /* ProgramicDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramicDetailCell.swift; sourceTree = "<group>"; };
 		9B831601200193440053BBA0 /* ColorTilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTilesViewController.swift; sourceTree = "<group>"; };
 		9B8316042001A2040053BBA0 /* CarouselDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselDetailCell.swift; sourceTree = "<group>"; };
 		9B8316092003A0E40053BBA0 /* CarouselItemDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselItemDetailCell.xib; sourceTree = "<group>"; };
 		9B9F12D5200FF94C00549C6E /* VerticalGridCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGridCellViewController.swift; sourceTree = "<group>"; };
+		9BF51C472014C2DC0053CFFE /* TableSectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionsViewController.swift; sourceTree = "<group>"; };
 		C741E3CB1FE9CE7F006B693F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		C741E3CD1FE9D001006B693F /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		C741E3D01FE9FB8B006B693F /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				C7854FA61FD7945700710A79 /* LabelCell.swift */,
+				9B6E84DE201513EA0000BE3F /* ProgramicDetailCell.swift */,
 				C741E3CB1FE9CE7F006B693F /* DetailCell.swift */,
 				C741E3CD1FE9D001006B693F /* DetailView.xib */,
 			);
@@ -243,6 +248,7 @@
 				C7854FA41FD7930900710A79 /* CollectionViewController.swift */,
 				9B831601200193440053BBA0 /* ColorTilesViewController.swift */,
 				9B9F12D5200FF94C00549C6E /* VerticalGridCellViewController.swift */,
+				9BF51C472014C2DC0053CFFE /* TableSectionsViewController.swift */,
 				C7854FDE1FD79DB600710A79 /* FunctionalTableDataMyDemo-Swift.h */,
 				C7854F661FD7929300710A79 /* Main.storyboard */,
 				C7854F691FD7929300710A79 /* Assets.xcassets */,
@@ -363,6 +369,7 @@
 				C741E3FC1FEA171C006B693F /* TableSectionChangeSet.swift in Sources */,
 				9B831602200193440053BBA0 /* ColorTilesViewController.swift in Sources */,
 				9B1751422008F15F004B7101 /* SimpleHeader.swift in Sources */,
+				9B6E84DF201513EA0000BE3F /* ProgramicDetailCell.swift in Sources */,
 				9B8316052001A2040053BBA0 /* CarouselDetailCell.swift in Sources */,
 				C7592573200F260D003C4E66 /* CarouselVerticalGridCell.swift in Sources */,
 				C741E3F51FEA171C006B693F /* HostCell.swift in Sources */,
@@ -380,6 +387,7 @@
 				C78550171FD864F600710A79 /* TableViewController.swift in Sources */,
 				C741E4031FEA171C006B693F /* UIView+Extensions.swift in Sources */,
 				C741E4001FEA171C006B693F /* TableItemConfigType.swift in Sources */,
+				9BF51C482014C2DC0053CFFE /* TableSectionsViewController.swift in Sources */,
 				C741E40D1FEA2334006B693F /* UIColor+Helpers.swift in Sources */,
 				C741E3F21FEA171C006B693F /* CollectionItemConfigType.swift in Sources */,
 				C741E3CC1FE9CE7F006B693F /* DetailCell.swift in Sources */,

@@ -27,7 +27,7 @@ public extension UITableView {
 	final func registerReusableCell<T: UITableViewCell>(_ cellType: T.Type) {
 		register(cellType.self, forCellReuseIdentifier: T.reuseIdentifier)
 	}
-    
+	
 	final func dequeueReusableCell<T: UITableViewCell>(_ cellType: T.Type = T.self, indexPath: IndexPath?) -> T {
 		if let indexPath = indexPath {
 			guard let cell = self.dequeueReusableCell(withIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {

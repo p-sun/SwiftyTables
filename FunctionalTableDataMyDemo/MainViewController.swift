@@ -84,6 +84,16 @@ class MainViewController: UIViewController {
 			}),
 			state: LabelState(text: "Vertical CarouseCell Demo"))
 		rows.append(carouselVerticalGridDemo)
+
+		let tableSectionsDemo = LabelCell(
+			key: "tableSectionsDemo",
+			style: cellStyleWithDisclosure,
+			actions: CellActions(selectionAction: { _ in
+				self.show(TableSectionsViewController(), sender: self)
+				return .deselected
+			}),
+			state: LabelState(text: "Table Sections Demo"))
+		rows.append(tableSectionsDemo)
 		
 		let detailCell = DetailCell(
 			key: "detailCell",
@@ -99,22 +109,17 @@ class MainViewController: UIViewController {
                 subtitle: "This is the subs on a detail cell"))
         rows.append(detailCell)
 		
-        for i in 0...3 {
-            let cell = self.dogeCarousel(key: "dogeCell\(i)")
-            rows.append(cell)
-        }
+		let dogeItemState = CarouselItemDetailState(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
+		let dogeCarousel = CarouselDetailCell(
+			key: "dogeCarousel",
+			state: CarouselState<CarouselItemDetailCell>(
+				itemModels: Array(repeating: dogeItemState, count: 6),
+				collectionHeight: 220,
+				didSelectItemCell: { index in
+					print("Did select doge at index \(index)") }))
+		rows.append(dogeCarousel)
         
 		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)
-    }
-    
-    private func dogeCarousel(key: String) -> CellConfigType {
-        let itemState = CarouselItemDetailState(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
-        return CarouselDetailCell(
-            key: key,
-            state: CarouselState<CarouselItemDetailCell>(
-                itemModels: Array(repeating: itemState, count: 4),
-				collectionHeight: 220, didSelectItemCell: { _ in
-                    print("did select doge") }))
     }
 }
