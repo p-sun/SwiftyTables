@@ -1,5 +1,5 @@
 //
-//  SimpleHeader.swift
+//  SimpleHeaderView.swift
 //  FunctionalTableDataMyDemo
 //
 //  Created by Pei Sun on 2018-01-12.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SimpleHeader: UIView {
+class SimpleHeaderView: UIView {
 	var title: String? {
 		didSet {
 			titleLabel.text = title
@@ -36,7 +36,7 @@ struct SimpleHeaderState: TableHeaderFooterStateType {
 	let topSeparatorHidden: Bool = true
 	let bottomSeparatorHidden: Bool = true
 	var height: CGFloat {
-		return 70//insets.top + titleFont.font.lineHeight + insets.bottom
+		return 150//insets.top + titleFont.font.lineHeight + insets.bottom
 	}
 	
 	init(title: String = "") {
@@ -44,11 +44,11 @@ struct SimpleHeaderState: TableHeaderFooterStateType {
 	}
 }
 
-func SimpleHeaderConfig(_ title: String) -> TableHeaderFooterConfigType {
+func SimpleHeader(_ title: String) -> TableHeaderFooterConfigType {
 	
 	let state = SimpleHeaderState(title: title)
 	
-	return TableSectionHeaderFooter<SimpleHeader, LayoutMarginsTableItemLayout, SimpleHeaderState>(state: state, updater: { (header, state) in
+	return TableSectionHeaderFooter<SimpleHeaderView, LayoutMarginsTableItemLayout, SimpleHeaderState>(state: state, updater: { (header, state) in
 		header.view.title = state.title
 		header.contentView.layoutMargins = state.insets
 		header.topSeparator.isHidden = state.topSeparatorHidden

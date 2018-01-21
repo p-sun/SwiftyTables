@@ -47,7 +47,7 @@ class ProgramicDetailView: UIView {
 		titleLabel.constrainToFillView(self)
 		
 		backgroundColor = .green
-		heightAnchor.constraint(equalToConstant: 90).isActive = true
+		heightAnchor.constraint(equalToConstant: 200).isActive = true
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

@@ -12,7 +12,7 @@ class TableSectionsViewController: UIViewController {
 	
 	var tableView = UITableView(frame: CGRect.zero, style: .grouped)
 	
-	var displayMonkey = false
+	var displayMonkey = true
 	
 	// FTD 1/3 - Init FTD
 	let functionalData = FunctionalTableData()
@@ -31,16 +31,17 @@ class TableSectionsViewController: UIViewController {
 	}
 	
 	@objc func render() {
-		var sections = [TableSection]()
-		
-		var title = "Scroll down a page, tap a cell, then scroll up. The table will skip."
-		if displayMonkey {
-			title += "🐒"
-		}
 		displayMonkey = !displayMonkey
+
+		var sections = [TableSection]()
 		
 		for i in 0..<30 {
 
+			var title = "\(i) Scroll down a page, tap a cell, then scroll up. The table will skip."
+			if displayMonkey {
+				title += "🐒"
+			}
+			
 			let cell = ProgramicDetailCell(
 				key: "programicDetailCell",
 				actions: CellActions(selectionAction: { [weak self] _ in
@@ -49,9 +50,8 @@ class TableSectionsViewController: UIViewController {
 				}),
 				state: ProgramicDetailState(title: title))
 			
-			
-			let section = TableSection(key: "section\(i)", rows: [cell])
-			
+			let header = SimpleHeader("\(i) Simple header")
+			let section = TableSection(key: "section\(i)", rows: [cell], header: header)
 			sections.append(section)
 		}
 
