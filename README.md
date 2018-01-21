@@ -7,7 +7,7 @@ Forked off of [Shopify's FunctionalTableData](https://github.com/Shopify/Functio
 
 I've added more examples and now allow creating new cells using Nibs -- simply conform any `UIView` to `NibView`, and pass into a `HostCell`.
 
-## Table Scroll Skipping 🐛
+## TableView Jumps when it is scrolled 🐛
 ### 🐛 Replication -- Setup
 1. Create a custom `CellConfigType` cell with a height that's not the default height of 44.
 2. Make an array of 30 `TableSection`s, where each `TableSection` contains this custom cell.
@@ -18,7 +18,7 @@ This bug has been replicated in `TableSectionsViewController` in this repo.
 ### 🐛 Replication -- Execution
 1. Scroll down the table.
 2. Tap a cell to re-render the table.
-3. Scroll up. Then the table will skip.
+3. Scroll up. Then the table will jump.
 
 ![Header Height Bug][buggif]
 
