@@ -158,11 +158,29 @@ let detailCell = DetailCell(
 		subtitle: "This is the subs on a detail cell"))
 ```
 
+![LabelCell][detailCell]
+
+
 #### LabelCell
 A programically created `CellConfigType`.
 
+```swift
+let labelCell = LabelCell(
+	key: "labelCell",
+	actions: CellActions(selectionAction: { _ in
+		print("label cell tapped")
+		return .deselected
+	}),
+	state: LabelState(text: "This is a LabelCell"))
 
-[buggif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/Issue.gif ""
-[colorTilesGif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/ColorTilesCarouselCell.gif ""
-[dogegif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/DogeCell.gif ""
-[verticalCarousel]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/VerticalCarousel.png ""
+```
+
+![LabelCell][labelCell]
+
+
+[buggif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/Issue.gif
+[colorTilesGif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/ColorTilesCarouselCell.gif
+[dogegif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/DogeCell.gif
+[verticalCarousel]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/VerticalCarousel.png
+[labelCell]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/LabelCell.png
+[detailCell]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/DetailCell.png
