@@ -6,6 +6,7 @@
 //
 
 class TableViewController: UIViewController {
+	
     let functionalData = FunctionalTableData()
     var tableView = UITableView(frame: CGRect.zero, style: .grouped)
     

@@ -35,7 +35,17 @@ class MainViewController: UIViewController {
             highlight: true,
             selectionColor: .green,
             backgroundColor: .white)
-        
+		
+		let labelCell = LabelCell(
+			key: "labelCell",
+			style: cellStyle,
+			actions: CellActions(selectionAction: { _ in
+				print("label cell tapped")
+				return .deselected
+			}),
+			state: LabelState(text: "This is a LabelCell"))
+		rows.append(labelCell)
+		
         var cellStyleWithDisclosure = cellStyle
         cellStyleWithDisclosure.accessoryType = .disclosureIndicator
         
@@ -118,7 +128,17 @@ class MainViewController: UIViewController {
 				didSelectItemCell: { index in
 					print("Did select doge at index \(index)") }))
 		rows.append(dogeCarousel)
-        
+		
+		let colorTilesCell = CarouselColorTilesCell(
+			key: "colorTilesCell",
+			state: CarouselState<CarouselItemColorTilesCell>(
+				itemModels: [.red, .blue, .purple, .yellow, .green, .orange],
+				collectionHeight: 120,
+				didSelectItemCell: { indexPath in
+					print("Did tap item \(indexPath.row)")})
+		)
+		rows.append(colorTilesCell)
+		
 		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)
     }

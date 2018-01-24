@@ -42,7 +42,7 @@ class ColorTilesViewController: UIViewController {
 
 	func render() {
 		var rows = [CellConfigType]()
-
+		
 		for (rowIndex, colors) in randomColors.enumerated() {
 			let cell = CarouselColorTilesCell(
 				key: "colorCell\(rowIndex)",
