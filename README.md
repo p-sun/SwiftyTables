@@ -22,8 +22,6 @@ This bug has been replicated in `TableSectionsViewController` in this repo. Here
 
 ![Header Height Bug][buggif]
 
-[buggif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/Issue.gif ""
-
 ### Solution
 The tableView jumps because `estimatedHeightForHeaderInSection` and `estimatedHeightForFooterInSection` have not been implemented in `FunctionalTableData`.
 This implementation fixes the issue.
@@ -69,3 +67,38 @@ private var minimumHeaderHeight: CGFloat {
 	}
 }
 ```
+
+## Features of this Demo 🌟 
+### MainViewController
+FunctionalTableData demo with multiple types of cells.
+
+### TableViewController
+FunctionalTableData demo where cells can be inserted and removed when you tap ➕ or 🗑.
+
+### CollectionViewController
+CollectionTableData demo where cells can be inserted and removed when you tap ➕ or 🗑.
+
+### CarouselCell<CustomItemCell>
+A generic FunctionalTableData cell with a horizontal scrolling, or vertical non-scrolling `UICollectionView`.
+Each CustomItemCell conforms to `CarouselItemCell`.
+
+```swift
+protocol CarouselItemCell where Self: UICollectionViewCell {
+	associatedtype ItemModel: Equatable
+	static func sizeForItem(model: ItemModel, in collectionView: UICollectionView) -> CGSize
+    static func scrollDirection() -> UICollectionViewScrollDirection
+	func configure(model: ItemModel)    
+}
+```
+
+##### CarouselCell - CarouselCell<CarouselItemColorTilesCell>
+
+![Color Tiles CarouselCell][colorTilesGif]
+
+
+I've added more examples and now allow creating new cells using Nibs -- simply conform any `UIView` to `NibView`, and pass into a `HostCell`.
+
+
+
+[buggif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/Issue.gif ""
+[colorTilesGif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/ColorTilesCarouselCell.gif ""
