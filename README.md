@@ -78,27 +78,91 @@ FunctionalTableData demo where cells can be inserted and removed when you tap �
 ### CollectionViewController
 CollectionTableData demo where cells can be inserted and removed when you tap ➕ or 🗑.
 
-### CarouselCell<CustomItemCell>
+### CarouselCell\<CustomItemCell\>
 A generic FunctionalTableData cell with a horizontal scrolling, or vertical non-scrolling `UICollectionView`.
-Each CustomItemCell conforms to `CarouselItemCell`.
+Each `CarouselCell` takes a single `CarouselItemCell` type.
+Each `CarouselItemCell` is a `UICollectionViewCell`, and is associated with a `ItemModel` type that it uses to calculate its size, and configure its views.
+
 
 ```swift
 protocol CarouselItemCell where Self: UICollectionViewCell {
-	associatedtype ItemModel: Equatable
+	associatedtype ItemModel: Equatable'
+	
 	static func sizeForItem(model: ItemModel, in collectionView: UICollectionView) -> CGSize
-    static func scrollDirection() -> UICollectionViewScrollDirection
-	func configure(model: ItemModel)    
+	func configure(model: ItemModel)
+	
+	static func scrollDirection() -> UICollectionViewScrollDirection
 }
 ```
 
-##### CarouselCell - CarouselCell<CarouselItemColorTilesCell>
+##### CarouselCell - CarouselCell\<CarouselItemColorTilesCell\>
+A programically created scrolling horizontal CarouselCell.
+The `ItemModel` is a `UIColor`, which sets the `CarouselItemColorTilesCell`'s color.
+
+```swift
+let cell = CarouselColorTilesCell(
+	key: "colorTilesCell",
+	state: CarouselState<CarouselItemColorTilesCell>(
+		itemModels: [.red, .blue, .purple, .yellow, .green, .orange],
+		collectionHeight: 120,
+		didSelectItemCell: { indexPath in
+			print("Did tap item \(indexPath.row)")})
+)
+```
 
 ![Color Tiles CarouselCell][colorTilesGif]
 
+##### CarouselCell - CarouselCell\<CarouselItemVerticalGridCell\>
+A programically created non-scrolling vertical CarouselCell.
 
-I've added more examples and now allow creating new cells using Nibs -- simply conform any `UIView` to `NibView`, and pass into a `HostCell`.
+```swift
+let fourGridCell = resizableCell(key: "fourGridCell", color: .purple, height: 100, itemsPerRow: [1, 3])
+rows.append(fourGridCell)
 
+let fiveGridCell = resizableCell(key: "fiveGridCell", color: .green, height: 100, itemsPerRow: [2, 3])
+rows.append(fiveGridCell)
+
+let tenGridCell = resizableCell(key: "tenGridCell", color: .blue, height: 100, itemsPerRow: [4, 3, 2, 1])
+rows.append(tenGridCell)
+
+```
+
+![Vertical Grid Cell][verticalCarousel]
+
+
+##### CarouselCell - CarouselCell\<CarouselItemDetailCell\>
+A scrolling horizontal CarouselCell created using a storyboard.
+
+```swift
+let dogeItemState = CarouselItemDetailState(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
+let dogeCarousel = CarouselDetailCell(
+	key: "dogeCarousel",
+	state: CarouselState<CarouselItemDetailCell>(
+		itemModels: Array(repeating: dogeItemState, count: 20),
+		collectionHeight: 220,
+		didSelectItemCell: { index in
+			print("Did select doge at index \(index)") }))
+```
+
+![CarouselDetailCell][dogegif]
+
+#### DetailCell
+A `CellConfigType` created with storyboard.
+
+```swift
+let detailCell = DetailCell(
+	key: "detailCell",
+	state: DetailState(
+		image: #imageLiteral(resourceName: "finedog"),
+		title: "Sample Title",
+		subtitle: "This is the subs on a detail cell"))
+```
+
+#### LabelCell
+A programically created `CellConfigType`.
 
 
 [buggif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/Issue.gif ""
 [colorTilesGif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/ColorTilesCarouselCell.gif ""
+[dogegif]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/DogeCell.gif ""
+[verticalCarousel]: https://github.com/p-sun/Swift-Declarative-Tables/blob/table_skipping_issue/Images/VerticalCarousel.png ""
