@@ -131,6 +131,19 @@
 			path = HeaderCells;
 			sourceTree = "<group>";
 		};
+		9B6E84E0201964920000BE3F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7854F641FD7929300710A79 /* MainViewController.swift */,
+				C78550161FD864F600710A79 /* TableViewController.swift */,
+				C7854FA41FD7930900710A79 /* CollectionViewController.swift */,
+				9B831601200193440053BBA0 /* ColorTilesViewController.swift */,
+				9B9F12D5200FF94C00549C6E /* VerticalGridCellViewController.swift */,
+				9BF51C472014C2DC0053CFFE /* TableSectionsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		9B83160320019A210053BBA0 /* Carousel Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,13 +255,8 @@
 			children = (
 				9B9F12D72010DA0000549C6E /* SwiftDeclarativeTables */,
 				C78550141FD8640B00710A79 /* Helpers */,
+				9B6E84E0201964920000BE3F /* ViewControllers */,
 				C7854F621FD7929300710A79 /* AppDelegate.swift */,
-				C7854F641FD7929300710A79 /* MainViewController.swift */,
-				C78550161FD864F600710A79 /* TableViewController.swift */,
-				C7854FA41FD7930900710A79 /* CollectionViewController.swift */,
-				9B831601200193440053BBA0 /* ColorTilesViewController.swift */,
-				9B9F12D5200FF94C00549C6E /* VerticalGridCellViewController.swift */,
-				9BF51C472014C2DC0053CFFE /* TableSectionsViewController.swift */,
 				C7854FDE1FD79DB600710A79 /* FunctionalTableDataMyDemo-Swift.h */,
 				C7854F661FD7929300710A79 /* Main.storyboard */,
 				C7854F691FD7929300710A79 /* Assets.xcassets */,

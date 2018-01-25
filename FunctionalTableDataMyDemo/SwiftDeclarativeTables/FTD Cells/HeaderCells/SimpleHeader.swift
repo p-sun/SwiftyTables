@@ -36,7 +36,7 @@ struct SimpleHeaderState: TableHeaderFooterStateType {
 	let topSeparatorHidden: Bool = true
 	let bottomSeparatorHidden: Bool = true
 	var height: CGFloat {
-		return 150//insets.top + titleFont.font.lineHeight + insets.bottom
+		return 150
 	}
 	
 	init(title: String = "") {
