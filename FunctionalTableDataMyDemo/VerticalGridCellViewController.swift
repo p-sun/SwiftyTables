@@ -35,8 +35,8 @@ class VerticalGridCellViewController: UIViewController {
 		let sixGridCell = resizableCell(key: "sixGridCell", color: .orange, height: 100, itemsPerRow: [3, 3])
 		rows.append(sixGridCell)
 
-		let nineGridCell = resizableCell(key: "nineGridCell", color: .blue, height: 100, itemsPerRow: [3, 3, 3])
-		rows.append(nineGridCell)
+		let tenGridCell = resizableCell(key: "tenGridCell", color: .blue, height: 100, itemsPerRow: [4, 3, 2, 1])
+		rows.append(tenGridCell)
 		
 		let sections = [TableSection(key: "section", rows: rows)]
 		functionalData.renderAndDiff(sections)

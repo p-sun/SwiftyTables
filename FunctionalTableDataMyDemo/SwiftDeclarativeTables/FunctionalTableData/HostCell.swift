@@ -29,14 +29,14 @@ public struct HostCell<View, State, Layout>: CellConfigType where View: UIView, 
 		self.state = state
 		self.cellUpdater = cellUpdater
 	}
-    
+	
 	// MARK: - TableItemConfigType
 	
 	/// Registers the instance of this HostCell for use in creating new table cells.
 	///
 	/// - Parameter tableView: the `UITableView` to register the cell with.
 	public func register(with tableView: UITableView) {
-            tableView.registerReusableCell(TableCell<View, Layout>.self)
+		tableView.registerReusableCell(TableCell<View, Layout>.self)
 	}
 	
 	/// Registers the instance of this HostCell for use in creating new table cells.

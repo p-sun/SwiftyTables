@@ -18,22 +18,6 @@ class CarouselItemVerticalGridCell: UICollectionViewCell, CarouselItemCell {
 	
 	var size = CGSize.zero
 	
-	struct GradientColors {
-		private static let bottomColor = #colorLiteral(red: 0.003921568627, green: 0.5725490196, blue: 0.8588235294, alpha: 1)
-		private static let topColors = [#colorLiteral(red: 0.4, green: 0.3490196078, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.4, green: 0.007843137255, blue: 0.3490196078, alpha: 1), #colorLiteral(red: 0.4, green: 0.007843137255, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.05490196078, green: 0.4, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.5882352941, green: 0.3607843137, blue: 0, alpha: 1), #colorLiteral(red: 0.007843137255, green: 0.07058823529, blue: 0.4, alpha: 1)]
-		
-		static func getBottomColor() -> UIColor {
-			return bottomColor.withAlphaComponent(0.5)
-		}
-		
-		static func getTopColor(index: Int) -> UIColor {
-			guard index < topColors.count else {
-				return .clear
-			}
-			return topColors[index].withAlphaComponent(0.5)
-		}
-	}
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -62,9 +46,7 @@ class CarouselItemVerticalGridCell: UICollectionViewCell, CarouselItemCell {
 	
     func configure(model: ItemModel) {
 		self.colorView.backgroundColor = model.color.withAlphaComponent(0.6)
-		let topColor = GradientColors.getTopColor(index: self.tag)
-		self.colorView.addDiagonalShading(size: self.bounds, bottomLeftColor: GradientColors.getBottomColor(), topRightColor:
-			topColor)
+		self.colorView.addDiagonalShading(size: self.bounds, index: self.tag)
     }
 }
 
@@ -91,7 +73,26 @@ extension CarouselItemVerticalGridState: Equatable {
 }
 
 private extension UIView {
-	func addDiagonalShading(size: CGRect, bottomLeftColor: UIColor, topRightColor: UIColor) {
+	func addDiagonalShading(size: CGRect, index: Int) {
+		struct GradientColors {
+			private static let topColors = [#colorLiteral(red: 0.4, green: 0.3490196078, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.4, green: 0.007843137255, blue: 0.3490196078, alpha: 1), #colorLiteral(red: 0.4, green: 0.007843137255, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.05490196078, green: 0.4, blue: 0.007843137255, alpha: 1), #colorLiteral(red: 0.5882352941, green: 0.3607843137, blue: 0, alpha: 1), #colorLiteral(red: 0.007843137255, green: 0.07058823529, blue: 0.4, alpha: 1), #colorLiteral(red: 0.4, green: 0, blue: 0.3504559801, alpha: 1), #colorLiteral(red: 0.4, green: 0.2038615125, blue: 0, alpha: 1), #colorLiteral(red: 0.2074886848, green: 0, blue: 0.4, alpha: 1), #colorLiteral(red: 0, green: 0.4, blue: 0.1079017388, alpha: 1), #colorLiteral(red: 0.4, green: 0.3878170228, blue: 0, alpha: 1), #colorLiteral(red: 0.4, green: 0, blue: 0.1252574799, alpha: 1)]
+			private static let bottomColor = #colorLiteral(red: 0.003921568627, green: 0.5725490196, blue: 0.8588235294, alpha: 1)
+			
+			static func getTopColor(index: Int) -> UIColor {
+				guard index < topColors.count else {
+					return .clear
+				}
+				return topColors[index].withAlphaComponent(0.5)
+			}
+			
+			static func getBottomColor() -> UIColor {
+				return bottomColor.withAlphaComponent(0.5)
+			}
+		}
+		
+		let topRightColor = GradientColors.getTopColor(index: index)
+		let bottomLeftColor = GradientColors.getBottomColor()
+		
 		let gradient = CAGradientLayer()
 		gradient.frame = size
 		gradient.startPoint = CGPoint(x: 0, y: 1)
