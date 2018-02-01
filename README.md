@@ -10,62 +10,6 @@ I've added the following,
 🌟 Sample cells and view controllers demonstrating how to use FunctionalTableData.
 🌟 Custom cells, headers, and `CarouselItemCells` created can be created programically or with nibs. Simply conform the UIVIew/UICollectionViewCell to the protocol `NibView`/`CarouselItemNibView`.
 
-## TableView Jumps when it is scrolled 🐛
-### How to Replicate 🐛 
-1. Comment out 'estimatedHeightForHeaderInSection' and `estimatedHeightForFooterInSection` in `FunctionalTableData`.
-2. Open the app, tap `Table Sections Demo`.
-3. Scroll down the table.
-4. Tap a cell to re-render the table.
-5. Scroll up. The table will jump when a new TableSection is displayed.
-
-![Header Height Bug][buggif]
-
-### Solution
-The tableView jumps because `estimatedHeightForHeaderInSection` and `estimatedHeightForFooterInSection` have not been implemented in `FunctionalTableData`.
-This implementation fixes the issue.
-
-```swift
-public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-    return heightForHeaderInSection(tableViewStyle: tableView.style, section: section)
-}
-
-public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-    return heightForFooterInSection(tableViewStyle: tableView.style, section: section)
-}
-
-public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return heightForHeaderInSection(tableViewStyle: tableView.style, section: section)
-}
-
-public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    return heightForFooterInSection(tableViewStyle: tableView.style, section: section)
-}
-
-private func heightForHeaderInSection(tableViewStyle: UITableViewStyle, section: Int) -> CGFloat {
-    guard let header = sections[section].header else {
-        // When given a height of zero grouped style UITableView's use their default value instead of zero. By returning CGFloat.min we get around this behavior and force UITableView to end up using a height of zero after all.
-        return tableViewStyle == .grouped ? minimumHeaderHeight : 0
-    }
-    return header.height
-}
-
-private func heightForFooterInSection(tableViewStyle: UITableViewStyle, section: Int) -> CGFloat {
-    guard let footer = sections[section].footer else {
-        // When given a height of zero grouped style UITableView's use their default value instead of zero. By returning CGFloat.min we get around this behavior and force UITableView to end up using a height of zero after all.
-        return tableViewStyle == .grouped ? minimumHeaderHeight : 0
-    }
-    return footer.height
-}
-
-private var minimumHeaderHeight: CGFloat {
-    if #available(iOS 11.0, *) {
-        return CGFloat.leastNormalMagnitude
-    } else {
-        return 2.0
-    }
-}
-```
-
 ## 🌟 This Demo 🌟 
 
 ### MainViewController

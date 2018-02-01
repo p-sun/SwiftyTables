@@ -94,16 +94,6 @@ class MainViewController: UIViewController {
 			}),
 			state: LabelState(text: "Vertical CarouseCell Demo"))
 		rows.append(carouselVerticalGridDemo)
-
-		let tableSectionsDemo = LabelCell(
-			key: "tableSectionsDemo",
-			style: cellStyleWithDisclosure,
-			actions: CellActions(selectionAction: { _ in
-				self.show(TableSectionsViewController(), sender: self)
-				return .deselected
-			}),
-			state: LabelState(text: "Table Sections Demo"))
-		rows.append(tableSectionsDemo)
 		
 		let detailCell = DetailCell(
 			key: "detailCell",

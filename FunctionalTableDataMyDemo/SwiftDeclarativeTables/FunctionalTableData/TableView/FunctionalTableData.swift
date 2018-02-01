@@ -571,13 +571,13 @@ extension FunctionalTableData: UITableViewDataSource {
 }
 
 extension FunctionalTableData: UITableViewDelegate {
-//    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-//        return heightForHeaderInSection(tableViewStyle: tableView.style, section: section)
-//    }
-//
-//    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-//        return heightForFooterInSection(tableViewStyle: tableView.style, section: section)
-//    }
+    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return heightForHeaderInSection(tableViewStyle: tableView.style, section: section)
+    }
+
+    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return heightForFooterInSection(tableViewStyle: tableView.style, section: section)
+    }
 	
 	public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heightForHeaderInSection(tableViewStyle: tableView.style, section: section)
