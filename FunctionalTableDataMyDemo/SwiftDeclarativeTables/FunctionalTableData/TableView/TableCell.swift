@@ -12,12 +12,12 @@ public class TableCell<ViewType: UIView, Layout: TableItemLayout>: UITableViewCe
 	public let view: ViewType
 	public var prepare: ((_ view: ViewType) -> Void)?
 	public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instanceFromNib() as? ViewType {
-            view = instance
+        if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instanceFromNib() {
+            view = instance as! ViewType
         } else {
             view = ViewType()
         }
-            
+        
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 
 		contentView.addSubviewsForAutolayout(view)

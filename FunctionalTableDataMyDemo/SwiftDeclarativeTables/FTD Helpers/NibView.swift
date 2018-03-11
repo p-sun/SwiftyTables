@@ -10,18 +10,8 @@ import Foundation
 protocol NibView: class {}
 
 extension NibView {
-    static func instanceFromNib() -> UIView? {
+    static func instanceFromNib() -> Self? {
         let nibName = String(describing: self)
-        return Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView
+        return Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?.first as? Self
     }
 }
-
-/*
- To allow initializing from nib, add this to TableCell and CollectionCell in FunctionalTableData
- 
- if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instanceFromNib() as? ViewType {
-    view = instance
- } else {
-    view = ViewType()
- }
- **/

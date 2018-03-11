@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85FD4EB72055E53C0059ED68 /* HowToUpdateFTD.md in Resources */ = {isa = PBXBuildFile; fileRef = 85FD4EB62055E53C0059ED68 /* HowToUpdateFTD.md */; };
 		9B1751422008F15F004B7101 /* SimpleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1751412008F15F004B7101 /* SimpleHeader.swift */; };
 		9B4DC4EE2005709900894FCA /* CarouselItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */; };
 		9B6E84DF201513EA0000BE3F /* ProgramicDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E84DE201513EA0000BE3F /* ProgramicDetailCell.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85FD4EB62055E53C0059ED68 /* HowToUpdateFTD.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = HowToUpdateFTD.md; sourceTree = "<group>"; };
 		9B1751412008F15F004B7101 /* SimpleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeader.swift; sourceTree = "<group>"; };
 		9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemCell.swift; sourceTree = "<group>"; };
 		9B6E84DE201513EA0000BE3F /* ProgramicDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramicDetailCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85FD4EB82055EFFD0059ED68 /* CarouselCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7592574200F2F3B003C4E66 /* CarouselState.swift */,
+				C7C1C0D5200EFDC300C8CA25 /* CarouselCell.swift */,
+				9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */,
+			);
+			path = CarouselCell;
+			sourceTree = "<group>";
+		};
 		9B1751402008F141004B7101 /* HeaderCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,11 +188,10 @@
 		C741E3CF1FE9FB6F006B693F /* FTD Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				85FD4EB82055EFFD0059ED68 /* CarouselCell */,
 				C741E3D01FE9FB8B006B693F /* NibView.swift */,
 				C741E4041FEA1B67006B693F /* HostCell+StateType.swift */,
-				C7592574200F2F3B003C4E66 /* CarouselState.swift */,
-				C7C1C0D5200EFDC300C8CA25 /* CarouselCell.swift */,
-				9B4DC4ED2005709900894FCA /* CarouselItemCell.swift */,
+				85FD4EB62055E53C0059ED68 /* HowToUpdateFTD.md */,
 			);
 			path = "FTD Helpers";
 			sourceTree = "<group>";
@@ -343,6 +354,7 @@
 			files = (
 				C7854F6D1FD7929300710A79 /* LaunchScreen.storyboard in Resources */,
 				9B83160B2003A0E40053BBA0 /* CarouselItemDetailCell.xib in Resources */,
+				85FD4EB72055E53C0059ED68 /* HowToUpdateFTD.md in Resources */,
 				C7854F6A1FD7929300710A79 /* Assets.xcassets in Resources */,
 				C7854F681FD7929300710A79 /* Main.storyboard in Resources */,
 				C741E3F61FEA171C006B693F /* Info.plist in Resources */,
