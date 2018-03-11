@@ -13,8 +13,8 @@ public class CollectionCell<ViewType: UIView, Layout: TableItemLayout>: UICollec
 	public var prepare: ((_ view: ViewType) -> Void)?
 	
 	public override init(frame: CGRect) {
-        if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instanceFromNib() as? ViewType {
-            view = instance
+        if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instanceFromNib() {
+            view = instance as! ViewType
         } else {
             view = ViewType()
         }

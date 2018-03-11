@@ -4,7 +4,7 @@
 1. Copy the FunctionalTableData folder from the original to this demo
     *(Original FTD Repository)[https://github.com/Shopify/FunctionalTableData]
 
-2. For `NibView.swift`. To allow initializing from nib, add this to TableCell and CollectionCell in FunctionalTableData.
+2. For `NibView.swift`. To allow initializing from nib, replace all instances of `view = ViewType()` with the following. i.e. in `TableCell` ,  `CollectionCell`, and `TableHeaderFooter` in FunctionalTableData.
 ```swift
 if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instanceFromNib() {
     view = instance as! ViewType
@@ -12,3 +12,4 @@ if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instance
     view = ViewType()
 }
 ```
+3. Reset FunctionalTableData to implement the `estimatedHeightForHeaderInSection` and `estimatedHeightForFooterInSection` methods.

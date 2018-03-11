@@ -17,8 +17,7 @@ public class TableCell<ViewType: UIView, Layout: TableItemLayout>: UITableViewCe
         } else {
             view = ViewType()
         }
-        
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
 		contentView.addSubviewsForAutolayout(view)
 		Layout.layoutView(view, inContentView: contentView)
@@ -68,8 +67,12 @@ public class TableHeaderFooter<ViewType: UIView, Layout: TableItemLayout>: UITab
 	public let bottomSeparator = Separator(style: Separator.Style.full)
 	
 	public override init(reuseIdentifier: String?) {
-		view = ViewType()
-		super.init(reuseIdentifier: reuseIdentifier)
+        if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instanceFromNib() {
+            view = instance as! ViewType
+        } else {
+            view = ViewType()
+        }
+        super.init(reuseIdentifier: reuseIdentifier)
 		
 		contentView.backgroundColor = UIColor.white
 		contentView.layoutMargins = view.layoutMargins
