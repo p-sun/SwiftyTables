@@ -33,33 +33,58 @@ class MainViewController: UIViewController {
             bottomSeparator: Separator.Style.inset,
             separatorColor: .lightGray,
             highlight: true,
-            selectionColor: .green,
             backgroundColor: .white)
-
-        let labelCell = LabelCell(
-            key: "labelCell",
-            style: cellStyle,
-            actions: CellActions(selectionAction: { _ in
-                print("label cell tapped")
-                return .deselected
-            }),
-            state: LabelState(text: "This is a LabelCell"))
-        rows.append(labelCell)
 
         var cellStyleWithDisclosure = cellStyle
         cellStyleWithDisclosure.accessoryType = .disclosureIndicator
 
-        let tableDemo = LabelCell(
+        let staticTableDemo = SampleLabelCell(
+            key: "staticTableDemo",
+            style: cellStyleWithDisclosure,
+            actions: CellActions(selectionAction: { _ in
+                let vc = SimplestStaticTableViewController()
+                vc.navigationItem.title = "🔮 1. Build a simple table"
+                self.show(vc, sender: self)
+                return .deselected
+            }),
+            state: SampleLabelState(text: "🔮 1. Build a simple table"))
+        rows.append(staticTableDemo)
+        
+        let dynamicTableDemo = SampleLabelCell(
+            key: "dynamicTableDemo",
+            style: cellStyleWithDisclosure,
+            actions: CellActions(selectionAction: { _ in
+                let vc = SimplestDynamicTableViewController()
+                vc.navigationItem.title = "🍏 2. Build a table from a dataset"
+                self.show(vc, sender: self)
+                return .deselected
+            }),
+            state: SampleLabelState(text: "🍏 2. Build a table from a dataset"))
+        rows.append(dynamicTableDemo)
+        
+        let styleDemo = SampleLabelCell(
+            key: "styleDemo",
+            style: cellStyleWithDisclosure,
+            actions: CellActions(selectionAction: { _ in
+                let vc = CellStyleViewController()
+                vc.navigationItem.title = "🌼 3. Add flair with CellStyle"
+                self.show(vc, sender: self)
+                return .deselected
+            }),
+            state: SampleLabelState(text: "🌼 3. Add flair with CellStyle"))
+        rows.append(styleDemo)
+        
+        let tableDemo = SampleLabelCell(
             key: "tableDemo",
             style: cellStyleWithDisclosure,
             actions: CellActions(selectionAction: { _ in
                 self.show(TableViewController(), sender: self)
                 return .deselected
             }),
-            state: LabelState(text: "UITableView Demo"))
+            state: SampleLabelState(text: "UITableView Demo"))
         rows.append(tableDemo)
 
-        let collectionDemo = LabelCell(
+        let collectionDemo = SampleLabelCell(
             key: "collectionDemo",
             style: cellStyleWithDisclosure,
             actions: CellActions(selectionAction: { _ in
@@ -72,30 +97,48 @@ class MainViewController: UIViewController {
                 self.show(CollectionViewController(collectionViewLayout: layout), sender: self)
                 return .deselected
             }),
-            state: LabelState(text: "UICollectionView Demo"))
+            state: SampleLabelState(text: "UICollectionView Demo"))
         rows.append(collectionDemo)
 
-        let colorTilesDemo = LabelCell(
+        let colorTilesDemo = SampleLabelCell(
             key: "colorTilesDemo",
             style: cellStyleWithDisclosure,
             actions: CellActions(selectionAction: { _ in
                 self.show(ColorTilesViewController(), sender: self)
                 return .deselected
             }),
-            state: LabelState(text: "Horizontal CarouselCell Demo"))
+            state: SampleLabelState(text: "Horizontal CarouselCell Demo"))
         rows.append(colorTilesDemo)
 
-        let carouselVerticalGridDemo = LabelCell(
+        let carouselVerticalGridDemo = SampleLabelCell(
             key: "carouselVerticalGridDemo",
             style: cellStyleWithDisclosure,
             actions: CellActions(selectionAction: { _ in
                 self.show(VerticalGridCellViewController(), sender: self)
                 return .deselected
             }),
-            state: LabelState(text: "Vertical CarouseCell Demo"))
+            state: SampleLabelState(text: "Vertical CarouseCell Demo"))
         rows.append(carouselVerticalGridDemo)
 
-		let detailCell = DetailCell(
+        let labelCell = SampleLabelCell(
+            key: "labelCell",
+            style: cellStyle,
+            actions: CellActions(selectionAction: { _ in
+                print("label cell tapped")
+                return .deselected
+            }),
+            state: SampleLabelState(text: "LabelCell"))
+        rows.append(labelCell)
+        
+//        let buttonCell = ButtonCell(
+//            key: "buttonCell",
+//            state: ButtonState(title: "",
+//                               action: {
+//                print("button switched")
+//            }))
+//        rows.append(buttonCell)
+
+		let detailCell = SampleNibCell(
 			key: "detailCell",
 			style: cellStyle,
 			actions: CellActions(
@@ -103,12 +146,26 @@ class MainViewController: UIViewController {
 					print("Detail Cell Selected")
 					return .deselected }
 			),
-			state: DetailState(
+			state: SampleNibState(
 				image: #imageLiteral(resourceName: "finedog"),
-				title: "Sample Title",
-                subtitle: "This is the subs on a detail cell"))
+				title: "Cell created from nib",
+                subtitle: "subtitles"))
         rows.append(detailCell)
-		
+
+        let defaultDetailCell = DefaultDetailCell(
+            key: "defaultDetailCell",
+            style: cellStyle,
+            actions: CellActions(
+                selectionAction: { _ in
+                    print("Detail Cell Selected")
+                    return .deselected }
+            ),
+            state: DefaultDetailState(
+                image: #imageLiteral(resourceName: "finedog"),
+                title: "DetailCell -- created Programically",
+                subtitle: "subtitle"))
+        rows.append(defaultDetailCell)
+
         let dogeItemState = CarouselItemDetailState(image: #imageLiteral(resourceName: "finedog"), title: "Doge", subtitle: "This is fine")
         let dogeCarousel = CarouselDetailCell(
             key: "dogeCarousel",

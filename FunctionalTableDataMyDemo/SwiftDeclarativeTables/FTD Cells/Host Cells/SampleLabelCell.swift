@@ -1,9 +1,9 @@
 import UIKit
 
-typealias LabelCell = HostCell<UILabel, LabelState, LayoutMarginsTableItemLayout>
+typealias SampleLabelCell = HostCell<UILabel, SampleLabelState, LayoutMarginsTableItemLayout>
 
 /// A very simple state for a `UILabel` allowing a quick configuration of its text, font, and color values.
-struct LabelState {
+struct SampleLabelState {
 	let text: String
 	let font: UIFont
 	let color: UIColor
@@ -15,7 +15,7 @@ struct LabelState {
 	}
 }
 
-extension LabelState: StateType {
+extension SampleLabelState: StateType {
     typealias View = UILabel
 
     /// Update the view with the contents of the state.
@@ -23,10 +23,10 @@ extension LabelState: StateType {
     /// - Parameters:
     ///   - view: `UIView` that responds to this state.
     ///   - state: data to update the view with. If `nil` the view is being reused by the tableview.
-    static func updateView(_ view: UILabel, state: LabelState?) {
+    static func updateView(_ view: UILabel, state: SampleLabelState?) {
         guard let state = state else {
             view.text = nil
-            view.font = UIFont.systemFont(ofSize: 17)
+            view.font = UIFont.systemFont(ofSize: 15)
             view.textColor = .black
             return
         }
@@ -34,11 +34,12 @@ extension LabelState: StateType {
         view.text = state.text
         view.font = state.font
         view.textColor = state.color
+        view.numberOfLines = 0
     }
 }
 
-extension LabelState: Equatable {
-	static func ==(lhs: LabelState, rhs: LabelState) -> Bool {
+extension SampleLabelState: Equatable {
+	static func ==(lhs: SampleLabelState, rhs: SampleLabelState) -> Bool {
 		return lhs.text == rhs.text && lhs.font == rhs.font && lhs.color == rhs.color
 	}
 }

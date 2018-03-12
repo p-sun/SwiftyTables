@@ -13,3 +13,13 @@ if let nibView = ViewType.self as? NibView.Type, let instance = nibView.instance
 }
 ```
 3. Reset FunctionalTableData to implement the `estimatedHeightForHeaderInSection` and `estimatedHeightForFooterInSection` methods.
+
+4. Add this to 
+```swift
+if cornerRadius > 0 {
+    cell.layer.cornerRadius = cornerRadius
+    cell.layer.masksToBounds = true
+} else {
+    cell.layer.masksToBounds = false
+}
+```

@@ -7,20 +7,20 @@
 
 import Foundation
 
-typealias DetailCell = HostCell<DetailView, DetailState, LayoutMarginsTableItemLayout>
+typealias SampleNibCell = HostCell<SampleNibView, SampleNibState, LayoutMarginsTableItemLayout>
 
-class DetailView: UIView, NibView {
+class SampleNibView: UIView, NibView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.backgroundColor = .blue
+        // Can setup the views here
     }
 }
 
-struct DetailState {
+struct SampleNibState {
     let image: UIImage?
     let title: String
     let subtitle: String
@@ -32,10 +32,10 @@ struct DetailState {
     }
 }
 
-extension DetailState: StateType {
-    typealias View = DetailView
+extension SampleNibState: StateType {
+    typealias View = SampleNibView
 
-    static func updateView(_ view: DetailView, state: DetailState?) {
+    static func updateView(_ view: SampleNibView, state: SampleNibState?) {
         guard let state = state else {
             view.imageView.image = nil
             view.titleLabel.text = nil
@@ -49,8 +49,8 @@ extension DetailState: StateType {
     }
 }
 
-extension DetailState: Equatable {
-    static func ==(lhs: DetailState, rhs: DetailState) -> Bool {
+extension SampleNibState: Equatable {
+    static func ==(lhs: SampleNibState, rhs: SampleNibState) -> Bool {
         var equality = lhs.title == rhs.title
         equality = equality && lhs.subtitle == rhs.subtitle
         equality = equality && lhs.image == rhs.image

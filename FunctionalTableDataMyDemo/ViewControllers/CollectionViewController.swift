@@ -48,13 +48,13 @@ class CollectionViewController: UICollectionViewController {
 //                style: CellStyle(backgroundColor: .white),
 //                state: LabelState(text: item),
 //                cellUpdater: LabelState.updateView)
-            return DetailCell(
+            return SampleNibCell(
                 key: "id-\(index)",
-                state: DetailState(
+                state: SampleNibState(
                     image: #imageLiteral(resourceName: "finedog"),
                     title: "",
                     subtitle: ""),
-                cellUpdater: DetailState.updateView)
+                cellUpdater: SampleNibState.updateView)
         }
         
         functionalData.renderAndDiff([

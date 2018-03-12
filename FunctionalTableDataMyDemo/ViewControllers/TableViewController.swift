@@ -46,11 +46,11 @@ class TableViewController: UIViewController {
     
     func render() {
         let rows: [CellConfigType] = items.enumerated().map { index, item in
-            return LabelCell(
+            return SampleLabelCell(
                 key: "id-\(index)",
                 style: CellStyle(backgroundColor: .white),
-                state: LabelState(text: item),
-                cellUpdater: LabelState.updateView)
+                state: SampleLabelState(text: item),
+                cellUpdater: SampleLabelState.updateView)
         }
         
         functionalData.renderAndDiff([

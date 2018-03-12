@@ -1,5 +1,5 @@
 //
-//  DoubleProgramicDetailCell.swift
+//  DoubleDetailCell.swift
 //  FunctionalTableDataMyDemo
 //
 //  Created by Paige Sun on 2018-01-21.
@@ -8,49 +8,50 @@
 
 import Foundation
 
-typealias ProgramicDetailCell = HostCell<ProgramicDetailView, ProgramicDetailState, LayoutMarginsTableItemLayout>
+typealias DefaultDetailCell = HostCell<DefaultDetailView, DefaultDetailState, LayoutMarginsTableItemLayout>
 
-struct ProgramicDetailState {
-	let title: String
-	
-	init(title: String) {
+struct DefaultDetailState {
+    let image: UIImage?
+	let title: String?
+    let subtitle: String?
+    
+    init(image: UIImage?, title: String?, subtitle: String?) {
 		self.title = title
+        self.subtitle = subtitle
+        self.image = image
 	}
 }
 
-extension ProgramicDetailState: StateType {
-	typealias View = ProgramicDetailView
+extension DefaultDetailState: StateType {
+	typealias View = DefaultDetailView
 	
-	static func updateView(_ view: ProgramicDetailView, state: ProgramicDetailState?) {
+	static func updateView(_ view: DefaultDetailView, state: DefaultDetailState?) {
 		guard let state = state else {
 			return
 		}
 		
-		view.titleLabel.text = state.title
+        view.imageView?.image = state.image
+        view.textLabel?.text = state.title
+        view.detailTextLabel?.text = state.subtitle
+        view.textLabel?.numberOfLines = 0
 	}
 }
 
-extension ProgramicDetailState: Equatable {
-	static func ==(lhs: ProgramicDetailState, rhs: ProgramicDetailState) -> Bool {
+extension DefaultDetailState: Equatable {
+	static func ==(lhs: DefaultDetailState, rhs: DefaultDetailState) -> Bool {
 		return lhs.title == rhs.title
+        // TODO
 	}
 }
 
-class ProgramicDetailView: UIView {
-	var titleLabel = UILabel()
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
+class DefaultDetailView: UITableViewCell {
+    init() {
+        super.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
 
-		titleLabel.numberOfLines = 2
-		addSubviewsForAutolayout(titleLabel)
-		titleLabel.constrainToFillView(self)
-		
-		backgroundColor = .green
-		heightAnchor.constraint(equalToConstant: 200).isActive = true
-	}
-	
-	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+        heightAnchor.constraint(greaterThanOrEqualToConstant: 44).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

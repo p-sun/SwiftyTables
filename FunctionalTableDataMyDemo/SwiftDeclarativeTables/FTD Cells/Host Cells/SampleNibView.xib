@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailView" customModule="FunctionalTableDataMyDemo" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SampleNibView" customModule="FunctionalTableDataMyDemo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="483" height="125"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -22,7 +22,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-jN-Qiq">
                             <rect key="frame" x="0.0" y="0.0" width="88" height="125"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finedog" translatesAutoresizingMaskIntoConstraints="NO" id="MEB-hl-3oy">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MEB-hl-3oy">
                                     <rect key="frame" x="0.0" y="18.5" width="88" height="88"/>
                                     <constraints>
                                         <constraint firstAttribute="height" priority="999" constant="88" id="IbT-w7-Ctc"/>
@@ -76,7 +76,4 @@
             <point key="canvasLocation" x="39.5" y="-252.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="finedog" width="277" height="268"/>
-    </resources>
 </document>
