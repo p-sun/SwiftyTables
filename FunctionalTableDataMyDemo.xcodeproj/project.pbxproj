@@ -200,6 +200,7 @@
 		9B6E84E0201964920000BE3F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */,
 				C7854F641FD7929300710A79 /* MainViewController.swift */,
 				85FD4EEC205612CA0059ED68 /* SimplestStaticTableViewController.swift */,
 				85FD4EEA20560B180059ED68 /* SimplestDynamicViewController.swift */,
@@ -226,6 +227,7 @@
 		9B9F12D72010DA0000549C6E /* SwiftDeclarativeTables */ = {
 			isa = PBXGroup;
 			children = (
+				C78550141FD8640B00710A79 /* Helpers */,
 				85FD4EBA2055F0AD0059ED68 /* FunctionalTableData */,
 				C741E3CF1FE9FB6F006B693F /* FTD Helpers */,
 				C78550151FD8642400710A79 /* FTD Cells */,
@@ -277,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				9B9F12D72010DA0000549C6E /* SwiftDeclarativeTables */,
-				C78550141FD8640B00710A79 /* Helpers */,
 				9B6E84E0201964920000BE3F /* ViewControllers */,
 				C7854F621FD7929300710A79 /* AppDelegate.swift */,
 				C7854FDE1FD79DB600710A79 /* FunctionalTableDataMyDemo-Swift.h */,
@@ -293,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				C7854FD81FD796B400710A79 /* UIView+Helpers.swift */,
-				C741E40C1FEA2334006B693F /* UIColor+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
