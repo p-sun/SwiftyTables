@@ -1,0 +1,1049 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDA9964E2099128200B9F649 /* DeclarativeTables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA996442099128200B9F649 /* DeclarativeTables.framework */; };
+		DDA996532099128200B9F649 /* DeclarativeTablesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996522099128200B9F649 /* DeclarativeTablesTests.swift */; };
+		DDA996552099128200B9F649 /* DeclarativeTables.h in Headers */ = {isa = PBXBuildFile; fileRef = DDA996472099128200B9F649 /* DeclarativeTables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDA9969C2099129000B9F649 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996702099129000B9F649 /* CarouselCell.swift */; };
+		DDA9969D2099129000B9F649 /* CarouselItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996712099129000B9F649 /* CarouselItemCell.swift */; };
+		DDA9969E2099129000B9F649 /* CarouselState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996722099129000B9F649 /* CarouselState.swift */; };
+		DDA9969F2099129000B9F649 /* HostCell+StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996732099129000B9F649 /* HostCell+StateType.swift */; };
+		DDA996A02099129000B9F649 /* HowToUpdateFTD.md in Resources */ = {isa = PBXBuildFile; fileRef = DDA996742099129000B9F649 /* HowToUpdateFTD.md */; };
+		DDA996A12099129000B9F649 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996752099129000B9F649 /* NibView.swift */; };
+		DDA996A22099129000B9F649 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996762099129000B9F649 /* UIView+Helpers.swift */; };
+		DDA996A32099129000B9F649 /* CellActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996782099129000B9F649 /* CellActions.swift */; };
+		DDA996A42099129000B9F649 /* CellConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996792099129000B9F649 /* CellConfigType.swift */; };
+		DDA996A52099129000B9F649 /* CellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9967A2099129000B9F649 /* CellStyle.swift */; };
+		DDA996A62099129000B9F649 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9967C2099129000B9F649 /* CollectionCell.swift */; };
+		DDA996A72099129000B9F649 /* CollectionItemConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9967D2099129000B9F649 /* CollectionItemConfigType.swift */; };
+		DDA996A82099129000B9F649 /* FunctionalCollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9967E2099129000B9F649 /* FunctionalCollectionData.swift */; };
+		DDA996A92099129000B9F649 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9967F2099129000B9F649 /* UICollectionView+Reusable.swift */; };
+		DDA996AB2099129000B9F649 /* HostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996812099129000B9F649 /* HostCell.swift */; };
+		DDA996AC2099129000B9F649 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDA996822099129000B9F649 /* Info.plist */; };
+		DDA996AD2099129000B9F649 /* ObjCExceptionRethrower.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996832099129000B9F649 /* ObjCExceptionRethrower.swift */; };
+		DDA996AE2099129000B9F649 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996842099129000B9F649 /* Reusable.swift */; };
+		DDA996AF2099129000B9F649 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996852099129000B9F649 /* Separator.swift */; };
+		DDA996B02099129000B9F649 /* TableItemLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996862099129000B9F649 /* TableItemLayout.swift */; };
+		DDA996B12099129000B9F649 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996872099129000B9F649 /* TableSection.swift */; };
+		DDA996B22099129000B9F649 /* TableSectionChangeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996882099129000B9F649 /* TableSectionChangeSet.swift */; };
+		DDA996B32099129000B9F649 /* TableSectionHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996892099129000B9F649 /* TableSectionHeaderFooter.swift */; };
+		DDA996B42099129000B9F649 /* FunctionalTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9968B2099129000B9F649 /* FunctionalTableData.swift */; };
+		DDA996B52099129000B9F649 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9968C2099129000B9F649 /* TableCell.swift */; };
+		DDA996B62099129000B9F649 /* TableItemConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9968D2099129000B9F649 /* TableItemConfigType.swift */; };
+		DDA996B72099129000B9F649 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9968E2099129000B9F649 /* UITableView+Reusable.swift */; };
+		DDA996B82099129000B9F649 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9968F2099129000B9F649 /* UIView+AutoLayout.swift */; };
+		DDA996B92099129000B9F649 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996902099129000B9F649 /* UIView+Extensions.swift */; };
+		DDA996C12099189D00B9F649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996C02099189D00B9F649 /* AppDelegate.swift */; };
+		DDA996C82099189E00B9F649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA996C72099189E00B9F649 /* Assets.xcassets */; };
+		DDA996CB2099189E00B9F649 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA996C92099189E00B9F649 /* LaunchScreen.storyboard */; };
+		DDA996D62099189E00B9F649 /* DeclarativeTablesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996D52099189E00B9F649 /* DeclarativeTablesDemoTests.swift */; };
+		DDA996DE209918DA00B9F649 /* DeclarativeTables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA996442099128200B9F649 /* DeclarativeTables.framework */; };
+		DDA996DF209918DA00B9F649 /* DeclarativeTables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDA996442099128200B9F649 /* DeclarativeTables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DDA996EA209919F100B9F649 /* Constrainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996E6209919F100B9F649 /* Constrainable.swift */; };
+		DDA996EB209919F100B9F649 /* Constraints+Activation+Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996E7209919F100B9F649 /* Constraints+Activation+Priority.swift */; };
+		DDA996ED209919F100B9F649 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996E9209919F100B9F649 /* UIView+Constraints.swift */; };
+		DDA996F920991A5900B9F649 /* CellStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F020991A5900B9F649 /* CellStyleViewController.swift */; };
+		DDA996FA20991A5900B9F649 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F120991A5900B9F649 /* CollectionViewController.swift */; };
+		DDA996FB20991A5900B9F649 /* ColorTilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F220991A5900B9F649 /* ColorTilesViewController.swift */; };
+		DDA996FC20991A5900B9F649 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F320991A5900B9F649 /* MainViewController.swift */; };
+		DDA996FD20991A5900B9F649 /* SimplestDynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F420991A5900B9F649 /* SimplestDynamicViewController.swift */; };
+		DDA996FE20991A5900B9F649 /* SimplestStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F520991A5900B9F649 /* SimplestStaticTableViewController.swift */; };
+		DDA996FF20991A5900B9F649 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F620991A5900B9F649 /* TableViewController.swift */; };
+		DDA9970020991A5900B9F649 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F720991A5900B9F649 /* UIColor+Helpers.swift */; };
+		DDA9970120991A5900B9F649 /* VerticalGridCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996F820991A5900B9F649 /* VerticalGridCellViewController.swift */; };
+		DDA997112099277E00B9F649 /* CarouselColorTilesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA997042099277E00B9F649 /* CarouselColorTilesCell.swift */; };
+		DDA997122099277E00B9F649 /* CarouselDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA997052099277E00B9F649 /* CarouselDetailCell.swift */; };
+		DDA997132099277E00B9F649 /* CarouselItemDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA997062099277E00B9F649 /* CarouselItemDetailCell.xib */; };
+		DDA997142099277E00B9F649 /* CarouselVerticalGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA997072099277E00B9F649 /* CarouselVerticalGridCell.swift */; };
+		DDA997152099277E00B9F649 /* SimpleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA997092099277E00B9F649 /* SimpleHeader.swift */; };
+		DDA997162099277E00B9F649 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9970B2099277E00B9F649 /* ButtonCell.swift */; };
+		DDA997172099277E00B9F649 /* ProgramicDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9970C2099277E00B9F649 /* ProgramicDetailCell.swift */; };
+		DDA997182099277E00B9F649 /* SampleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9970D2099277E00B9F649 /* SampleLabelCell.swift */; };
+		DDA997192099277E00B9F649 /* SampleNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9970E2099277E00B9F649 /* SampleNibCell.swift */; };
+		DDA9971A2099277E00B9F649 /* SampleNibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA9970F2099277E00B9F649 /* SampleNibView.xib */; };
+		DDA9971B2099277E00B9F649 /* SpacerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA997102099277E00B9F649 /* SpacerCell.swift */; };
+		DDA9971D20992CDB00B9F649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA9971C20992CDA00B9F649 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDA9964F2099128200B9F649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA9963B2099128200B9F649 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA996432099128200B9F649;
+			remoteInfo = DeclarativeTables;
+		};
+		DDA996D22099189E00B9F649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA9963B2099128200B9F649 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA996BD2099189D00B9F649;
+			remoteInfo = DeclarativeTablesDemo;
+		};
+		DDA996E0209918DA00B9F649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA9963B2099128200B9F649 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA996432099128200B9F649;
+			remoteInfo = DeclarativeTables;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDA996E2209918DA00B9F649 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDA996DF209918DA00B9F649 /* DeclarativeTables.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DDA996442099128200B9F649 /* DeclarativeTables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeclarativeTables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA996472099128200B9F649 /* DeclarativeTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeclarativeTables.h; sourceTree = "<group>"; };
+		DDA996482099128200B9F649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA9964D2099128200B9F649 /* DeclarativeTablesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeclarativeTablesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA996522099128200B9F649 /* DeclarativeTablesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarativeTablesTests.swift; sourceTree = "<group>"; };
+		DDA996542099128200B9F649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA996702099129000B9F649 /* CarouselCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		DDA996712099129000B9F649 /* CarouselItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItemCell.swift; sourceTree = "<group>"; };
+		DDA996722099129000B9F649 /* CarouselState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselState.swift; sourceTree = "<group>"; };
+		DDA996732099129000B9F649 /* HostCell+StateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HostCell+StateType.swift"; sourceTree = "<group>"; };
+		DDA996742099129000B9F649 /* HowToUpdateFTD.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = HowToUpdateFTD.md; sourceTree = "<group>"; };
+		DDA996752099129000B9F649 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		DDA996762099129000B9F649 /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		DDA996782099129000B9F649 /* CellActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellActions.swift; sourceTree = "<group>"; };
+		DDA996792099129000B9F649 /* CellConfigType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigType.swift; sourceTree = "<group>"; };
+		DDA9967A2099129000B9F649 /* CellStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellStyle.swift; sourceTree = "<group>"; };
+		DDA9967C2099129000B9F649 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		DDA9967D2099129000B9F649 /* CollectionItemConfigType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionItemConfigType.swift; sourceTree = "<group>"; };
+		DDA9967E2099129000B9F649 /* FunctionalCollectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalCollectionData.swift; sourceTree = "<group>"; };
+		DDA9967F2099129000B9F649 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		DDA996812099129000B9F649 /* HostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostCell.swift; sourceTree = "<group>"; };
+		DDA996822099129000B9F649 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA996832099129000B9F649 /* ObjCExceptionRethrower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCExceptionRethrower.swift; sourceTree = "<group>"; };
+		DDA996842099129000B9F649 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		DDA996852099129000B9F649 /* Separator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		DDA996862099129000B9F649 /* TableItemLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableItemLayout.swift; sourceTree = "<group>"; };
+		DDA996872099129000B9F649 /* TableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		DDA996882099129000B9F649 /* TableSectionChangeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionChangeSet.swift; sourceTree = "<group>"; };
+		DDA996892099129000B9F649 /* TableSectionHeaderFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderFooter.swift; sourceTree = "<group>"; };
+		DDA9968B2099129000B9F649 /* FunctionalTableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalTableData.swift; sourceTree = "<group>"; };
+		DDA9968C2099129000B9F649 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		DDA9968D2099129000B9F649 /* TableItemConfigType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableItemConfigType.swift; sourceTree = "<group>"; };
+		DDA9968E2099129000B9F649 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		DDA9968F2099129000B9F649 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		DDA996902099129000B9F649 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		DDA996BE2099189D00B9F649 /* DeclarativeTablesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeclarativeTablesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA996C02099189D00B9F649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDA996C72099189E00B9F649 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDA996CA2099189E00B9F649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDA996CC2099189E00B9F649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA996D12099189E00B9F649 /* DeclarativeTablesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeclarativeTablesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA996D52099189E00B9F649 /* DeclarativeTablesDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarativeTablesDemoTests.swift; sourceTree = "<group>"; };
+		DDA996D72099189E00B9F649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA996E6209919F100B9F649 /* Constrainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrainable.swift; sourceTree = "<group>"; };
+		DDA996E7209919F100B9F649 /* Constraints+Activation+Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraints+Activation+Priority.swift"; sourceTree = "<group>"; };
+		DDA996E9209919F100B9F649 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		DDA996F020991A5900B9F649 /* CellStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellStyleViewController.swift; sourceTree = "<group>"; };
+		DDA996F120991A5900B9F649 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		DDA996F220991A5900B9F649 /* ColorTilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTilesViewController.swift; sourceTree = "<group>"; };
+		DDA996F320991A5900B9F649 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DDA996F420991A5900B9F649 /* SimplestDynamicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplestDynamicViewController.swift; sourceTree = "<group>"; };
+		DDA996F520991A5900B9F649 /* SimplestStaticTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplestStaticTableViewController.swift; sourceTree = "<group>"; };
+		DDA996F620991A5900B9F649 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DDA996F720991A5900B9F649 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		DDA996F820991A5900B9F649 /* VerticalGridCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalGridCellViewController.swift; sourceTree = "<group>"; };
+		DDA997042099277E00B9F649 /* CarouselColorTilesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselColorTilesCell.swift; sourceTree = "<group>"; };
+		DDA997052099277E00B9F649 /* CarouselDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselDetailCell.swift; sourceTree = "<group>"; };
+		DDA997062099277E00B9F649 /* CarouselItemDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselItemDetailCell.xib; sourceTree = "<group>"; };
+		DDA997072099277E00B9F649 /* CarouselVerticalGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselVerticalGridCell.swift; sourceTree = "<group>"; };
+		DDA997092099277E00B9F649 /* SimpleHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleHeader.swift; sourceTree = "<group>"; };
+		DDA9970B2099277E00B9F649 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		DDA9970C2099277E00B9F649 /* ProgramicDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramicDetailCell.swift; sourceTree = "<group>"; };
+		DDA9970D2099277E00B9F649 /* SampleLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleLabelCell.swift; sourceTree = "<group>"; };
+		DDA9970E2099277E00B9F649 /* SampleNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleNibCell.swift; sourceTree = "<group>"; };
+		DDA9970F2099277E00B9F649 /* SampleNibView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleNibView.xib; sourceTree = "<group>"; };
+		DDA997102099277E00B9F649 /* SpacerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerCell.swift; sourceTree = "<group>"; };
+		DDA9971C20992CDA00B9F649 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDA996402099128200B9F649 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9964A2099128200B9F649 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA9964E2099128200B9F649 /* DeclarativeTables.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA996BB2099189D00B9F649 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA996DE209918DA00B9F649 /* DeclarativeTables.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA996CE2099189E00B9F649 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDA9963A2099128200B9F649 = {
+			isa = PBXGroup;
+			children = (
+				DDA996462099128200B9F649 /* DeclarativeTables */,
+				DDA996512099128200B9F649 /* DeclarativeTablesTests */,
+				DDA996BF2099189D00B9F649 /* DeclarativeTablesDemo */,
+				DDA996D42099189E00B9F649 /* DeclarativeTablesDemoTests */,
+				DDA996452099128200B9F649 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDA996452099128200B9F649 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDA996442099128200B9F649 /* DeclarativeTables.framework */,
+				DDA9964D2099128200B9F649 /* DeclarativeTablesTests.xctest */,
+				DDA996BE2099189D00B9F649 /* DeclarativeTablesDemo.app */,
+				DDA996D12099189E00B9F649 /* DeclarativeTablesDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDA996462099128200B9F649 /* DeclarativeTables */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9965E2099129000B9F649 /* SwiftDeclarativeTables */,
+				DDA996472099128200B9F649 /* DeclarativeTables.h */,
+				DDA996482099128200B9F649 /* Info.plist */,
+			);
+			path = DeclarativeTables;
+			sourceTree = "<group>";
+		};
+		DDA996512099128200B9F649 /* DeclarativeTablesTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA996522099128200B9F649 /* DeclarativeTablesTests.swift */,
+				DDA996542099128200B9F649 /* Info.plist */,
+			);
+			path = DeclarativeTablesTests;
+			sourceTree = "<group>";
+		};
+		DDA9965E2099129000B9F649 /* SwiftDeclarativeTables */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9966E2099129000B9F649 /* FTD Helpers */,
+				DDA996772099129000B9F649 /* FunctionalTableData */,
+			);
+			path = SwiftDeclarativeTables;
+			sourceTree = "<group>";
+		};
+		DDA9966E2099129000B9F649 /* FTD Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9966F2099129000B9F649 /* CarouselCell */,
+				DDA996732099129000B9F649 /* HostCell+StateType.swift */,
+				DDA996752099129000B9F649 /* NibView.swift */,
+				DDA996762099129000B9F649 /* UIView+Helpers.swift */,
+				DDA996742099129000B9F649 /* HowToUpdateFTD.md */,
+			);
+			path = "FTD Helpers";
+			sourceTree = "<group>";
+		};
+		DDA9966F2099129000B9F649 /* CarouselCell */ = {
+			isa = PBXGroup;
+			children = (
+				DDA996702099129000B9F649 /* CarouselCell.swift */,
+				DDA996712099129000B9F649 /* CarouselItemCell.swift */,
+				DDA996722099129000B9F649 /* CarouselState.swift */,
+			);
+			path = CarouselCell;
+			sourceTree = "<group>";
+		};
+		DDA996772099129000B9F649 /* FunctionalTableData */ = {
+			isa = PBXGroup;
+			children = (
+				DDA996782099129000B9F649 /* CellActions.swift */,
+				DDA996792099129000B9F649 /* CellConfigType.swift */,
+				DDA9967A2099129000B9F649 /* CellStyle.swift */,
+				DDA9967B2099129000B9F649 /* CollectionView */,
+				DDA996812099129000B9F649 /* HostCell.swift */,
+				DDA996822099129000B9F649 /* Info.plist */,
+				DDA996832099129000B9F649 /* ObjCExceptionRethrower.swift */,
+				DDA996842099129000B9F649 /* Reusable.swift */,
+				DDA996852099129000B9F649 /* Separator.swift */,
+				DDA996862099129000B9F649 /* TableItemLayout.swift */,
+				DDA996872099129000B9F649 /* TableSection.swift */,
+				DDA996882099129000B9F649 /* TableSectionChangeSet.swift */,
+				DDA996892099129000B9F649 /* TableSectionHeaderFooter.swift */,
+				DDA9968A2099129000B9F649 /* TableView */,
+				DDA9968F2099129000B9F649 /* UIView+AutoLayout.swift */,
+				DDA996902099129000B9F649 /* UIView+Extensions.swift */,
+			);
+			path = FunctionalTableData;
+			sourceTree = "<group>";
+		};
+		DDA9967B2099129000B9F649 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9967C2099129000B9F649 /* CollectionCell.swift */,
+				DDA9967D2099129000B9F649 /* CollectionItemConfigType.swift */,
+				DDA9967E2099129000B9F649 /* FunctionalCollectionData.swift */,
+				DDA9967F2099129000B9F649 /* UICollectionView+Reusable.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		DDA9968A2099129000B9F649 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9968B2099129000B9F649 /* FunctionalTableData.swift */,
+				DDA9968C2099129000B9F649 /* TableCell.swift */,
+				DDA9968D2099129000B9F649 /* TableItemConfigType.swift */,
+				DDA9968E2099129000B9F649 /* UITableView+Reusable.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DDA996BF2099189D00B9F649 /* DeclarativeTablesDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DDA997022099277E00B9F649 /* FTD Cells */,
+				DDA996E5209919F100B9F649 /* NeatConstraints */,
+				DDA996EF20991A5900B9F649 /* ViewControllers */,
+				DDA996C02099189D00B9F649 /* AppDelegate.swift */,
+				DDA9971C20992CDA00B9F649 /* Main.storyboard */,
+				DDA996C72099189E00B9F649 /* Assets.xcassets */,
+				DDA996C92099189E00B9F649 /* LaunchScreen.storyboard */,
+				DDA996CC2099189E00B9F649 /* Info.plist */,
+			);
+			path = DeclarativeTablesDemo;
+			sourceTree = "<group>";
+		};
+		DDA996D42099189E00B9F649 /* DeclarativeTablesDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDA996D52099189E00B9F649 /* DeclarativeTablesDemoTests.swift */,
+				DDA996D72099189E00B9F649 /* Info.plist */,
+			);
+			path = DeclarativeTablesDemoTests;
+			sourceTree = "<group>";
+		};
+		DDA996E5209919F100B9F649 /* NeatConstraints */ = {
+			isa = PBXGroup;
+			children = (
+				DDA996E6209919F100B9F649 /* Constrainable.swift */,
+				DDA996E7209919F100B9F649 /* Constraints+Activation+Priority.swift */,
+				DDA996E9209919F100B9F649 /* UIView+Constraints.swift */,
+			);
+			path = NeatConstraints;
+			sourceTree = "<group>";
+		};
+		DDA996EF20991A5900B9F649 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDA996F320991A5900B9F649 /* MainViewController.swift */,
+				DDA996F520991A5900B9F649 /* SimplestStaticTableViewController.swift */,
+				DDA996F420991A5900B9F649 /* SimplestDynamicViewController.swift */,
+				DDA996F020991A5900B9F649 /* CellStyleViewController.swift */,
+				DDA996F620991A5900B9F649 /* TableViewController.swift */,
+				DDA996F120991A5900B9F649 /* CollectionViewController.swift */,
+				DDA996F220991A5900B9F649 /* ColorTilesViewController.swift */,
+				DDA996F720991A5900B9F649 /* UIColor+Helpers.swift */,
+				DDA996F820991A5900B9F649 /* VerticalGridCellViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DDA997022099277E00B9F649 /* FTD Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DDA997032099277E00B9F649 /* Carousel Cells */,
+				DDA997082099277E00B9F649 /* HeaderCells */,
+				DDA9970A2099277E00B9F649 /* Host Cells */,
+			);
+			path = "FTD Cells";
+			sourceTree = "<group>";
+		};
+		DDA997032099277E00B9F649 /* Carousel Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DDA997042099277E00B9F649 /* CarouselColorTilesCell.swift */,
+				DDA997052099277E00B9F649 /* CarouselDetailCell.swift */,
+				DDA997062099277E00B9F649 /* CarouselItemDetailCell.xib */,
+				DDA997072099277E00B9F649 /* CarouselVerticalGridCell.swift */,
+			);
+			path = "Carousel Cells";
+			sourceTree = "<group>";
+		};
+		DDA997082099277E00B9F649 /* HeaderCells */ = {
+			isa = PBXGroup;
+			children = (
+				DDA997092099277E00B9F649 /* SimpleHeader.swift */,
+			);
+			path = HeaderCells;
+			sourceTree = "<group>";
+		};
+		DDA9970A2099277E00B9F649 /* Host Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9970B2099277E00B9F649 /* ButtonCell.swift */,
+				DDA9970C2099277E00B9F649 /* ProgramicDetailCell.swift */,
+				DDA9970D2099277E00B9F649 /* SampleLabelCell.swift */,
+				DDA9970E2099277E00B9F649 /* SampleNibCell.swift */,
+				DDA9970F2099277E00B9F649 /* SampleNibView.xib */,
+				DDA997102099277E00B9F649 /* SpacerCell.swift */,
+			);
+			path = "Host Cells";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DDA996412099128200B9F649 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA996552099128200B9F649 /* DeclarativeTables.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DDA996432099128200B9F649 /* DeclarativeTables */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA996582099128200B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTables" */;
+			buildPhases = (
+				DDA9963F2099128200B9F649 /* Sources */,
+				DDA996402099128200B9F649 /* Frameworks */,
+				DDA996412099128200B9F649 /* Headers */,
+				DDA996422099128200B9F649 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeclarativeTables;
+			productName = DeclarativeTables;
+			productReference = DDA996442099128200B9F649 /* DeclarativeTables.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DDA9964C2099128200B9F649 /* DeclarativeTablesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA9965B2099128200B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTablesTests" */;
+			buildPhases = (
+				DDA996492099128200B9F649 /* Sources */,
+				DDA9964A2099128200B9F649 /* Frameworks */,
+				DDA9964B2099128200B9F649 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA996502099128200B9F649 /* PBXTargetDependency */,
+			);
+			name = DeclarativeTablesTests;
+			productName = DeclarativeTablesTests;
+			productReference = DDA9964D2099128200B9F649 /* DeclarativeTablesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDA996BD2099189D00B9F649 /* DeclarativeTablesDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA996D82099189E00B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTablesDemo" */;
+			buildPhases = (
+				DDA996BA2099189D00B9F649 /* Sources */,
+				DDA996BB2099189D00B9F649 /* Frameworks */,
+				DDA996BC2099189D00B9F649 /* Resources */,
+				DDA996E2209918DA00B9F649 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA996E1209918DA00B9F649 /* PBXTargetDependency */,
+			);
+			name = DeclarativeTablesDemo;
+			productName = DeclarativeTablesDemo;
+			productReference = DDA996BE2099189D00B9F649 /* DeclarativeTablesDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDA996D02099189E00B9F649 /* DeclarativeTablesDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA996DB2099189E00B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTablesDemoTests" */;
+			buildPhases = (
+				DDA996CD2099189E00B9F649 /* Sources */,
+				DDA996CE2099189E00B9F649 /* Frameworks */,
+				DDA996CF2099189E00B9F649 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA996D32099189E00B9F649 /* PBXTargetDependency */,
+			);
+			name = DeclarativeTablesDemoTests;
+			productName = DeclarativeTablesDemoTests;
+			productReference = DDA996D12099189E00B9F649 /* DeclarativeTablesDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDA9963B2099128200B9F649 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Paige Sun";
+				TargetAttributes = {
+					DDA996432099128200B9F649 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					DDA9964C2099128200B9F649 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					DDA996BD2099189D00B9F649 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					DDA996D02099189E00B9F649 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = DDA996BD2099189D00B9F649;
+					};
+				};
+			};
+			buildConfigurationList = DDA9963E2099128200B9F649 /* Build configuration list for PBXProject "DeclarativeTables" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDA9963A2099128200B9F649;
+			productRefGroup = DDA996452099128200B9F649 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDA996432099128200B9F649 /* DeclarativeTables */,
+				DDA9964C2099128200B9F649 /* DeclarativeTablesTests */,
+				DDA996BD2099189D00B9F649 /* DeclarativeTablesDemo */,
+				DDA996D02099189E00B9F649 /* DeclarativeTablesDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDA996422099128200B9F649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA996AC2099129000B9F649 /* Info.plist in Resources */,
+				DDA996A02099129000B9F649 /* HowToUpdateFTD.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9964B2099128200B9F649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA996BC2099189D00B9F649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA996CB2099189E00B9F649 /* LaunchScreen.storyboard in Resources */,
+				DDA9971D20992CDB00B9F649 /* Main.storyboard in Resources */,
+				DDA996C82099189E00B9F649 /* Assets.xcassets in Resources */,
+				DDA9971A2099277E00B9F649 /* SampleNibView.xib in Resources */,
+				DDA997132099277E00B9F649 /* CarouselItemDetailCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA996CF2099189E00B9F649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDA9963F2099128200B9F649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA996A72099129000B9F649 /* CollectionItemConfigType.swift in Sources */,
+				DDA996B32099129000B9F649 /* TableSectionHeaderFooter.swift in Sources */,
+				DDA996B02099129000B9F649 /* TableItemLayout.swift in Sources */,
+				DDA996B72099129000B9F649 /* UITableView+Reusable.swift in Sources */,
+				DDA996AE2099129000B9F649 /* Reusable.swift in Sources */,
+				DDA996B62099129000B9F649 /* TableItemConfigType.swift in Sources */,
+				DDA996B82099129000B9F649 /* UIView+AutoLayout.swift in Sources */,
+				DDA996A62099129000B9F649 /* CollectionCell.swift in Sources */,
+				DDA9969E2099129000B9F649 /* CarouselState.swift in Sources */,
+				DDA996AF2099129000B9F649 /* Separator.swift in Sources */,
+				DDA996A12099129000B9F649 /* NibView.swift in Sources */,
+				DDA996AB2099129000B9F649 /* HostCell.swift in Sources */,
+				DDA996B12099129000B9F649 /* TableSection.swift in Sources */,
+				DDA996B22099129000B9F649 /* TableSectionChangeSet.swift in Sources */,
+				DDA996B52099129000B9F649 /* TableCell.swift in Sources */,
+				DDA9969D2099129000B9F649 /* CarouselItemCell.swift in Sources */,
+				DDA996A22099129000B9F649 /* UIView+Helpers.swift in Sources */,
+				DDA996B42099129000B9F649 /* FunctionalTableData.swift in Sources */,
+				DDA996A92099129000B9F649 /* UICollectionView+Reusable.swift in Sources */,
+				DDA996A52099129000B9F649 /* CellStyle.swift in Sources */,
+				DDA996A82099129000B9F649 /* FunctionalCollectionData.swift in Sources */,
+				DDA996B92099129000B9F649 /* UIView+Extensions.swift in Sources */,
+				DDA996A42099129000B9F649 /* CellConfigType.swift in Sources */,
+				DDA996A32099129000B9F649 /* CellActions.swift in Sources */,
+				DDA9969C2099129000B9F649 /* CarouselCell.swift in Sources */,
+				DDA996AD2099129000B9F649 /* ObjCExceptionRethrower.swift in Sources */,
+				DDA9969F2099129000B9F649 /* HostCell+StateType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA996492099128200B9F649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA996532099128200B9F649 /* DeclarativeTablesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA996BA2099189D00B9F649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA997162099277E00B9F649 /* ButtonCell.swift in Sources */,
+				DDA997142099277E00B9F649 /* CarouselVerticalGridCell.swift in Sources */,
+				DDA996EA209919F100B9F649 /* Constrainable.swift in Sources */,
+				DDA996FF20991A5900B9F649 /* TableViewController.swift in Sources */,
+				DDA996FE20991A5900B9F649 /* SimplestStaticTableViewController.swift in Sources */,
+				DDA996FB20991A5900B9F649 /* ColorTilesViewController.swift in Sources */,
+				DDA997122099277E00B9F649 /* CarouselDetailCell.swift in Sources */,
+				DDA996EB209919F100B9F649 /* Constraints+Activation+Priority.swift in Sources */,
+				DDA996ED209919F100B9F649 /* UIView+Constraints.swift in Sources */,
+				DDA996FA20991A5900B9F649 /* CollectionViewController.swift in Sources */,
+				DDA9970120991A5900B9F649 /* VerticalGridCellViewController.swift in Sources */,
+				DDA996F920991A5900B9F649 /* CellStyleViewController.swift in Sources */,
+				DDA9971B2099277E00B9F649 /* SpacerCell.swift in Sources */,
+				DDA9970020991A5900B9F649 /* UIColor+Helpers.swift in Sources */,
+				DDA997192099277E00B9F649 /* SampleNibCell.swift in Sources */,
+				DDA996FD20991A5900B9F649 /* SimplestDynamicViewController.swift in Sources */,
+				DDA996C12099189D00B9F649 /* AppDelegate.swift in Sources */,
+				DDA997172099277E00B9F649 /* ProgramicDetailCell.swift in Sources */,
+				DDA996FC20991A5900B9F649 /* MainViewController.swift in Sources */,
+				DDA997182099277E00B9F649 /* SampleLabelCell.swift in Sources */,
+				DDA997152099277E00B9F649 /* SimpleHeader.swift in Sources */,
+				DDA997112099277E00B9F649 /* CarouselColorTilesCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA996CD2099189E00B9F649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA996D62099189E00B9F649 /* DeclarativeTablesDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDA996502099128200B9F649 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA996432099128200B9F649 /* DeclarativeTables */;
+			targetProxy = DDA9964F2099128200B9F649 /* PBXContainerItemProxy */;
+		};
+		DDA996D32099189E00B9F649 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA996BD2099189D00B9F649 /* DeclarativeTablesDemo */;
+			targetProxy = DDA996D22099189E00B9F649 /* PBXContainerItemProxy */;
+		};
+		DDA996E1209918DA00B9F649 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA996432099128200B9F649 /* DeclarativeTables */;
+			targetProxy = DDA996E0209918DA00B9F649 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDA996C92099189E00B9F649 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA996CA2099189E00B9F649 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDA996562099128200B9F649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DDA996572099128200B9F649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DDA996592099128200B9F649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DeclarativeTables/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTables;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA9965A2099128200B9F649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DeclarativeTables/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTables;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDA9965C2099128200B9F649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				INFOPLIST_FILE = DeclarativeTablesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTablesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA9965D2099128200B9F649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				INFOPLIST_FILE = DeclarativeTablesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTablesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDA996D92099189E00B9F649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				INFOPLIST_FILE = DeclarativeTablesDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTablesDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA996DA2099189E00B9F649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				INFOPLIST_FILE = DeclarativeTablesDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTablesDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDA996DC2099189E00B9F649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				INFOPLIST_FILE = DeclarativeTablesDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTablesDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeclarativeTablesDemo.app/DeclarativeTablesDemo";
+			};
+			name = Debug;
+		};
+		DDA996DD2099189E00B9F649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 66T4X4PK9Q;
+				INFOPLIST_FILE = DeclarativeTablesDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paigesun.DeclarativeTablesDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeclarativeTablesDemo.app/DeclarativeTablesDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDA9963E2099128200B9F649 /* Build configuration list for PBXProject "DeclarativeTables" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA996562099128200B9F649 /* Debug */,
+				DDA996572099128200B9F649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA996582099128200B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTables" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA996592099128200B9F649 /* Debug */,
+				DDA9965A2099128200B9F649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA9965B2099128200B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTablesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA9965C2099128200B9F649 /* Debug */,
+				DDA9965D2099128200B9F649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA996D82099189E00B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTablesDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA996D92099189E00B9F649 /* Debug */,
+				DDA996DA2099189E00B9F649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA996DB2099189E00B9F649 /* Build configuration list for PBXNativeTarget "DeclarativeTablesDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA996DC2099189E00B9F649 /* Debug */,
+				DDA996DD2099189E00B9F649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDA9963B2099128200B9F649 /* Project object */;
+}
