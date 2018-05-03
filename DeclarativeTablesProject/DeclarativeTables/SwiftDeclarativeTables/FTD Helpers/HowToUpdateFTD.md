@@ -65,4 +65,4 @@ return footer.height
 
 5. Replace `if #available(iOSApplicationExtension 11.0` with `if #available(iOS 11.0`
 
-6. Copy and paste the contents of `FunctionalTableData.h` from the Shopify repo into `DeclarativeTables.h` in this repo.
+6. Copy and paste the contents of `FunctionalTableData.h` from the Shopify repo into `DeclarativeTables.h` this repo.
