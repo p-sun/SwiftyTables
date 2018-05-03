@@ -1,4 +1,4 @@
-## How to update FunctionalTableData from Shopify
+## How to update FunctionalTableData from Shopify for this Framework
 
 
 1. Copy the FunctionalTableData folder from the original to this demo
@@ -65,4 +65,4 @@ return footer.height
 
 5. Replace `if #available(iOSApplicationExtension 11.0` with `if #available(iOS 11.0`
 
-6. Delete Del
+6. Copy and paste the contents of `FunctionalTableData.h` from the Shopify repo into `DeclarativeTables.h` in this repo.
