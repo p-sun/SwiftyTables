@@ -1,4 +1,4 @@
-## How to update FunctionalTableData from Shopify for this Framework
+## How to update FunctionalTableData from Shopify
 
 
 1. Copy the FunctionalTableData folder from the original to this demo
@@ -63,6 +63,17 @@ return footer.height
 }
 ```
 
-5. Replace `if #available(iOSApplicationExtension 11.0` with `if #available(iOS 11.0`
+5. Implement  `estimatedHeightForRowAt` in `FunctionalTableData`.
+```
+public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    if let indexKeyPath = sections[indexPath.section].sectionKeyPathForRow(indexPath.row) {
+        return heightAtIndexKeyPath[indexKeyPath] ?? UITableViewAutomaticDimension
+    } else {
+        return UITableViewAutomaticDimension
+    }
+}
+```
 
-6. Copy and paste the contents of `FunctionalTableData.h` from the Shopify repo into `DeclarativeTables.h` this repo.
+6. Replace `if #available(iOSApplicationExtension 11.0` with `if #available(iOS 11.0`
+
+7. Copy and paste the contents of `FunctionalTableData.h` from the Shopify repo into `DeclarativeTables.h` this repo.
