@@ -7,8 +7,12 @@ Forked off of [Shopify's FunctionalTableData](https://github.com/Shopify/Functio
 
 I've added the following,
 🌟 A easy to use generic `CarouselCell` that it is a `CellConfigType` (i.e. a FunctionalTableData cell), containing a `UICollectionView` with a single type of `UICollectionViewCell`.
+
 🌟 Sample cells and view controllers demonstrating how to use FunctionalTableData.
+
 🌟 Custom cells, headers, and `CarouselItemCells` created can be created programically or with nibs. Simply conform the UIVIew/UICollectionViewCell to the protocol `NibView`/`CarouselItemNibView`.
+
+🌟 Estimated cell, section, and header heights.
 
 ## 🌟 This Demo 🌟 
 
