@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint DeclarativeTables.podspec' to ensure this is a
+#  Be sure to run `pod spec lint SwiftyTables.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "SwiftDeclarativeTables"
+  s.name         = "SwiftyTables"
   s.version      = "1.0.0"
   s.summary      = "A framework for writing UITablesViews and UICollectionViews in Swift in a cleaner, simpler way."
   s.swift_version = "4.1"
@@ -26,10 +26,11 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  Create Swift tables in a simpler, and more declarative way, making it simple to add and remove sections and rows dynamically with animations.
+  Create Swift UITableView and UICollectionViews in a simpler, and more declarative way.
+  Use this to dynamically add and remove sections and rows with animations without having to bookkeep IndexPaths.
                    DESC
 
-  s.homepage     = "https://github.com/p-sun/Swift-Declarative-Tables.git"
+  s.homepage     = "https://github.com/p-sun/SwiftyTables.git"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +81,7 @@ Pod::Spec.new do |s|
   #
 
   s.version      = "1.0.0"
-  s.source       = { :git => "https://github.com/p-sun/Swift-Declarative-Tables.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/p-sun/SwiftyTables.git", :tag => s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +92,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "DeclarativeTablesProject/DeclarativeTables/**/*.{swift,h}"#.{h,m}"
+  s.source_files  = "SwiftyTablesProject/SwiftyTables/**/*.{swift,h}"#.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
