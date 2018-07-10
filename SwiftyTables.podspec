@@ -80,9 +80,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.version      = "1.0.0"
-  s.source       = { :git => "https://github.com/p-sun/SwiftyTables.git", :tag => s.version.to_s }
-
+  s.source       = { :git => "https://github.com/p-sun/SwiftyTables.git", :branch => "master", :tag => s.version.to_s }
+  
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

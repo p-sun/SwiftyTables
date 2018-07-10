@@ -1,6 +1,8 @@
 # Swift-Declarative-Tables
 Makes Swift 4 tables much simpler and declarative, like React, making it simple to add and remove sections and rows dynamically.
 
+Simply add `pod 'SwiftyTables'` to your `Podfile`.
+
 No more crazy switches and monster UITableViewDelegates methods! Each cell's state is declared in one place.
 
 Forked off of [Shopify's FunctionalTableData](https://github.com/Shopify/FunctionalTableData). 
