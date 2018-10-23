@@ -25,7 +25,6 @@
 		DDA996A82099129000B9F649 /* FunctionalCollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9967E2099129000B9F649 /* FunctionalCollectionData.swift */; };
 		DDA996A92099129000B9F649 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9967F2099129000B9F649 /* UICollectionView+Reusable.swift */; };
 		DDA996AB2099129000B9F649 /* HostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996812099129000B9F649 /* HostCell.swift */; };
-		DDA996AC2099129000B9F649 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDA996822099129000B9F649 /* Info.plist */; };
 		DDA996AD2099129000B9F649 /* ObjCExceptionRethrower.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996832099129000B9F649 /* ObjCExceptionRethrower.swift */; };
 		DDA996AE2099129000B9F649 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996842099129000B9F649 /* Reusable.swift */; };
 		DDA996AF2099129000B9F649 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA996852099129000B9F649 /* Separator.swift */; };
@@ -560,7 +559,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA996AC2099129000B9F649 /* Info.plist in Resources */,
 				DDA996A02099129000B9F649 /* HowToUpdateFTD.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -923,6 +921,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66T4X4PK9Q;
 				INFOPLIST_FILE = SwiftyTablesDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -942,6 +941,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66T4X4PK9Q;
 				INFOPLIST_FILE = SwiftyTablesDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
